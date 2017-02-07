@@ -1,4 +1,5 @@
 languageCode = "en-us"
 title = "Ismaili Volunteer"
-baseurl = "http://example.org/"
+baseurl = "https://alizain.github.io/ismailivolunteer/"
 publishDir = "docs"
+relativeURLs = true

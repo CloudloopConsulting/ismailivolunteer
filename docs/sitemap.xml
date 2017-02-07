@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.org/listings/music-class-west/</loc>
+    <loc>https://alizain.github.io/ismailivolunteer/listings/music-class-west/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/</loc>
+    <loc>https://alizain.github.io/ismailivolunteer/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/listings/</loc>
+    <loc>https://alizain.github.io/ismailivolunteer/listings/</loc>
     <priority>0</priority>
   </url>
   
