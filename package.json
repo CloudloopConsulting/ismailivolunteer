@@ -1,0 +1,27 @@
+{
+  "name": "ismailivolunteer",
+  "version": "0.1.0",
+  "description": "Ismaili Volunteer Listings",
+  "main": "none",
+  "private": true,
+  "scripts": {
+    "styles": "./node_modules/.bin/node-sass -r ./styles -o ./static/styles --include-path ./node_modules",
+    "styles:watch": "npm run styles -- -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alizain/ismailivolunteer.git"
+  },
+  "author": "Alizain Feerasta",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/alizain/ismailivolunteer/issues"
+  },
+  "homepage": "https://github.com/alizain/ismailivolunteer#readme",
+  "devDependencies": {
+    "node-sass": "^4.4.0"
+  },
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.6"
+  }
+}
