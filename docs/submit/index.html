@@ -17,14 +17,32 @@
     <body>
         
 
+		<header class="container mt-3 mb-6">
+	
+		<nav class="navbar navbar-light flex-row justify-content-end align-items-center p-0">
+			<a class="mr-auto navbar-brand p-0" href="https://alizain.github.io/ismailivolunteer/">
+				<img src="https://alizain.github.io/ismailivolunteer/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+				Ismaili Volunteer
+			</a>
+
+			<ul class="navbar-nav flex-row flex-end">
+			  <li class="nav-item mx-2">
+			    <a class="nav-link" href="https://alizain.github.io/ismailivolunteer/submit">Submit</a>
+			  </li>
+			</ul>
+		</nav>
+	
+</header>
+
+
 		<main>
 	        
-	<section class="title">
+	<section class="container title mb-6">
 		<h1>Submit a Volunteer Opportunity</h1>
 	</section>
-	<section class="submit">
+	<section class="container submit mb-6">
 		<form data-form-up>
-			<div class="form-section">
+			<div class="form-section mb-6">
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label" for="org-input">Organization</label>
 					<div class="col-sm-8">
@@ -57,7 +75,7 @@
 				</div>
 			</div>
 
-			<div class="form-section">
+			<div class="form-section mb-6">
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label" for="position-input">Volunteer Position</label>
 					<div class="col-sm-8">
@@ -78,7 +96,7 @@
 				</div>
 			</div>
 
-			<div class="form-section">
+			<div class="form-section mb-6">
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label" for="startdate-input">Start Date</label>
 					<div class="col-sm-8">
@@ -103,7 +121,9 @@
 			<input type="hidden" name="_next" value="https://alizain.github.io/ismailivolunteer/thank-you/submit" />
 			<input type="hidden" name="_subject" value="Submit a Volunteer Opportunity" />
 
-			<input type="submit" class="btn btn-primary" value="Send">
+			<div class="text-right">
+				<input type="submit" class="btn btn-primary" value="Submit">
+			</div>
 		</form>
 		<script src="https://alizain.github.io/ismailivolunteer/scripts/formvendor.js"></script>
 <script>
@@ -178,6 +198,11 @@ form.onsubmit = function onsubmit(ev) {
 
 		</main>
 
+		<footer>
+
+</footer>
+
+
         
         <script>
             window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
@@ -187,5 +212,6 @@ form.onsubmit = function onsubmit(ev) {
 
         
         
+
     </body>
 </html>
