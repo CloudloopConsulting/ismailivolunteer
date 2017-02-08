@@ -50,7 +50,9 @@
 			<input type="hidden" name="_next" value="{{ "/thank-you/apply" | absURL }}" />
 			<input type="hidden" name="_subject" class="form-control" value="{{ .Params.position }} for {{ .Params.program }}" readonly />
 
-			<input type="submit" class="btn btn-primary" value="Send">
+			<div class="text-right">
+				<input type="submit" class="btn btn-primary" value="Apply">
+			</div>
 		</form>
 		{{ partial "formup.html" . }}
 	</section>
