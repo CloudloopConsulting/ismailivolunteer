@@ -1,0 +1,8 @@
+@import "_variables.scss";
+
+.content {
+	h3 {
+		margin-bottom: map-get(map-get($spacers, 3), 'x');
+		margin-top: map-get(map-get($spacers, 5), 'x');
+	}
+}

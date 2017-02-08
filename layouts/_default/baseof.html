@@ -19,10 +19,14 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to make full use of this website.</p>
         <![endif]-->
 
+		{{ partial "header.html" . }}
+
 		<main>
 	        {{ block "main" . }}
 	        {{ end }}
 		</main>
+
+		{{ partial "footer.html" . }}
 
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>
@@ -33,5 +37,6 @@
 
         {{ block "scripts" . }}
         {{ end }}
+
     </body>
 </html>
