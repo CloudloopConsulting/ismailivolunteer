@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>we</title>
-        <meta name="description" content="The We Movement">
+        <title>Ismaili Volunteer</title>
+        <meta name="description" content="Find volunteer opportunities within the community">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -19,36 +19,121 @@
 
 		<main>
 	        
-  <h1></h1>
-  <p>0001-01-01 00:00:00 &#43;0000 UTC</p>
-  <section id="about" class="content-container">
-	<h3>About</h3>
-	<ul class="content">
+	<section class="title">
+		<h1>Something</h1>
+	</section>
+	<section class="content">
 		
-	</ul>
-</section>
 
-  <section id="pros" class="content-container">
-  <h3>Pros</h3>
-  <ul class="content">
-    
-  </ul>
-</section>
+<h2 id="requirements">Requirements</h2>
 
-  <section id="cons" class="content-container">
-  <h3>Cons</h3>
-  <ul class="content">
-    
-  </ul>
-</section>
+	</section>
+	<section class="apply">
+		<form data-form-up>
+			<div class="form-section">
+				<div class="form-group row">
+					<label class="col-sm-4 col-form-label" for="name-input">Name</label>
+					<div class="col-sm-8">
+						<div class="row">
+							<div class="col-sm-6">
+								<input required type="text" id="name-input" name="firstname" class="form-control" placeholder="First name">
+							</div>
+							<div class="col-sm-6">
+								<input required type="text" id="name-last-input" name="lastname" class="form-control" placeholder="Last Name">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-sm-4 col-form-label" for="email-input">Email</label>
+					<div class="col-sm-8">
+						<input required type="email" id="email-input" name="email" class="form-control" placeholder="organizer@artsandculture.ca">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-sm-4 col-form-label" for="jamatkhana-input">Primary Jamatkhana</label>
+					<div class="col-sm-8">
+						<input required type="text" id="jamatkhana-input" name="jamatkhana" class="form-control" placeholder="Brampton">
+					</div>
+				</div>
+			</div>
 
-  <section id="background" class="content-container">
-	<h3>Background</h3>
-	<ul class="content">
-		
-	</ul>
-</section>
+			<input type="text" name="_gotcha" style="display:none" />
+			<input type="hidden" name="_next" value="https://alizain.github.io/thank-you/apply" />
+			<input type="hidden" name="_subject" class="form-control" value="Something for Music Class" readonly />
 
+			<input type="submit" class="btn btn-primary" value="Send">
+		</form>
+		<script src="https://alizain.github.io/ismailivolunteer/scripts/formvendor.js"></script>
+<script>
+	(function(window) {
+
+		'use strict';
+
+		var formdata = "eyJjYyI6WyJzb21lb25lZWxzZUBnbWFpbC5jb20iLCJzdXBlcnZpc29yQGdtYWlsLmNvbSJdLCJ0byI6ImFsaXphaW4uZmVlcmFzdGFAZ21haWwuY29tIn0="
+
+		/* global formdata */
+
+var $ = window.jQuery
+var config = {}
+var $form = $('form[data-form-up]').eq(0)
+var form = $form[0]
+var instance
+
+function formAction(c) {
+	return 'https://formspree.io/' + c.to
+}
+
+function formMethod() {
+	return 'POST'
+}
+
+function formCC(c) {
+	return $('<input type="hidden" name="_cc" value="' + c.cc.join(',') + '">')[0]
+}
+
+try {
+	config = JSON.parse(atob(formdata))
+} catch (e) {
+	throw new Error('could not decode formdata')
+}
+
+if (Object.keys(config) === 0) {
+	throw new Error('incomplete config')
+}
+
+if (!form) {
+	throw new Error('cannot find form')
+}
+
+instance = $form.parsley({
+	errorClass: 'has-danger',
+	successClass: 'has-success',
+	classHandler: function classHandler(el) {
+		return el.$element.closest('.form-group')
+	},
+	errorsWrapper: '<div class="feedback-container"></div>',
+	errorTemplate: '<div class="form-control-feedback"></div>'
+})
+
+form.onsubmit = function onsubmit(ev) {
+	if (instance.isValid()) {
+		form.appendChild(formCC(config))
+		form.action = formAction(config)
+		form.method = formMethod()
+	} else {
+		ev.preventDefault()
+	}
+}
+
+
+	})(window)
+</script>
+<noscript>
+	<p>JavaScript is required to validate and submit this form!</p>
+</noscript>
+
+	</section>
 
 		</main>
 
