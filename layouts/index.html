@@ -1,17 +1,17 @@
 {{ define "main" }}
-	<!-- Listings by organization -->
 	{{ range (where .Data.Pages "Section" "listings").GroupByParam "org" }}
 		<section class="listing-section">
 			<h2 class="section-title">{{ .Key }}</h2>
 			<ul class="listing">
 				{{ range .Pages }}
 					<li class="listing-item">
-						<h3 class="item-title">
-							<a href="{{ .Permalink }}">{{ .Params.position }}</a>
-						</h3>
-						<div class="item-meta">
-							<p>
-						</div>
+						<h3 class="item-title"><a href="{{ .Permalink }}">{{ .Params.position }} - {{ .Params.program }}</a></h3>
+						<ul class="item-meta">
+							<li>{{ .Params.startdate }} to {{ .Params.enddate }}</li>
+							<li>{{ delimit .Params.commitment ", " }}</li>
+							<li>{{ .Params.location }}</li>
+							<li>{{ .Params.org }}</li>
+						</ul>
 					</li>
 				{{ end }}
 			</ul>
