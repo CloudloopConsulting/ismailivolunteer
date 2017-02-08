@@ -1,5 +1,6 @@
-/* global $, formdata */
+/* global formdata */
 
+var $ = window.jQuery
 var config = {}
 var $form = $('form[data-form-up]').eq(0)
 var form = $form[0]
