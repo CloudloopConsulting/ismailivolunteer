@@ -1,6 +1,6 @@
 languageCode = "en-us"
 title = "Ismaili Volunteer"
-baseurl = "https://alizain.github.io/ismailivolunteer/"
-publishDir = "docs"
+baseurl = "https://ismailivolunteer.github.io"
+publishDir = "public"
 # relativeURLs = true
 canonifyURLs = true

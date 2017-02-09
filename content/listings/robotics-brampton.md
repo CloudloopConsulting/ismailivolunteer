@@ -15,8 +15,6 @@ commitment:
 formdata:
   to: alizain.feerasta@gmail.com
   cc:
-    - someoneelse@gmail.com
-    - supervisor@gmail.com
 ---
 
 ### About the Program
