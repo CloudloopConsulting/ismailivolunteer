@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "styles": "./node_modules/.bin/node-sass -r ./styles -o ./static/styles --include-path ./node_modules",
+	"public": "cp -r public/ dist",
 	"formvendor": "./node_modules/.bin/rollup -c rollup.config.js scripts/formvendor.js -o static/scripts/formvendor.js -n formvendor"
   },
   "repository": {
