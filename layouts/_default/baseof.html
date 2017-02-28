@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" manifest="ismailivolunteer.appcache">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -34,6 +34,22 @@
             ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
         </script>
         <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+		<script>
+			window.addEventListener('load', function(e) {
+				window.applicationCache.addEventListener('updateready', function(e) {
+					if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+						// Browser downloaded a new app cache.
+						// Swap it in and reload the page to get the new hotness.
+						window.applicationCache.swapCache();
+						if (confirm('A new version of this site is available. Load it?')) {
+							window.location.reload();
+						}
+					} else {
+						// Manifest didn't changed. Nothing new to server.
+					}
+				}, false);
+			}, false);
+		</script>
 
         {{ block "scripts" . }}
         {{ end }}
