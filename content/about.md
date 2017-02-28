@@ -1,4 +1,4 @@
 ---
-title: What is the Ismaili Volunteer?
+title: Ismaili Volunteer
 type: about
 ---
