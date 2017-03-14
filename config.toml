@@ -3,4 +3,4 @@ title = "Ismaili Volunteer"
 baseurl = "https://ismailivolunteer.github.io"
 publishDir = "dist"
 # relativeURLs = true
-canonifyURLs = true
+canonifyURLs = false
