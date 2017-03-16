@@ -12,7 +12,7 @@ commitment:
   - 3-7pm every Sunday
 
 formdata:
-  to: alizain.feerasta@gmail.com
+  to: ismailivolunteer@gmail.com
   cc:
 ---
 

@@ -13,7 +13,7 @@ commitment:
   - 6hrs per week
 
 formdata:
-  to: alizain.feerasta@gmail.com
+  to: ismailivolunteer@gmail.com
   cc:
     - alizain@feerasta.net
 ---
