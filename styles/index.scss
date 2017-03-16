@@ -1,3 +1,32 @@
-@import "_variables.scss";
-@import "_base.scss";
-@import "bootstrap/scss/bootstrap.scss";
+@import "base";
+
+.jumbotron {
+	font-family: $font-family-sans-serif;
+	position: relative;
+	background: $black;
+	overflow: hidden;
+	color: $white;
+
+	.jumbotron-background {
+		position: absolute;
+		top: -10px;
+		bottom: -10px;
+		left: -10px;
+		right: -10px;
+		transition: background-image 0.6s ease-in-out;
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		filter: blur(6px);
+		opacity: 1;
+		box-shadow: inset 0px 88px 80px -20px rgba(0, 0, 0, 0.8);
+	}
+
+	header {
+		background: none;
+		nav {
+			border-bottom: 2px solid $white;
+		}
+	}
+
+}

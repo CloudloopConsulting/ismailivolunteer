@@ -1,12 +1,13 @@
 const nodeResolve = require('rollup-plugin-node-resolve')
 const commonJs = require('rollup-plugin-commonjs')
+const babel = require('rollup-plugin-babel')
 
 module.exports = {
 	format: 'iife',
 	plugins: [
 		nodeResolve({
-			module: false,
-			jsnext: false,
+			module: true,
+			jsnext: true,
 			main: true,
 			browser: true,
 			extensions: [
@@ -14,6 +15,9 @@ module.exports = {
 			],
 			preferBuiltins: false
 		}),
-		commonJs()
+		commonJs(),
+		babel({
+			exclude: 'node_modules/**'
+		})
 	]
 }

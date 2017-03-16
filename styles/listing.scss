@@ -1,8 +1,10 @@
-@import "_variables.scss";
+@import "base";
 
 .content {
-	h3 {
-		margin-bottom: map-get(map-get($spacers, 3), 'x');
-		margin-top: map-get(map-get($spacers, 5), 'x');
+	h4 {
+		margin-top: get-spacers( 4, 'x');
+		&:first-of-type {
+			margin-top: 0;
+		}
 	}
 }

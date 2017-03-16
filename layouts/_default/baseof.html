@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" manifest="ismailivolunteer.appcache">
+<html lang="en" manifest="/ismailivolunteer.appcache">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -9,24 +9,39 @@
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-		<link rel="stylesheet" href="/styles/index.css">
+		<link rel="stylesheet" href="{{ "styles/app.css" | relURL }}">
 
         {{ block "head" . }}
         {{ end }}
+
+        <script>
+            (function(d) {
+                var config = {
+                    kitId: 'iiq8uhx',
+                    scriptTimeout: 3000,
+                    async: true
+                },
+                h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+            })(document);
+        </script>
     </head>
     <body>
         <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to make full use of this website.</p>
         <![endif]-->
 
-		{{ partial "header.html" . }}
+        {{ block "header" .}}
+		    {{ partial "header.html" . }}
+        {{ end }}
 
 		<main>
 	        {{ block "main" . }}
 	        {{ end }}
 		</main>
 
-		{{ partial "footer.html" . }}
+        {{ block "footer" .}}
+		    {{ partial "footer.html" . }}
+        {{ end }}
 
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>
@@ -38,15 +53,11 @@
 			window.addEventListener('load', function(e) {
 				window.applicationCache.addEventListener('updateready', function(e) {
 					if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
-						// Browser downloaded a new app cache.
-						// Swap it in and reload the page to get the new hotness.
 						window.applicationCache.swapCache();
 						if (confirm('A new version of this site is available. Load it?')) {
 							window.location.reload();
 						}
-					} else {
-						// Manifest didn't changed. Nothing new to server.
-					}
+					} else {}
 				}, false);
 			}, false);
 		</script>

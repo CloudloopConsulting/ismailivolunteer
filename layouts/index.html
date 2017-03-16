@@ -1,10 +1,26 @@
+{{ define "head" }}
+	<link rel="stylesheet" href="{{ "styles/index.css" | relURL }}">
+{{ end }}
+
+{{ define "header" }}
+	<!-- empty -->
+{{ end }}
+
 {{ define "main" }}
+	<section class="jumbotron jumbotron-fluid mb-6 p-0">
+		<div id="images-target" class="jumbotron-background"></div>
+		{{ partial "header.html" . }}
+		<div class="container pt-8 pb-9">
+			<h1 class="display-3 mb-0">Volunteer in the jamat</h1>
+			<h4 class="mb-0">Find interesting opportunites and connect with organizers.</h4>
+		</div>
+	</section>
 	{{ range (where .Data.Pages "Section" "listings").GroupByParam "org" }}
 		<section class="container listing-section mb-6">
-			<h2 class="section-title mb-5">{{ .Key }}</h2>
+			<h2 class="section-title mb-4">{{ .Key }}</h2>
 			<ul class="listing list-unstyled">
 				{{ range .Pages }}
-					<li class="listing-item mb-5">
+					<li class="listing-item mb-4">
 						<h4 class="item-title"><a href="{{ .Permalink }}"><strong>{{ .Params.position }}</strong> for <em>{{ .Params.program }}</em></a></h4>
 						<ul class="item-meta list-inline">
 							<li class="list-inline-item mr-2">{{ .Params.startdate }} to {{ .Params.enddate }}</li>
@@ -16,4 +32,10 @@
 			</ul>
 		</section>
 	{{ end }}
+{{ end }}
+
+{{ define "scripts" }}
+	<script>
+		{{ readFile "static/scripts/index_jumbotron.js" | safeJS }}
+	</script>
 {{ end }}

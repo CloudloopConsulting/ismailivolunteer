@@ -1,19 +1,51 @@
-<header class="container mt-3 mb-6">
-	<!-- <div class="row"> -->
-		<nav class="navbar navbar-light flex-row justify-content-end align-items-center p-0">
-			<a class="mr-auto navbar-brand p-0" href="{{ "" | absURL }}">
-				<img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-				Ismaili Volunteer
-			</a>
+<!-- <header class="mb-6">
+	<div class="container">
+		<div class="row">
+			<nav class="navbar navbar-light flex-row justify-content-end align-items-center p-0">
+				<h4 class="mr-auto navbar-brand p-0">
+					<a href="{{ "/" | relURL }}">Ismaili Volunteer</a>
+				</h4>
 
-			<ul class="navbar-nav flex-row flex-end">
-				<li class="nav-item mx-2">
-  			    	<a class="nav-link" href="{{ "about" | absURL }}">About</a>
-  			  	</li>
-				<li class="nav-item mx-2">
-			    	<a class="nav-link" href="{{ "submit" | absURL }}">Submit</a>
+				<ul class="navbar-nav flex-row flex-end">
+					<li class="nav-item mx-2">
+				    	<a class="nav-link" href="{{ "submit" | relURL }}">Submit</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header> -->
+
+<!-- <header class="mb-6">
+	<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="{{ " / " | relURL }}">Ismaili Volunteer</a>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="{{ " submit " | relURL }}">Submit</a>
 				</li>
 			</ul>
-		</nav>
-	<!-- </div> -->
+		</div>
+	</nav>
+</header> -->
+
+<header class="p-0">
+	<div class="container">
+	<nav class="navbar navbar-inverse flex-row align-items-center py-2 px-0">
+		<!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button> -->
+		<a class="navbar-brand p-0" href="{{ "/" | relURL }}">Ismaili Volunteer</a>
+
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item active">
+				<a class="nav-link px-2 py-0" href="{{ "submit" | relURL }}">Submit</a>
+			</li>
+		</ul>
+	</nav>
+</div>
 </header>

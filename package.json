@@ -5,9 +5,11 @@
   "main": "none",
   "private": true,
   "scripts": {
-    "styles": "./node_modules/.bin/node-sass -r ./styles -o ./static/styles --include-path ./node_modules",
-	"public": "cp -r public/ dist",
-	"formvendor": "./node_modules/.bin/rollup -c rollup.config.js scripts/formvendor.js -o static/scripts/formvendor.js -n formvendor"
+    "scss": "./node_modules/.bin/node-sass -r ./styles -o ./static/styles --include-path ./node_modules",
+    "public": "cp -r public/ dist",
+	"images": "cp -r images/ static/images",
+    "form_submit": "./node_modules/.bin/rollup -c rollup.config.js scripts/form_submit.js -o static/scripts/form_submit.js -n form_submit",
+    "index_jumbotron": "./node_modules/.bin/rollup -c rollup.config.js scripts/index_jumbotron.js -o static/scripts/index_jumbotron.js -n index_jumbotron"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,9 @@
   },
   "homepage": "https://github.com/alizain/ismailivolunteer#readme",
   "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-latest": "^6.24.0",
     "eslint": "^3.15.0",
     "eslint-config-airbnb-base": "^11.1.0",
     "eslint-plugin-compat": "^1.0.1",
@@ -27,8 +32,10 @@
     "eslint-plugin-promise": "^3.4.1",
     "node-sass": "^4.4.0",
     "rollup": "^0.41.4",
+    "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-commonjs": "^7.0.0",
-    "rollup-plugin-node-resolve": "^2.0.0"
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-watch": "^3.2.2"
   },
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",
