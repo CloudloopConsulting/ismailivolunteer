@@ -3,7 +3,7 @@
 {{ end }}
 
 {{ define "main" }}
-	<section class="container title mb-6">
+	<section class="container title mt-6 mb-6">
 		<h1>{{ .Params.Position }}</h1>
 		<h4 class="mb-2">{{ .Params.program }} - {{ .Params.org }}</h4>
 		<h6 class="mb-1">{{ delimit .Params.commitment ", " }}</h6>
@@ -48,7 +48,7 @@
 			<input type="hidden" name="_next" value="{{ "thank-you/apply" | absURL }}" />
 			<input type="hidden" name="_subject" class="form-control" value="{{ .Params.position }} for {{ .Params.program }}" readonly />
 
-			<div class="text-right">
+			<div class="mt-4 text-right">
 				<input type="submit" class="btn btn-primary" value="Apply">
 			</div>
 		</form>

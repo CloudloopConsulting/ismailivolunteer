@@ -25,8 +25,21 @@
 	header {
 		background: none;
 		nav {
-			border-bottom: 2px solid $white;
+			border-bottom: 1px solid $white;
 		}
 	}
 
+}
+
+section.listing-section {
+	h4 a {
+		text-decoration: none;
+	}
+	.item-meta {
+		font-family: $font-family-sans-serif;
+	}
+}
+
+section.more {
+	color: $gray-light;
 }

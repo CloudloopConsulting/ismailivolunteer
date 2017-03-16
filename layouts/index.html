@@ -21,7 +21,7 @@
 			<ul class="listing list-unstyled">
 				{{ range .Pages }}
 					<li class="listing-item mb-4">
-						<h4 class="item-title"><a href="{{ .Permalink }}"><strong>{{ .Params.position }}</strong> for <em>{{ .Params.program }}</em></a></h4>
+						<h4 class="item-title mb-1"><a href="{{ .Permalink }}"><strong>{{ .Params.position }}</strong> for <em>{{ .Params.program }}</em></a></h4>
 						<ul class="item-meta list-inline">
 							<li class="list-inline-item mr-2">{{ .Params.startdate }} to {{ .Params.enddate }}</li>
 							<li class="list-inline-item mr-2">{{ delimit .Params.commitment ", " }}</li>
@@ -32,6 +32,14 @@
 			</ul>
 		</section>
 	{{ end }}
+	<section class="container more mb-6 mt-8 text-center">
+		<div class="row justify-content-sm-center">
+			<div class="col col-md-8">
+				<h5 class="mb-2">Didn't find anything?</h5>
+				<p><em>Keep checking back! This is just the beginning, we'll be adding more organizations and opportunities in the coming weeks.</em></p>
+			</div>
+		</div>
+	</section>
 {{ end }}
 
 {{ define "scripts" }}

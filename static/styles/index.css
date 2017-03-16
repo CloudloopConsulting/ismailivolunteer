@@ -20,4 +20,13 @@
   .jumbotron header {
     background: none; }
     .jumbotron header nav {
-      border-bottom: 2px solid #fff; }
+      border-bottom: 1px solid #fff; }
+
+section.listing-section h4 a {
+  text-decoration: none; }
+
+section.listing-section .item-meta {
+  font-family: "museo-sans-rounded", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+
+section.more {
+  color: #636c72; }

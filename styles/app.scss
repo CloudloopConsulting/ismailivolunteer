@@ -36,8 +36,31 @@ header {
 	nav {
 		font-family: $font-family-sans-serif;
 	}
+	a {
+		text-decoration: none;
+	}
 }
 
 footer {
+	border-top: 1px solid $gray-lighter;
+	font-family: $font-family-sans-serif;
+	color: $gray;
+	.content p {
+		&:after {
+			content: "∙";
+			margin: 0 1rem;
+			color: $gray-light;
+		}
+		&:last-child:after {
+			content: "";
+		}
+	}
+}
 
+a {
+	text-decoration: underline;
+}
+
+form {
+	font-family: $font-family-sans-serif;
 }

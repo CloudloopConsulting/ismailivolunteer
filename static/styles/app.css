@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
@@ -5085,3 +5086,22 @@ header {
   z-index: 10; }
   header nav {
     font-family: "museo-sans-rounded", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+  header a {
+    text-decoration: none; }
+
+footer {
+  border-top: 1px solid #eceeef;
+  font-family: "museo-sans-rounded", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #464a4c; }
+  footer .content p:after {
+    content: "∙";
+    margin: 0 1rem;
+    color: #636c72; }
+  footer .content p:last-child:after {
+    content: ""; }
+
+a {
+  text-decoration: underline; }
+
+form {
+  font-family: "museo-sans-rounded", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
