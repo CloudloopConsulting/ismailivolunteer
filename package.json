@@ -18,14 +18,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alizain/ismailivolunteer.git"
+    "url": "git+https://github.com/ismailivolunteer/ismailivolunteer.git"
   },
   "author": "Alizain Feerasta",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/alizain/ismailivolunteer/issues"
+    "url": "https://github.com/ismailivolunteer/ismailivolunteer/issues"
   },
-  "homepage": "https://github.com/alizain/ismailivolunteer#readme",
+  "homepage": "https://github.com/ismailivolunteer/ismailivolunteer#readme",
   "devDependencies": {
     "babel-core": "^6.24.0",
     "babel-plugin-external-helpers": "^6.22.0",
