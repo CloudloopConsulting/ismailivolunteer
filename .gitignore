@@ -27,3 +27,7 @@ Temporary Items
 
 # NPM related
 node_modules
+
+# Hugo related builds
+dist
+static
