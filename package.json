@@ -14,7 +14,7 @@
 	"public": "cp -r public/ dist",
 	"minify": "./node_modules/.bin/html-minifier --collapse-whitespace --remove-comments --minify-js --minify-css --file-ext html --input-dir ./dist --output-dir ./dist",
     "compile": "npm run static && npm run public && hugo && npm run minify",
-    "netlify": "npm run scripts && hugo_0.19"
+    "netlify": "npm run static && npm run public && hugo_0.19 && npm run minify"
   },
   "repository": {
     "type": "git",
