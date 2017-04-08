@@ -14,6 +14,7 @@
         {{ block "head" . }}
         {{ end }}
 
+		<link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,700,700i" rel="stylesheet">
         <script>
             (function(d) {
                 var config = {
@@ -30,18 +31,22 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to make full use of this website.</p>
         <![endif]-->
 
-        {{ block "header" .}}
-		    {{ partial "header.html" . }}
-        {{ end }}
+		{{ block "header" .}}
+			<header class="">
+				{{ partial "header.html" . }}
+			</header>
+		{{ end }}
 
-		<main>
+		<main class="">
 	        {{ block "main" . }}
 	        {{ end }}
 		</main>
 
-        {{ block "footer" .}}
-		    {{ partial "footer.html" . }}
-        {{ end }}
+		{{ block "footer" .}}
+			<footer class="">
+				{{ partial "footer.html" . }}
+			</footer>
+		{{ end }}
 
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>

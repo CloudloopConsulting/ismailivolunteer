@@ -1,7 +1,5 @@
 const needToLoad = [
-	'1',
-	'2',
-	'3'
+	'5',
 ].map(name => `/images/jumbotron/${name}.jpg`)
 
 const loaded = []
@@ -42,15 +40,15 @@ function changeImg() {
 	setImageOnEl(relPath)
 }
 
-const initialImg = popUnloadedImg()
-setImageOnEl(initialImg)
-pushLoadedImg(initialImg)
-
-const len = needToLoad.length
-for (let i = 0; i < len; i++) {
-	preloadAnImg()
-}
-
-const intervalFunc = window.setInterval(changeImg, intervalWait)
-
-window.needToLoad = needToLoad
+// const initialImg = popUnloadedImg()
+// setImageOnEl(initialImg)
+// pushLoadedImg(initialImg)
+//
+// const len = needToLoad.length
+// for (let i = 0; i < len; i++) {
+// 	preloadAnImg()
+// }
+//
+// const intervalFunc = window.setInterval(changeImg, intervalWait)
+//
+// window.needToLoad = needToLoad

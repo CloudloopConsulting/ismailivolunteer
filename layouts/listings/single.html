@@ -4,8 +4,9 @@
 
 {{ define "main" }}
 	<section class="container title mt-6 mb-6">
-		<h1>{{ .Params.Position }}</h1>
-		<h4 class="mb-2">{{ .Params.program }} - {{ .Params.org }}</h4>
+		<h1>{{ .Params.Position }} for {{ .Params.program }}</h1>
+		<div class="d-flex-row"
+		<h6 class="mb-2"><div class="avatar rounded-circle"></div>by {{ .Params.organizer }} and the {{ .Params.org }}</h4>
 		<h6 class="mb-1">{{ delimit .Params.commitment ", " }}</h6>
 		<h6 class="mb-0">{{ .Params.location }}</h6>
 	</section>

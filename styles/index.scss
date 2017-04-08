@@ -1,9 +1,29 @@
 @import "base";
 
+hr {
+	width: 10rem;
+	border: 0;
+	height: 1px;
+	background: $gray-lighterer;
+	position: relative;
+	&:after {
+		content: '';
+		position: absolute;
+		left: 50%;
+		margin-left: -2px;
+		top: -1.5px;
+		width: 4px;
+		height: 4px;
+		border-radius: 50%;
+		background: $gray-lighterer;
+		z-index: 1;
+	}
+}
+
 .jumbotron {
 	font-family: $font-family-sans-serif;
 	position: relative;
-	background: $black;
+	background: $gray-dark;
 	overflow: hidden;
 	color: $white;
 
@@ -17,29 +37,153 @@
 		background-size: cover;
 		background-position: center center;
 		background-repeat: no-repeat;
-		filter: blur(6px);
+		filter: blur(8px);
 		opacity: 1;
-		box-shadow: inset 0px 88px 80px -20px rgba(0, 0, 0, 0.8);
+
+		&:after {
+			content: '';
+			background: -webkit-linear-gradient(-90deg, rgba(0,0,0,0.16) 10%, rgba(0,0,0,0.1) 26%, transparent 52%);
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		}
 	}
 
 	header {
 		background: none;
+		opacity: 0.4;
+		transition: 0.33s opacity ease-in-out;
+		&:hover {
+			opacity: 1;
+		}
 		nav {
-			border-bottom: 1px solid $white;
+			// border-bottom: 1px solid $white;
+		}
+	}
+
+	.cta {
+		color: #FFF;
+		text-decoration: none;
+		padding: 1rem;
+		border: 1px solid #FFF;
+		border-radius: $border-radius;
+		display: inline-block;
+		transition: 0.33s all ease-in-out;
+		&:hover {
+			cursor: pointer;
+			background-color: #FFF;
+			color: $brand-primary;
 		}
 	}
 
 }
 
+blockquote {
+	.quote {
+		font-family: "abril-text", $font-family-serif;
+		font-style: italic;
+		font-size: $font-size-h4;
+		&:before {
+			color: $gray-lighterer;
+			content: open-quote;
+			font-size: 4em;
+			line-height: 0;
+			margin-right: 0.26em;
+			vertical-align: -0.4em;
+		}
+		&:after {
+			color: $gray-lighterer;
+			content: close-quote;
+			font-size: 4em;
+			line-height: 0;
+			margin-left: 0.2em;
+			vertical-align: -0.62em;
+		}
+	}
+	cite {
+		font-style: normal;
+	}
+	.avatar {
+		width: 72px;
+		height: 72px;
+		background: url('/images/agakhanquote.png');
+		background-position: center;
+		background-size: cover;
+		border-radius: 50%;
+		overflow: hidden;
+		flex: 0 0 auto;
+	}
+}
+
 section.listing-section {
+	font-family: $font-family-sans-serif;
+
 	h4 a {
 		text-decoration: none;
 	}
+
+	// .item-meta {
+	// 	// font-style: italic;
+	// 	color: $gray-light;
+	// 	li {
+	// 		margin-right: 0.2rem;
+	// 		em {
+	// 			color: $gray-light-mauve;
+	// 			font-style: normal;
+	// 		}
+	// 		&:last-child {
+	// 			margin-right: 0;
+	// 		}
+	// 		&:after {
+	// 			content: '-';
+	// 			margin-left: 0.4rem;
+	// 		}
+	// 		&:last-child:after {
+	// 			content: none;
+	// 		}
+	// 	}
+	// }
+
 	.item-meta {
-		font-family: $font-family-sans-serif;
+		// font-style: italic;
+		color: lighten($gray-light, 15%);
+		li {
+			margin-right: 0.4rem;
+			em {
+				color: $gray-light;
+				font-style: normal;
+			}
+			i {
+				color: lighten($gray-light, 30%);
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+			&:after {
+				content: '|';
+				color: $gray-lighterer;
+				font-family: $font-family-serif;
+				font-weight: 100;
+				margin-left: 0.6rem;
+			}
+			&:last-child:after {
+				content: none;
+			}
+		}
+	}
+
+	.item-commitment {
+		color: $gray-lighter;
+		.time {
+			color: $gray-lighter;
+			font-size: $font-size-h1;
+			line-height: 1;
+		}
 	}
 }
 
 section.more {
-	color: $gray-light;
+	color: $gray-lighter;
 }

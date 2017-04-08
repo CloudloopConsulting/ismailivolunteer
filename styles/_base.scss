@@ -13,8 +13,12 @@ $black:  #000;
 $gray-dark:                 #292b2c;
 $gray:                      #464a4c;
 $gray-light:                #636c72;
-$gray-lighter:              #eceeef;
+$gray-lighter:              #bcc4c7;
+$gray-lighterer:            #eceeef;
 $gray-lightest:             #f7f7f9;
+
+// Grayscale variants
+$gray-light-mauve:          hsl(296, 24%, 40%);
 
 // Reassign color vars to semantic color scheme
 $brand-primary:             hsl(260, 50%, 52%);
@@ -107,7 +111,7 @@ $sizes: (
 $body-bg:       $white;
 $body-color:    $gray-dark;
 $inverse-bg:    $gray-dark;
-$inverse-color: $gray-lighter;
+$inverse-color: $gray-lighterer;
 
 
 // Links
@@ -165,7 +169,7 @@ $grid-gutter-widths: (
 // Font, line-height, and color for body text, headings, and more.
 
 $font-family-sans-serif: "museo-sans-rounded", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-$font-family-serif:      Georgia, "Times New Roman", Times, serif;
+$font-family-serif:      "Merriweather", Georgia, "Times New Roman", Times, serif;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $font-family-base:       $font-family-serif;
 
@@ -215,7 +219,7 @@ $abbr-border-color: $gray-light;
 
 $blockquote-small-color:  $gray-light;
 $blockquote-font-size:    ($font-size-base * 1.25);
-$blockquote-border-color: $gray-lighter;
+$blockquote-border-color: $gray-lighterer;
 $blockquote-border-width: .25rem;
 
 $hr-border-color: rgba($black,.1);
@@ -268,11 +272,11 @@ $table-bg-accent:               rgba($black,.05);
 $table-bg-hover:                rgba($black,.075);
 $table-bg-active:               $table-bg-hover;
 
-$table-head-bg:                 $gray-lighter;
+$table-head-bg:                 $gray-lighterer;
 $table-head-color:              $gray;
 
 $table-border-width:            $border-width;
-$table-border-color:            $gray-lighter;
+$table-border-color:            $gray-lighterer;
 
 
 // Buttons
@@ -337,7 +341,7 @@ $input-padding-y:                .5rem;
 $input-line-height:              1.25;
 
 $input-bg:                       $white;
-$input-bg-disabled:              $gray-lighter;
+$input-bg-disabled:              $gray-lighterer;
 
 $input-color:                    $gray;
 $input-border-color:             rgba($black,.15);
@@ -379,7 +383,7 @@ $form-check-inline-margin-x: .75rem;
 
 $form-group-margin-bottom:       $spacer-y;
 
-$input-group-addon-bg:           $gray-lighter;
+$input-group-addon-bg:           $gray-lighterer;
 $input-group-addon-border-color: $input-border-color;
 
 $cursor-disabled:                not-allowed;
@@ -395,7 +399,7 @@ $custom-control-indicator-bg-size:    50% 50%;
 $custom-control-indicator-box-shadow: inset 0 .25rem .25rem rgba($black,.1);
 
 $custom-control-disabled-cursor:             $cursor-disabled;
-$custom-control-disabled-indicator-bg:       $gray-lighter;
+$custom-control-disabled-indicator-bg:       $gray-lighterer;
 $custom-control-disabled-description-color:  $gray-light;
 
 $custom-control-checked-indicator-color:      $white;
@@ -426,7 +430,7 @@ $custom-select-line-height:         $input-line-height;
 $custom-select-color:               $input-color;
 $custom-select-disabled-color:      $gray-light;
 $custom-select-bg:            $white;
-$custom-select-disabled-bg:   $gray-lighter;
+$custom-select-disabled-bg:   $gray-lighterer;
 $custom-select-bg-size:       8px 10px; // In pixels because image dimensions
 $custom-select-indicator-color: #333;
 $custom-select-indicator:     str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E"), "#", "%23");
@@ -454,7 +458,7 @@ $custom-file-border-color:  $input-border-color;
 $custom-file-border-radius: $border-radius;
 $custom-file-box-shadow:    inset 0 .2rem .4rem rgba($black,.05);
 $custom-file-button-color:  $custom-file-color;
-$custom-file-button-bg:     $gray-lighter;
+$custom-file-button-bg:     $gray-lighterer;
 $custom-file-text: (
   placeholder: (
     en: "Choose file..."
@@ -486,7 +490,7 @@ $dropdown-margin-top:            .125rem;
 $dropdown-bg:                    $white;
 $dropdown-border-color:          rgba($black,.15);
 $dropdown-border-width:          $border-width;
-$dropdown-divider-bg:            $gray-lighter;
+$dropdown-divider-bg:            $gray-lighterer;
 $dropdown-box-shadow:            0 .5rem 1rem rgba($black,.175);
 
 $dropdown-link-color:            $gray-dark;
@@ -551,13 +555,13 @@ $navbar-light-toggler-border:       rgba($black,.1);
 $nav-item-margin:               .2rem;
 $nav-item-inline-spacer:        1rem;
 $nav-link-padding:              .5em 1em;
-$nav-link-hover-bg:             $gray-lighter;
+$nav-link-hover-bg:             $gray-lighterer;
 $nav-disabled-link-color:       $gray-light;
 
 $nav-tabs-border-color:                       #ddd;
 $nav-tabs-border-width:                       $border-width;
 $nav-tabs-border-radius:                      $border-radius;
-$nav-tabs-link-hover-border-color:            $gray-lighter;
+$nav-tabs-link-hover-border-color:            $gray-lighterer;
 $nav-tabs-active-link-hover-color:            $gray;
 $nav-tabs-active-link-hover-bg:               $body-bg;
 $nav-tabs-active-link-hover-border-color:     #ddd;
