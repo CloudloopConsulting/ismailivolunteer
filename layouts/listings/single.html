@@ -4,13 +4,49 @@
 
 {{ define "main" }}
 	<section class="container title mt-6 mb-6">
-		<h1>{{ .Params.Position }} for {{ .Params.program }}</h1>
-		<div class="d-flex-row"
-		<h6 class="mb-2"><div class="avatar rounded-circle"></div>by {{ .Params.organizer }} and the {{ .Params.org }}</h4>
-		<h6 class="mb-1">{{ delimit .Params.commitment ", " }}</h6>
-		<h6 class="mb-0">{{ .Params.location }}</h6>
+		<h1><strong>{{ .Params.Position }}</strong> for {{ .Params.program }}</h1>
+		<p class="mb-0 font-family-sans-serif">Organized by {{ .Params.organizer }}, {{ .Params.program }} is an initiative of the {{ .Params.org }}</p>
+		<ul class="item-meta list-inline font-family-sans-serif">
+			<li class="list-inline-item mb-1">This opportunity was <em>posted on {{ partial "date_format.html" .Date }}</em>, and will <em>expire on {{ partial "date_format.html" .ExpiryDate }}</em></li>
+		</ul>
 	</section>
 	<section class="container content mb-6">
+		<h4>Time Commitment</h4>
+		<div class="row">
+			<div class="col col-12 push-md-5 push-xl-6 col-md-7 col-xl-6 d-flex align-items-stretch flex-nowrap mb-3 font-family-sans-serif">
+				<div datetime="{{ .Params.startdate | dateFormat "2006-01-02" }}" class="time start d-flex flex-column">
+					<div style="flex-grow: 1;" class="top d-flex flex-column justify-content-center">
+						<div class="month">{{ .Params.startdate | dateFormat "January" }}</div>
+					</div>
+					<div style="flex-grow: 5;" class="bottom d-flex flex-column justify-content-around">
+						<div class="date">{{ .Params.startdate | dateFormat "2" }}</div>
+						<div class="day">{{ .Params.startdate | dateFormat "Monday" }}</div>
+					</div>
+				</div>
+				<div class="timecommitment p-3 text-center d-flex flex-column justify-content-center align-content-center">
+					<div class="number">{{ .Params.totalhours }}</div>
+					<p class="label mb-0">hours of time (approx) over the {{ .Params.weeksduration }} weeks of the program</p>
+				</div>
+				<div datetime="{{ .Params.enddate | dateFormat "2006-01-02" }}" class="time end d-flex flex-column">
+					<div style="flex-grow: 1;" class="top d-flex flex-column justify-content-center">
+						<div class="month">{{ .Params.enddate | dateFormat "January" }}</div>
+					</div>
+					<div style="flex-grow: 5;" class="bottom d-flex flex-column justify-content-around">
+						<div class="date">{{ .Params.enddate | dateFormat "2" }}</div>
+						<div class="day">{{ .Params.enddate | dateFormat "Monday" }}</div>
+					</div>
+				</div>
+			</div>
+			<div class="col col-12 pull-md-7 pull-xl-6 col-md-5 col-xl-6">
+				<p>This program starts on the <strong>{{ .Params.startdate | dateFormat "2" | humanize }} of {{ .Params.startdate | dateFormat "January" }}</strong> and ends on the <strong>{{ .Params.enddate | dateFormat "2" | humanize }} of {{ .Params.enddate | dateFormat "January" }}</strong>. If you are not available for some time within this period, please let us know, we'll do our best to accomodate. Your commitments for this program will be:</p>
+			</div>
+		</div>
+		<ul>
+			{{ range .Params.commitment }}
+				<li>{{ . }}</li>
+			{{ end }}
+		</ul>
+		<p>This is approximately <strong>{{ .Params.hoursperweek }} hours per week</strong> of commitment.</p>
 		{{ .Content }}
 	</section>
 	<section class="container apply mb-6">

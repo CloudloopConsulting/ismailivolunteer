@@ -42,8 +42,6 @@ const instance = $form.parsley({
 	errorTemplate: '<div class="form-control-feedback"></div>'
 })
 
-console.log(parsedConfig)
-
 form.onsubmit = function onsubmit(ev) {
 	if (!instance.isValid()) {
 		ev.preventDefault()

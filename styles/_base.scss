@@ -18,14 +18,16 @@ $gray-lighterer:            #eceeef;
 $gray-lightest:             #f7f7f9;
 
 // Grayscale variants
-$gray-light-mauve:          hsl(296, 24%, 40%);
+
 
 // Reassign color vars to semantic color scheme
 $brand-primary:             hsl(260, 50%, 52%);
+$brand-primary-light:       hsl(296, 24%, 40%);
 $brand-secondary:           hsl(190, 80%, 14%);
+$brand-tertiary:			hsl(28, 86%, 56%);
 $brand-success:             hsl(158, 80%, 38%);
 $brand-info:                hsl(190, 78%, 24%);
-$brand-warning:             hsl(36, 90%, 48%);
+$brand-warning:             hsl(36, 86%, 56%);
 $brand-danger:              hsl(0, 84%, 64%);
 $brand-inverse:             $gray-dark;
 
@@ -144,9 +146,9 @@ $grid-breakpoints: (
 
 $container-max-widths: (
   sm: 560px,
-  md: 680px,
-  lg: 780px,
-  xl: 860px
+  md: 740px,
+  lg: 860px,
+  xl: 940px
 );
 
 
@@ -155,7 +157,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns:               12;
-$grid-gutter-width-base:     0rem;
+$grid-gutter-width-base:     2rem;
 $grid-gutter-widths: (
   xs: $grid-gutter-width-base,
   sm: $grid-gutter-width-base,
@@ -178,11 +180,11 @@ $font-size-lg:   1.25rem;
 $font-size-sm:   .8rem;
 $font-size-xs:   .64rem;
 
-$font-weight-normal: 400;
+$font-weight-normal: 300;
 $font-weight-bold: 600;
 
 $font-weight-base: $font-weight-normal;
-$line-height-base: 1.6;
+$line-height-base: 1.8;
 
 $font-size-h1: 3.052rem;
 $font-size-h2: 2.441rem;
@@ -242,8 +244,8 @@ $list-inline-padding: 5px;
 $line-height-lg:         2;
 $line-height-sm:         1.4;
 
-$border-radius:          .25rem;
-$border-radius-lg:       .3rem;
+$border-radius:          .4rem;
+$border-radius-lg:       .8rem;
 $border-radius-sm:       .2rem;
 
 $component-active-color: $white;

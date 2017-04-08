@@ -14,7 +14,7 @@
         {{ block "head" . }}
         {{ end }}
 
-		<link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,700,700i" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i" rel="stylesheet">
         <script>
             (function(d) {
                 var config = {
@@ -27,9 +27,8 @@
         </script>
     </head>
     <body>
-        <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to make full use of this website.</p>
-        <![endif]-->
+
+		{{ partial "old_browsers.html" . }}
 
 		{{ block "header" .}}
 			<header class="">
@@ -48,12 +47,19 @@
 			</footer>
 		{{ end }}
 
-        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>
             window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
             ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
         </script>
         <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+		<script>
+			{{ readFile "static/scripts/modernizr.js" | safeJS }}
+		</script>
+		<script>
+			{{ readFile "static/scripts/old_browsers.js" | safeJS }}
+		</script>
+
 		<script>
 			window.addEventListener('load', function(e) {
 				window.applicationCache.addEventListener('updateready', function(e) {

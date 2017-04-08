@@ -72,7 +72,14 @@ small {
 	line-height: 1.4;
 }
 
-.container {
-	padding-left: 1rem !important;
-	padding-right: 1rem !important;
+.font-family-sans-serif {
+	font-family: $font-family-sans-serif;
+}
+
+#old-browsers {
+	background: $brand-danger;
+	color: #FFF;
+	a {
+		color: #FFF;
+	}
 }

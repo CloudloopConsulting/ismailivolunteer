@@ -9,10 +9,12 @@
     "images": "cp -r images static",
     "form_submit": "./node_modules/.bin/rollup -c rollup.config.js scripts/form_submit.js -o static/scripts/form_submit.js -n form_submit",
     "index_jumbotron": "./node_modules/.bin/rollup -c rollup.config.js scripts/index_jumbotron.js -o static/scripts/index_jumbotron.js -n index_jumbotron",
-	"smooth": "./node_modules/.bin/rollup -c rollup.config.js scripts/smooth.js -o static/scripts/smooth.js -n smooth",
-    "scripts": "npm run form_submit && npm run index_jumbotron && npm run smooth",
-	"fontawesome": "cp -r node_modules/font-awesome/fonts/ fonts",
-	"fonts": "npm run fontawesome && cp -r fonts static",
+    "smooth": "./node_modules/.bin/rollup -c rollup.config.js scripts/smooth.js -o static/scripts/smooth.js -n smooth",
+    "modernizr": "./node_modules/.bin/modernizr -c modernizr-config.json -d static/scripts",
+    "old_browsers": "./node_modules/.bin/rollup -c rollup.config.js scripts/old_browsers.js -o static/scripts/old_browsers.js -n old_browsers",
+    "scripts": "npm run form_submit && npm run index_jumbotron && npm run smooth && npm run modernizr && npm run old_browsers",
+    "fontawesome": "cp -r node_modules/font-awesome/fonts/ fonts",
+    "fonts": "npm run fontawesome && cp -r fonts static",
     "static": "rm -rf ./static && npm run scss && npm run public && npm run images && npm run scripts && npm run fonts",
     "public": "cp -r public/ dist",
     "minify": "./node_modules/.bin/html-minifier --collapse-whitespace --remove-comments --minify-js --minify-css --file-ext html --input-dir ./dist --output-dir ./dist",
@@ -50,6 +52,8 @@
     "bootstrap": "4.0.0-alpha.6",
     "font-awesome": "latest",
     "jquery": "^3.1.1",
+    "jump.js": "^1.0.2",
+    "modernizr": "^3.4.0",
     "parsleyjs": "^2.6.2"
   }
 }

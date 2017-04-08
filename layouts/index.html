@@ -9,14 +9,14 @@
 {{ define "main" }}
 	<section class="jumbotron jumbotron-fluid mb-6 p-0">
 		<div id="images-target" class="jumbotron-background" style="background-image: url('/images/jumbotron/4.edited.jpg');"></div>
-		<!-- Yes, the image above (4.edited.jpg) is a cheat. This angle doesn't actually exist. I've flipped the image along its vertical axis. In the original image, the prayer hall is on the left side. This was intentionally done, to create a left-to-right eye movement that begins at the top of the page, and ends at Open Opportunities. -->
+		<!-- Yes, the image above (4.edited.jpg) is a cheat. This angle doesn't actually exist. I've flipped the image along its vertical axis. In the original image, the prayer hall is on the left side. This was intentionally done, to create a right-to-left eye movement that begins at the top of the page (at the prayer hall), and ends at Open Opportunities. -->
 		<header>
 			{{ partial "header.html" . }}
 		</header>
 		<div class="container pt-8 pb-9 text-center">
-			<h1 class="display-4 mb-4">Find opportunities,<br><span>Volunteer</span> in the jamat.</h1>
+			<h1 class="display-5 mb-4">Find opportunities,<br><span>Volunteer</span> in the jamat.</h1>
 			<div class="mt-4 mb-3">
-				<a data-smooth data-smooth-offset="-64" href="#opportunities"><h5 class="cta mb-0">Get started <i class="ml-1 fa fa-chevron-right" style="font-size: 0.92em;" aria-hidden="true"></i></h5></a>
+				<a data-smooth data-smooth-offset="-64" href="#opportunities"><h5 class="cta mb-0">Get started <i class="ml-1 fa fa-chevron-right" style="font-size: 0.92em;"aria-hidden="true"></i></h5></a>
 			</div>
 		</div>
 	</section>
@@ -25,13 +25,18 @@
 			<div class="col col-md-9">
 				<blockquote>
 					<p class="quote mb-3">This Canadian spirit resonates with a cherished principle in Shia Ismaili culture – the importance of contributing one's individual energies on a voluntary basis to improving the lives of others. This is not a matter of philanthropy, but rather of self-fulfillment – "enlightened self-fulfillment."</p>
-					<cite class="d-flex flex-row align-items-center justify-content-start">
-						<div class="avatar mr-3"></div>
-						<div>
-							<h6 class="mb-1">His Highness the Aga Khan</h6>
-							<small><p style="max-width: 330px;" class="mb-0">From his address to both Houses of the Parliament of Canada in Ottawa on Thursday, 27 February 2014</p></small>
+					<div class="row">
+						<div class="col col-12 offset-sm-1">
+							<cite class="d-flex flex-row align-items-center justify-content-start">
+								<div class="avatar mr-3"></div>
+								<div>
+									<h6 class="mb-1">His Highness the Aga Khan</h6>
+									<small><p style="max-width: 330px;" class="mb-0">From his address to both Houses of the Parliament of Canada in Ottawa on Thursday, 27 February 2014</p></small>
+								</div>
+							</cite>
 						</div>
-					</cite>
+					</div>
+
 				</blockquote>
 			</div>
 		</div>
@@ -43,7 +48,7 @@
 			{{ range ( where (where .Data.Pages "Section" "listings") ".Params.approved" true ) }}
 				<li class="listing-item mb-4">
 					<h4 class="item-title mb-2"><a href="{{ .RelPermalink }}"><strong>{{ .Params.position }}</strong> for {{ .Params.program }}</a></h4>
-					<p class="mb-1">{{ .Description }}</p>
+					<p class="mb-0">{{ .Description }}</p>
 					<ul class="item-meta list-inline">
 						<li class="list-inline-item mb-1"><i class="fa fa-calendar mr-2" aria-hidden="true"></i><em>{{ partial "date_format.html" .Params.startdate }}</em> to <em>{{ partial "date_format.html" .Params.enddate }}</em></li>
 						<li class="list-inline-item mb-1"><i class="fa fa-clock-o mr-2" aria-hidden="true"></i><em>{{ .Params.hoursperweek }} hours/week</em> time commitment</li>

@@ -1,0 +1,27 @@
+.item-meta {
+	// font-style: italic;
+	color: lighten($gray-light, 15%);
+	li {
+		margin-right: 0.4rem;
+		em {
+			color: $gray-light;
+			font-style: normal;
+		}
+		i {
+			color: lighten($gray-light, 30%);
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+		&:after {
+			content: '|';
+			color: $gray-lighterer;
+			font-family: $font-family-serif;
+			font-weight: 100;
+			margin-left: 0.6rem;
+		}
+		&:last-child:after {
+			content: none;
+		}
+	}
+}

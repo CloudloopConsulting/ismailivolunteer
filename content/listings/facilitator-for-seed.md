@@ -13,10 +13,11 @@ enddate: 2017-06-24
 
 weeksduration: 11
 hoursperweek: 4
+totalhours: 44
 commitment:
-  - Saturdays from 10:30am to 12:30pm
-  - 1-2 hrs of prep time per week
-  - 1 hr monthly meeting
+  - class on Saturdays from 10:30am to 12:30pm
+  - 1-2 hours of prep time per week
+  - 1 hour monthly meeting
 
 formdata:
   to: ismailivolunteer@gmail.com
