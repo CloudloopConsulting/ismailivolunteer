@@ -4,3 +4,6 @@ baseurl = "https://ismailivolunteer.netlify.com"
 publishDir = "dist"
 relativeURLs = true
 canonifyURLs = false
+
+[params]
+  description = "Find volunteer opportunities within the community"

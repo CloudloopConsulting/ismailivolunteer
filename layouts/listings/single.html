@@ -1,5 +1,17 @@
+{{ define "title" }}
+	<title>{{ .Params.Position }} for {{ .Params.program }} - {{ .Site.Title }}</title>
+{{ end }}
+
 {{ define "head" }}
 	<link rel="stylesheet" href="{{ "styles/listing.css" | relURL }}">
+{{ end }}
+
+{{ define "social_graph" }}
+	<meta property="og:url" content="{{ .Permalink }}" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="{{ .Params.Position }} for {{ .Params.program }}" />
+	<meta property="og:description" content="{{ .Description }}" />
+	<meta property="og:image" content="{{ "images/jumbotron/4.edited.jpg" | absURL }}" />
 {{ end }}
 
 {{ define "main" }}
@@ -13,40 +25,39 @@
 	<section class="container content mb-6">
 		<h4>Time Commitment</h4>
 		<div class="row">
-			<div class="col col-12 push-md-5 push-xl-6 col-md-7 col-xl-6 d-flex align-items-stretch flex-nowrap mb-3 font-family-sans-serif">
-				<div datetime="{{ .Params.startdate | dateFormat "2006-01-02" }}" class="time start d-flex flex-column">
-					<div style="flex-grow: 1;" class="top d-flex flex-column justify-content-center">
-						<div class="month">{{ .Params.startdate | dateFormat "January" }}</div>
-					</div>
-					<div style="flex-grow: 5;" class="bottom d-flex flex-column justify-content-around">
-						<div class="date">{{ .Params.startdate | dateFormat "2" }}</div>
-						<div class="day">{{ .Params.startdate | dateFormat "Monday" }}</div>
-					</div>
-				</div>
-				<div class="timecommitment p-3 text-center d-flex flex-column justify-content-center align-content-center">
-					<div class="number">{{ .Params.totalhours }}</div>
-					<p class="label mb-0">hours of time (approx) over the {{ .Params.weeksduration }} weeks of the program</p>
-				</div>
-				<div datetime="{{ .Params.enddate | dateFormat "2006-01-02" }}" class="time end d-flex flex-column">
-					<div style="flex-grow: 1;" class="top d-flex flex-column justify-content-center">
-						<div class="month">{{ .Params.enddate | dateFormat "January" }}</div>
-					</div>
-					<div style="flex-grow: 5;" class="bottom d-flex flex-column justify-content-around">
-						<div class="date">{{ .Params.enddate | dateFormat "2" }}</div>
-						<div class="day">{{ .Params.enddate | dateFormat "Monday" }}</div>
-					</div>
-				</div>
+			<div class="col col-12 col-md-5 col-lg-4 push-md-7 push-lg-8">
+				<table class="timecommitment">
+					<tr>
+						<td>Starts</td>
+						<td>{{ partial "date_format.html" .Params.startdate }}</td>
+					</tr>
+					<tr>
+						<td>Ends</td>
+						<td>{{ partial "date_format.html" .Params.enddate }}</td>
+					</tr>
+					<tr>
+						<td>Duration</td>
+						<td>{{ .Params.weeksduration }} weeks</td>
+					</tr>
+					<tr>
+						<td>Hours/week</td>
+						<td>{{ .Params.hoursperweek }} hrs <small>(approx)</small></td>
+					</tr>
+					<tr>
+						<td>Total hours</td>
+						<td>{{ .Params.totalhours }} hrs</td>
+					</tr>
+				</table>
 			</div>
-			<div class="col col-12 pull-md-7 pull-xl-6 col-md-5 col-xl-6">
-				<p>This program starts on the <strong>{{ .Params.startdate | dateFormat "2" | humanize }} of {{ .Params.startdate | dateFormat "January" }}</strong> and ends on the <strong>{{ .Params.enddate | dateFormat "2" | humanize }} of {{ .Params.enddate | dateFormat "January" }}</strong>. If you are not available for some time within this period, please let us know, we'll do our best to accomodate. Your commitments for this program will be:</p>
+			<div class="col col-12 col-md-7 col-lg-8 pull-md-5 pull-lg-4">
+				<p>If you are not available for some time within this period, please let us know, we'll do our best to accomodate. Your commitments for this program will be:</p>
+				<ul>
+					{{ range .Params.commitment }}
+						<li>{{ . }}</li>
+					{{ end }}
+				</ul>
 			</div>
 		</div>
-		<ul>
-			{{ range .Params.commitment }}
-				<li>{{ . }}</li>
-			{{ end }}
-		</ul>
-		<p>This is approximately <strong>{{ .Params.hoursperweek }} hours per week</strong> of commitment.</p>
 		{{ .Content }}
 	</section>
 	<section class="container apply mb-6">
@@ -74,9 +85,31 @@
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label" for="jamatkhana-input">Primary Jamatkhana</label>
 					<div class="col-sm-8">
-						<select required type="text" id="jamatkhana-input" name="jamatkhana" class="form-control">
+						<select required id="jamatkhana-input" name="jamatkhana" class="form-control">
 							{{ partial "select_options.html" .Site.Data.constants.jamatkhanas }}
 						</select>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-sm-4 col-form-label" for="hearabout-input">Where did you hear about this?</label>
+					<div class="col-sm-8">
+						<input required type="text" id="hearabout-input" name="hearabout" class="form-control" placeholder="Announcements in JK">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-sm-4 col-form-label" for="other-input">Additional Information</label>
+					<div class="col-sm-8">
+						<textarea rows="4" type="text" id="other-input" name="other" class="form-control" placeholder="Questions, comments, concerns, feedback, or anything else..."></textarea>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="offset-sm-4 col-sm-8">
+						<div class="form-check">
+							<label class="form-check-label">
+								<input class="form-check-input" required name="affirm" type="checkbox" value="">
+								<em>By checking this box and sending this application, you affirm that you are available for the above-mentioned time period.</em>
+							</label>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -1,0 +1,24 @@
+<div class="d-flex align-items-stretch flex-nowrap mb-3 font-family-sans-serif">
+	<div datetime="{{ .Params.startdate | dateFormat "2006-01-02" }}" class="time start d-flex flex-column">
+		<div style="flex-grow: 1;" class="top d-flex flex-column justify-content-center">
+			<div class="month">{{ .Params.startdate | dateFormat "January" }}</div>
+		</div>
+		<div style="flex-grow: 5;" class="bottom d-flex flex-column justify-content-around">
+			<div class="date">{{ .Params.startdate | dateFormat "2" }}</div>
+			<div class="day">{{ .Params.startdate | dateFormat "Monday" }}</div>
+		</div>
+	</div>
+	<div class="timecommitment p-3 text-center d-flex flex-column justify-content-center align-content-center">
+		<div class="number">{{ .Params.totalhours }}</div>
+		<p class="label mb-0">hours of time (approx) over the {{ .Params.weeksduration }} weeks of the program</p>
+	</div>
+	<div datetime="{{ .Params.enddate | dateFormat "2006-01-02" }}" class="time end d-flex flex-column">
+		<div style="flex-grow: 1;" class="top d-flex flex-column justify-content-center">
+			<div class="month">{{ .Params.enddate | dateFormat "January" }}</div>
+		</div>
+		<div style="flex-grow: 5;" class="bottom d-flex flex-column justify-content-around">
+			<div class="date">{{ .Params.enddate | dateFormat "2" }}</div>
+			<div class="day">{{ .Params.enddate | dateFormat "Monday" }}</div>
+		</div>
+	</div>
+</div>

@@ -14,71 +14,105 @@ h1 {
 	}
 }
 
-.timecommitment {
-	flex: 1 1 100%;
-	border-top: 1px solid $gray-lighterer;
-	border-bottom: 1px solid $gray-lighterer;
-	.number {
-		font-size: 2.8rem;
-		color: $brand-tertiary;
-		line-height: 1;
-	}
-	.label {
-		color: $brand-tertiary;
-	}
-}
+table.timecommitment {
+	width: 100%;
 
-.time {
-	font-size: 1rem;
-	width: auto;
-	min-width: 6.8rem;
-	text-align: center;
+	tbody {
 
-	.top {
-		background-color: $brand-success;
-		overflow: hidden;
 	}
 
-	.bottom {
-		background-color: #fff;
-		border: 1px solid $gray-lighterer;
-		border-top: 0;
-		overflow: hidden;
-	}
-
-	&.start {
-		.top {
-			border-top-left-radius: $border-radius-lg;
+	tr {
+		&:first-child {
+			td {
+				padding-top: 0;
+			}
 		}
-		.bottom {
-			border-bottom-left-radius: $border-radius-lg;
+		&:last-child {
+			td {
+				padding-bottom: 0;
+			}
 		}
 	}
 
-	&.end {
-		.top {
-			border-top-right-radius: $border-radius-lg;
-		}
-		.bottom {
-			border-bottom-right-radius: $border-radius-lg;
-		}
-	}
-
-	.month {
+	td {
 		padding: 0.25rem 0;
-		color: #fff;
+		padding-left: 0.5rem;
+		font-weight: 500;
+		&:first-child {
+			width: 54%;
+			padding-left: 0;
+			padding-right: 0.5rem;
+			font-weight: 300;
+			text-align: right;
+		}
 	}
-
-	.date {
-		font-size: 2.8rem;
-		color: $brand-info;
-		line-height: 1;
-		padding-top: 1rem;
-	}
-
-	.day {
-		padding-bottom: 0.25rem;
-		color: $brand-success;
-	}
-
 }
+
+// .timecommitment {
+// 	flex: 1 1 100%;
+// 	border-top: 1px solid $gray-lighterer;
+// 	border-bottom: 1px solid $gray-lighterer;
+// 	.number {
+// 		font-size: 2.8rem;
+// 		color: $brand-tertiary;
+// 		line-height: 1;
+// 	}
+// 	.label {
+// 		color: $brand-tertiary;
+// 	}
+// }
+//
+// .time {
+// 	font-size: 1rem;
+// 	width: auto;
+// 	min-width: 6.8rem;
+// 	text-align: center;
+//
+// 	.top {
+// 		background-color: $brand-success;
+// 		overflow: hidden;
+// 	}
+//
+// 	.bottom {
+// 		background-color: #fff;
+// 		border: 1px solid $gray-lighterer;
+// 		border-top: 0;
+// 		overflow: hidden;
+// 	}
+//
+// 	&.start {
+// 		.top {
+// 			border-top-left-radius: $border-radius-lg;
+// 		}
+// 		.bottom {
+// 			border-bottom-left-radius: $border-radius-lg;
+// 		}
+// 	}
+//
+// 	&.end {
+// 		.top {
+// 			border-top-right-radius: $border-radius-lg;
+// 		}
+// 		.bottom {
+// 			border-bottom-right-radius: $border-radius-lg;
+// 		}
+// 	}
+//
+// 	.month {
+// 		padding: 0.25rem 0;
+// 		color: #fff;
+// 	}
+//
+// 	.date {
+// 		font-size: 2.8rem;
+// 		color: $brand-info;
+// 		line-height: 1;
+// 		padding-top: 1rem;
+// 	}
+//
+// 	.day {
+// 		padding-bottom: 0.25rem;
+// 		color: $brand-success;
+// 	}
+//
+// }

@@ -3,8 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Ismaili Volunteer</title>
-        <meta name="description" content="Find volunteer opportunities within the community">
+		{{ block "title" . }}
+			<title>{{ .Site.Title }}</title>
+		{{ end }}
+        <meta name="description" content="{{ .Site.Params.description }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -13,6 +15,14 @@
 
         {{ block "head" . }}
         {{ end }}
+
+		{{ block "social_graph" . }}
+			<meta property="og:url" content="{{ .Site.BaseURL }}" />
+			<meta property="og:type" content="website" />
+			<meta property="og:title" content="{{ .Site.Title }}" />
+			<meta property="og:description" content="{{ .Site.Params.description }}" />
+			<meta property="og:image" content="{{ "images/jumbotron/4.edited.jpg" | absURL }}" />
+		{{ end }}
 
 		<link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i" rel="stylesheet">
         <script>

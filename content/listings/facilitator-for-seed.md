@@ -7,7 +7,7 @@ position: Facilitator
 program: SEED
 org: Education Board
 organizer: Abidah Shamji
-description: Run small group sessions around early childhood development
+description: Facilitate small group sessions with parents and children for early childhood development
 startdate: 2017-04-08
 enddate: 2017-06-24
 
