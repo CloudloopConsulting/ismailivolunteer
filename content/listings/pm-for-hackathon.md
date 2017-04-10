@@ -15,7 +15,7 @@ weeksduration: 22
 totalhours: 20
 
 formdata:
-  to: ismailivolunteer@gmail.com
+  to: ismailivolunteercanada@gmail.com
   cc:
     - aliya.ramji@iicanada.net
 ---

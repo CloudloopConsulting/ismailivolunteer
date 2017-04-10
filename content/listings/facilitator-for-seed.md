@@ -20,7 +20,7 @@ commitments:
   - 1 hour monthly meeting
 
 formdata:
-  to: ismailivolunteer@gmail.com
+  to: ismailivolunteercanada@gmail.com
   cc:
     - akebo@akcfo.org
 ---
