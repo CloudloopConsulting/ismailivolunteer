@@ -51,7 +51,9 @@
 					<p class="mb-0">{{ .Description }}</p>
 					<ul class="item-meta list-inline">
 						<li class="list-inline-item mb-1"><i class="fa fa-calendar mr-2" aria-hidden="true"></i><em>{{ partial "date_format.html" .Params.startdate }}</em> to <em>{{ partial "date_format.html" .Params.enddate }}</em></li>
-						<li class="list-inline-item mb-1"><i class="fa fa-clock-o mr-2" aria-hidden="true"></i><em>{{ .Params.hoursperweek }} hours/week</em> time commitment</li>
+						{{ if isset .Params "hoursperweek"}}
+							<li class="list-inline-item mb-1"><i class="fa fa-clock-o mr-2" aria-hidden="true"></i><em>{{ .Params.hoursperweek }} hours/week</em> time commitment</li>
+						{{ end }}
 						<li class="list-inline-item mb-1"><i class="fa fa-hourglass-half mr-2" aria-hidden="true"></i><em>{{ .Params.weeksduration }} week</em> program</li>
 					</ul>
 				</li>

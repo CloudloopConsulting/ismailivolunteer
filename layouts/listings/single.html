@@ -23,10 +23,11 @@
 		</ul>
 	</section>
 	<section class="container content mb-6">
+		{{ .Content }}
 		<h4>Time Commitment</h4>
 		<div class="row">
-			<div class="col col-12 col-md-5 col-lg-4 push-md-7 push-lg-8">
-				<table class="timecommitment">
+			<div class="col col-12 col-md-5 col-lg-4">
+				<table class="timecommitment font-family-sans-serif">
 					<tr>
 						<td>Starts</td>
 						<td>{{ partial "date_format.html" .Params.startdate }}</td>
@@ -35,30 +36,37 @@
 						<td>Ends</td>
 						<td>{{ partial "date_format.html" .Params.enddate }}</td>
 					</tr>
-					<tr>
-						<td>Duration</td>
-						<td>{{ .Params.weeksduration }} weeks</td>
-					</tr>
-					<tr>
-						<td>Hours/week</td>
-						<td>{{ .Params.hoursperweek }} hrs <small>(approx)</small></td>
-					</tr>
+					{{ if isset .Params "weeksduration" }}
+						<tr>
+							<td>Duration</td>
+							<td>{{ .Params.weeksduration }} weeks</td>
+						</tr>
+					{{ end }}
+					{{ if isset .Params "hoursperweek" }}
+						<tr>
+							<td>Hours/week</td>
+							<td>{{ .Params.hoursperweek }} hrs <small>(approx)</small></td>
+						</tr>
+					{{ end }}
 					<tr>
 						<td>Total hours</td>
 						<td>{{ .Params.totalhours }} hrs</td>
 					</tr>
 				</table>
 			</div>
-			<div class="col col-12 col-md-7 col-lg-8 pull-md-5 pull-lg-4">
-				<p>If you are not available for some time within this period, please let us know, we'll do our best to accomodate. Your commitments for this program will be:</p>
-				<ul>
-					{{ range .Params.commitment }}
-						<li>{{ . }}</li>
-					{{ end }}
-				</ul>
+			<div class="col col-12 col-md-7 col-lg-8">
+				{{ if isset .Params "commitments" }}
+					<p>If you are not available for some time within this period, please let us know, we'll do our best to accomodate. Your commitments for this program will be:</p>
+					<ul>
+						{{ range .Params.commitments }}
+							<li>{{ . }}</li>
+						{{ end }}
+					</ul>
+				{{ else }}
+					<p>If you are not available for some time within this period, please let us know, we'll do our best to accomodate.</p>
+				{{ end }}
 			</div>
 		</div>
-		{{ .Content }}
 	</section>
 	<section class="container apply mb-6">
 		<h2 class="mb-4">Apply</h2>

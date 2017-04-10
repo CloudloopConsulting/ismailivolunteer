@@ -36,14 +36,15 @@ table.timecommitment {
 
 	td {
 		padding: 0.25rem 0;
-		padding-left: 0.5rem;
-		font-weight: 500;
 		&:first-child {
 			width: 54%;
-			padding-left: 0;
 			padding-right: 0.5rem;
-			font-weight: 300;
 			text-align: right;
+		}
+		&:last-child {
+			padding-left: 0.5rem;
+			color: $brand-success;
+			font-weight: 600;
 		}
 	}
 }
