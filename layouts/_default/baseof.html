@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" manifest="/ismailivolunteer.appcache">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -64,13 +64,6 @@
         <script src="https://www.google-analytics.com/analytics.js" async defer></script>
 
 		<script>
-			{{ readFile "static/scripts/modernizr.js" | safeJS }}
-		</script>
-		<script>
-			{{ readFile "static/scripts/old_browsers.js" | safeJS }}
-		</script>
-
-		<script>
 			window.addEventListener('load', function(e) {
 				window.applicationCache.addEventListener('updateready', function(e) {
 					if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
@@ -81,6 +74,13 @@
 					} else {}
 				}, false);
 			}, false);
+		</script>
+
+		<script>
+			{{ readFile "static/scripts/modernizr.js" | safeJS }}
+		</script>
+		<script>
+			{{ readFile "static/scripts/old_browsers.js" | safeJS }}
 		</script>
 
         {{ block "scripts" . }}
