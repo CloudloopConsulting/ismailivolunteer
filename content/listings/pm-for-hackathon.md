@@ -1,6 +1,6 @@
 ---
-date: 2017-04-10
-expirydate: 2017-04-30
+date: 2017-04-14
+expirydate: 2017-04-28
 approved: true
 
 position: Project Manager
@@ -15,7 +15,6 @@ weeksduration: 22
 totalhours: 20
 
 formdata:
-  to: ismailivolunteercanada@gmail.com
   cc:
     - aliya.ramji@iicanada.net
 ---

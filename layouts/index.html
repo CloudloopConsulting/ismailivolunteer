@@ -24,7 +24,7 @@
 		<div class="row justify-content-sm-center">
 			<div class="col col-md-9">
 				<blockquote>
-					<p class="quote mb-3">This Canadian spirit resonates with a cherished principle in Shia Ismaili culture – the importance of contributing one's individual energies on a voluntary basis to improving the lives of others. This is not a matter of philanthropy, but rather of self-fulfillment – "enlightened self-fulfillment."</p>
+					<p class="quote mb-3">... Canadian [volunteering] spirit resonates with a cherished principle in Shia Ismaili culture – the importance of contributing one's individual energies on a voluntary basis to improving the lives of others. This is not a matter of philanthropy, but rather of self-fulfillment – "enlightened self-fulfillment."</p>
 					<div class="row">
 						<div class="col col-12 offset-sm-1">
 							<cite class="d-flex flex-row align-items-center justify-content-start">
@@ -45,17 +45,11 @@
 	<section id="opportunities" class="container listing-section my-6">
 		<h2 class="section-title mb-4">Open opportunities</h2>
 		<ul class="listing list-unstyled">
-			{{ range ( where (where .Data.Pages "Section" "listings") ".Params.approved" true ) }}
+			{{ range ( ( where ( where .Data.Pages "Section" "listings" ) ".Params.approved" true ).ByParam "position" ) }}
 				<li class="listing-item mb-4">
 					<h4 class="item-title mb-2"><a href="{{ .RelPermalink }}"><strong>{{ .Params.position }}</strong> for {{ .Params.program }}</a></h4>
 					<p class="mb-0">{{ .Description }}</p>
-					<ul class="item-meta list-inline">
-						<li class="list-inline-item mb-1"><i class="fa fa-calendar mr-2" aria-hidden="true"></i><em>{{ partial "date_format.html" .Params.startdate }}</em> to <em>{{ partial "date_format.html" .Params.enddate }}</em></li>
-						{{ if isset .Params "hoursperweek"}}
-							<li class="list-inline-item mb-1"><i class="fa fa-clock-o mr-2" aria-hidden="true"></i><em>{{ .Params.hoursperweek }} hours/week</em> time commitment</li>
-						{{ end }}
-						<li class="list-inline-item mb-1"><i class="fa fa-hourglass-half mr-2" aria-hidden="true"></i><em>{{ .Params.weeksduration }} week</em> program</li>
-					</ul>
+					{{ partial "listing_meta.html" . }}
 				</li>
 			{{ end }}
 		</ul>

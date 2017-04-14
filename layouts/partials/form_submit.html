@@ -3,11 +3,8 @@
 
 		'use strict';
 
-		window.__FORM_DATA__ = {{ dict "to" .Params.formdata.to "cc" .Params.formdata.cc | jsonify | base64Encode }}
+		window.__FORM_DATA__ = {{ dict "to" .Site.Data.constants.formspree.to "cc" .Params.formdata.cc | jsonify | base64Encode }}
 
 	})(window)
 </script>
 <script src="{{ "scripts/form_submit.js" | relURL }}"></script>
-<noscript>
-	<p>JavaScript is required to validate and submit this form!</p>
-</noscript>

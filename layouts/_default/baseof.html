@@ -59,22 +59,9 @@
 
         <script>
             window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+            ga('create','UA-97418571-1','auto');ga('send','pageview')
         </script>
         <script src="https://www.google-analytics.com/analytics.js" async defer></script>
-
-		<script>
-			window.addEventListener('load', function(e) {
-				window.applicationCache.addEventListener('updateready', function(e) {
-					if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
-						window.applicationCache.swapCache();
-						if (confirm('A new version of this site is available. Load it?')) {
-							window.location.reload();
-						}
-					} else {}
-				}, false);
-			}, false);
-		</script>
 
 		<script>
 			{{ readFile "static/scripts/modernizr.js" | safeJS }}

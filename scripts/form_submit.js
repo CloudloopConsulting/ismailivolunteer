@@ -50,7 +50,5 @@ form.onsubmit = function onsubmit(ev) {
 	form.appendChild(formCC(parsedConfig))
 	form.action = formAction(parsedConfig)
 	form.method = formMethod()
-	window._form = form
-	ev.preventDefault()
-	return false
+	return true
 }

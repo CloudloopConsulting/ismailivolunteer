@@ -1,0 +1,11 @@
+<ul class="item-meta list-inline font-family-sans-serif">
+	{{ if isset .Params "proqualifications"}}
+		<li class="list-inline-item mb-1"><i class="fa fa-certificate mr-2" aria-hidden="true"></i><em>Pro-qualifications</em> required</li>
+	{{ end }}
+	<li class="list-inline-item mb-1"><i class="fa fa-calendar mr-2" aria-hidden="true"></i><em>{{ partial "date_format.html" .Params.startdate }}</em> to <em>{{ partial "date_format.html" .Params.enddate }}</em></li>
+	{{ if isset .Params "hoursperweek"}}
+		<li class="list-inline-item mb-1"><i class="fa fa-clock-o mr-2" aria-hidden="true"></i><em>{{ .Params.hoursperweek }} hours/week</em></li>
+	{{ end }}
+	<li class="list-inline-item mb-1"><i class="fa fa-hourglass-half mr-2" aria-hidden="true"></i><em>{{ .Params.weeksduration }} week</em> program</li>
+	<li class="list-inline-item mb-1"><i class="fa fa-heart mr-2" aria-hidden="true"></i><em>{{ .Params.totalhours }} hours</em> in total</li>
+</ul>

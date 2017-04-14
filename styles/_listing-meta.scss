@@ -1,6 +1,6 @@
 .item-meta {
 	// font-style: italic;
-	color: lighten($gray-light, 15%);
+	color: $gray-lighter;
 	li {
 		margin-right: 0.4rem;
 		em {
@@ -8,7 +8,7 @@
 			font-style: normal;
 		}
 		i {
-			color: lighten($gray-light, 30%);
+			color: $brand-success;
 		}
 		&:last-child {
 			margin-right: 0;

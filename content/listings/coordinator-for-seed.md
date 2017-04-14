@@ -3,25 +3,23 @@ date: 2017-04-14
 expirydate: 2017-04-28
 approved: true
 
-position: Facilitator
+position: Administrative Coordinator
 program: SEED
 org: Education Board
 organizer: Abidah Shamji
-description: Facilitate small group sessions with parents and children for early childhood development
-startdate: 2017-04-08
-enddate: 2017-06-24
+description: Help manage the SEED program across the GTA
+startdate: 2017-04-30
+enddate: 2018-01-01
 
-weeksduration: 11
-hoursperweek: 4
-totalhours: 44
+weeksduration: 35
+hoursperweek: 3
+totalhours: 105
 commitments:
-  - class on Saturdays from 10:30am to 12:30pm
-  - 1-2 hours of prep time per week
-  - 1 hour monthly meeting
+  - 2-3 hours per week of work
+  - one 20-30 minute in-person visit per month at selected centres
 
 formdata:
   cc:
-    - akebo@akcfo.org
     - abidah.shamji@iicanada.net
 ---
 
@@ -31,12 +29,8 @@ SEED stands for Supportive Environments and Experiences for Development. Join us
 
 #### The Role
 
-SEED Facilitators will engage participants in ECD activities through small group sessions in a play-based learning environment
+The volunteer will work with the SEED team to ensure all centres are organized, expenses are submitted on time with required paperwork, all centres have materials and equipment and that evaluation data is submitted on-time and is accurate. The volunteer will have to be in contact with all centre coordinators via phone and e-mail.
 
 #### About You
 
-- Ability to work well with children
-- Good command of the English language
-- Comfortable presenting in front of small groups
-- Enthusiastic, friendly and approachable
-- Strong communication skills
+Organized, ability to communicate effectively, efficient, and committed.

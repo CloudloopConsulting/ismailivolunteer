@@ -18,45 +18,15 @@
 	<section class="container title mt-6 mb-6">
 		<h1><strong>{{ .Params.Position }}</strong> for {{ .Params.program }}</h1>
 		<p class="mb-0 font-family-sans-serif">Organized by {{ .Params.organizer }}, {{ .Params.program }} is an initiative of the {{ .Params.org }}</p>
-		<ul class="item-meta list-inline font-family-sans-serif">
-			<li class="list-inline-item mb-1">This opportunity was <em>posted on {{ partial "date_format.html" .Date }}</em>, and will <em>expire on {{ partial "date_format.html" .ExpiryDate }}</em></li>
-		</ul>
+		{{ partial "listing_meta.html" . }}
 	</section>
 	<section class="container content mb-6">
-		{{ .Content }}
-		<h4>Time Commitment</h4>
 		<div class="row">
-			<div class="col col-12 col-md-5 col-lg-4">
-				<table class="timecommitment font-family-sans-serif">
-					<tr>
-						<td>Starts</td>
-						<td>{{ partial "date_format.html" .Params.startdate }}</td>
-					</tr>
-					<tr>
-						<td>Ends</td>
-						<td>{{ partial "date_format.html" .Params.enddate }}</td>
-					</tr>
-					{{ if isset .Params "weeksduration" }}
-						<tr>
-							<td>Duration</td>
-							<td>{{ .Params.weeksduration }} weeks</td>
-						</tr>
-					{{ end }}
-					{{ if isset .Params "hoursperweek" }}
-						<tr>
-							<td>Hours/week</td>
-							<td>{{ .Params.hoursperweek }} hrs <small>(approx)</small></td>
-						</tr>
-					{{ end }}
-					<tr>
-						<td>Total hours</td>
-						<td>{{ .Params.totalhours }} hrs</td>
-					</tr>
-				</table>
-			</div>
-			<div class="col col-12 col-md-7 col-lg-8">
+			<div class="col-lg-10 last-child-mb-0">
+				{{ .Content }}
+				<h4>Time Commitment</h4>
 				{{ if isset .Params "commitments" }}
-					<p>If you are not available for some time within this period, please let us know, we'll do our best to accomodate. Your commitments for this program will be:</p>
+					<p>If you are not available for some time within this period, please let us know, we'll do our best to accomodate. Your commitments for this program will primarily be:</p>
 					<ul>
 						{{ range .Params.commitments }}
 							<li>{{ . }}</li>
@@ -70,38 +40,36 @@
 	</section>
 	<section class="container apply mb-6">
 		<h2 class="mb-4">Apply</h2>
+		<noscript>
+			<p class="py-2 px-3 font-family-sans-serif rounded bg-danger text-white text-center">To prevent spam, JavaScript is required to validate and submit this form. We're sorry for the inconvenience!</p>
+		</noscript>
+		<p class="font-family-sans-serif text-right required-label required-label-legend">Required</p>
 		<form data-form-marker>
 			<div class="form-section">
 				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="name-input">Name</label>
+					<label class="col-sm-4 col-form-label required-label" for="name-input">Name</label>
 					<div class="col-sm-8">
 						<input required type="name" id="name-input" name="name" class="form-control" placeholder="Awesome Volunteer">
 					</div>
 				</div>
 				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="email-input">Email</label>
+					<label class="col-sm-4 col-form-label required-label" for="email-input">Email</label>
 					<div class="col-sm-8">
 						<input required type="email" id="email-input" name="email" class="form-control" placeholder="volunteer@gmail.com">
 					</div>
 				</div>
 				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="phone-input">Phone</label>
+					<label class="col-sm-4 col-form-label required-label" for="phone-input">Phone</label>
 					<div class="col-sm-8">
 						<input required type="text" id="phone-input" name="phone" class="form-control" placeholder="+1 (416) 888-9999">
 					</div>
 				</div>
 				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="jamatkhana-input">Primary Jamatkhana</label>
+					<label class="col-sm-4 col-form-label required-label" for="jamatkhana-input">Primary Jamatkhana</label>
 					<div class="col-sm-8">
 						<select required id="jamatkhana-input" name="jamatkhana" class="form-control">
 							{{ partial "select_options.html" .Site.Data.constants.jamatkhanas }}
 						</select>
-					</div>
-				</div>
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="hearabout-input">Where did you hear about this?</label>
-					<div class="col-sm-8">
-						<input required type="text" id="hearabout-input" name="hearabout" class="form-control" placeholder="Announcements in JK">
 					</div>
 				</div>
 				<div class="form-group row">
@@ -111,9 +79,15 @@
 					</div>
 				</div>
 				<div class="form-group row">
+					<label class="col-sm-4 col-form-label" for="hearabout-input">How did you hear about this website?</label>
+					<div class="col-sm-8">
+						<input type="text" id="hearabout-input" name="hearabout" class="form-control" placeholder="Announcements in JK">
+					</div>
+				</div>
+				<div class="form-group row">
 					<div class="offset-sm-4 col-sm-8">
 						<div class="form-check">
-							<label class="form-check-label">
+							<label class="form-check-label required-label">
 								<input class="form-check-input" required name="affirm" type="checkbox" value="">
 								<em>By checking this box and sending this application, you affirm that you are available for the above-mentioned time period.</em>
 							</label>
@@ -131,5 +105,10 @@
 			</div>
 		</form>
 		{{ partial "form_submit.html" . }}
+	</section>
+	<section class="container extra mb-4">
+		<ul class="text-right item-meta list-inline font-family-sans-serif">
+			<li class="list-inline-item mb-1">This opportunity was <em>posted on {{ partial "date_format.html" .Date }}</em>, and will <em>expire on {{ partial "date_format.html" .ExpiryDate }}</em></li>
+		</ul>
 	</section>
 {{ end }}
