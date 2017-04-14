@@ -3,8 +3,8 @@ date: 2017-01-01
 expirydate: 2018-01-01
 approved: false
 
-position: Test
-program: Volunteer
+position: Facilitator
+program: Seva
 org: Internal
 organizer: Alizain Feerasta
 description: Make sure everything works
@@ -20,7 +20,7 @@ commitments:
 
 formdata:
   cc:
-    - alizain.feerasta@gmail.com
+    - alizain@feerasta.net
 ---
 
 #### About the Program

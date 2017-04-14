@@ -18,6 +18,12 @@ function formCC(config) {
 	return $('<input type="hidden" name="_cc" value="' + (config.cc || []).join(',') + '">')[0]
 }
 
+function updateFormSubject() {
+	const name = $form.find('input[name="name"]')
+	const subject = $form.find('input[name="_subject"]')
+	subject.val(`[${name.val()}][${subject.val()}] Application`)
+}
+
 try {
 	parsedConfig = JSON.parse(atob(window.__FORM_DATA__))
 } catch (e) {
@@ -47,6 +53,7 @@ form.onsubmit = function onsubmit(ev) {
 		ev.preventDefault()
 		return false
 	}
+	updateFormSubject()
 	form.appendChild(formCC(parsedConfig))
 	form.action = formAction(parsedConfig)
 	form.method = formMethod()
