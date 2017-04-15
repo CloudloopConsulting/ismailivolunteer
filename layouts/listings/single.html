@@ -11,7 +11,9 @@
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="{{ .Params.Position }} for {{ .Params.program }}" />
 	<meta property="og:description" content="{{ .Description }}" />
-	<meta property="og:image" content="{{ "images/jumbotron/4.edited.jpg" | absURL }}" />
+	<meta property="og:image" content="{{ printf "%s%s%s" "images/social/" .File.BaseFileName ".png" | absURL }}" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
 {{ end }}
 
 {{ define "main" }}
@@ -37,6 +39,9 @@
 				{{ end }}
 			</div>
 		</div>
+		<ul class="mt-4 posted-expiry item-meta list-inline font-family-sans-serif">
+			<li class="list-inline-item mb-1">This opportunity was <em>posted on {{ partial "date_format.html" .Date }}</em>, and will <em>expire on {{ partial "date_format.html" .ExpiryDate }}</em></li>
+		</ul>
 	</section>
 	<section class="container apply mb-6">
 		<h2 class="mb-4">Apply</h2>
@@ -97,7 +102,7 @@
 			</div>
 
 			<input type="text" name="_gotcha" style="display:none" />
-			<input type="hidden" name="_next" value="{{ "thank-you/apply" | absURL }}" />
+			<input type="hidden" name="_next" value="{{ "thankyou/apply" | absURL }}" />
 			<input type="hidden" name="_subject" class="form-control" value="{{ .Params.position }} for {{ .Params.program }}" readonly />
 
 			<div class="mt-4 text-right">
@@ -105,10 +110,5 @@
 			</div>
 		</form>
 		{{ partial "form_submit.html" . }}
-	</section>
-	<section class="container extra mb-4">
-		<ul class="text-right item-meta list-inline font-family-sans-serif">
-			<li class="list-inline-item mb-1">This opportunity was <em>posted on {{ partial "date_format.html" .Date }}</em>, and will <em>expire on {{ partial "date_format.html" .ExpiryDate }}</em></li>
-		</ul>
 	</section>
 {{ end }}

@@ -31,3 +31,4 @@ node_modules
 # Hugo related builds
 dist
 static
+content/phantom
