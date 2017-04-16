@@ -21,6 +21,7 @@ commitments:
 formdata:
   cc:
     - alizain@feerasta.net
+    - hussein@cloudloop.ca
 ---
 
 #### About the Program
