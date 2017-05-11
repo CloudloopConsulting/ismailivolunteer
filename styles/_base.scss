@@ -359,7 +359,8 @@ $input-border-focus:             lighten($brand-primary, 25%);
 $input-box-shadow-focus:         $input-box-shadow, rgba($input-border-focus, .6);
 $input-color-focus:              $input-color;
 
-$input-color-placeholder:        $gray-light;
+$input-color-placeholder:        $gray-lighter;
+$input-font-style-placeholder:   italics;
 
 $input-padding-x-sm:             .5rem;
 $input-padding-y-sm:             .25rem;

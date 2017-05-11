@@ -1,6 +1,6 @@
 <ul class="item-meta list-inline font-family-sans-serif">
 	{{ if isset .Params "proqualifications"}}
-		<li class="list-inline-item"><i class="fa fa-certificate mr-2" aria-hidden="true"></i><em>Pro-qualifications</em> required</li>
+		<li class="list-inline-item"><i class="fa fa-certificate mr-2" aria-hidden="true"></i><em>Professional qualifications</em> required</li>
 	{{ end }}
 	<li class="list-inline-item"><i class="fa fa-calendar mr-2" aria-hidden="true"></i><em>{{ partial "date_format.html" .Params.startdate }}</em> to <em>{{ partial "date_format.html" .Params.enddate }}</em></li>
 	{{ if isset .Params "hoursperweek"}}
@@ -13,11 +13,11 @@
 		</em></li>
 	{{ end }}
 	<li class="list-inline-item"><i class="fa fa-hourglass-half mr-2" aria-hidden="true"></i><em>{{ .Params.weeksduration }} week</em> program</li>
-	<li class="list-inline-item"><i class="fa fa-check-square mr-2" aria-hidden="true"></i><em>
+	<!-- <li class="list-inline-item"><i class="fa fa-check-square mr-2" aria-hidden="true"></i><em>
 		{{ if eq .Params.totalhours 1 }}
 			{{ .Params.totalhours }} hour
 		{{ else }}
 			{{ .Params.totalhours }} hours
 		{{ end }}
-	</em> in total</li>
+	</em> in total</li> -->
 </ul>
