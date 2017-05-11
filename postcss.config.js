@@ -1,7 +1,7 @@
 module.exports = {
 	plugins: [
 		require('autoprefixer')({ broswers: [
-			'last 6 version'
+			'last 20 version'
 		] }),
 	]
 }
