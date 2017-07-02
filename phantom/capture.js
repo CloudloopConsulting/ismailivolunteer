@@ -34,7 +34,7 @@ if (system.args.length < 2 || system.args.length > 3) {
 				console.log('Saving image')
 				page.render(filename)
 				phantom.exit(0)
-			}, 2000)
+			}, 4000)
 		}
 	})
 }

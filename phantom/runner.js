@@ -3,7 +3,7 @@ const fs = Promise.promisifyAll(require('fs'))
 const path = require('path')
 const exec = require('child_process').exec
 
-const HTTP_ROOT = 'http://localhost:1313/phantom'
+const HTTP_ROOT = 'http://localhost:1313/listings'
 const ROOT = path.join(__dirname, '..')
 const SRC_DIR = path.join(ROOT, 'content', 'phantom')
 const IMG_DIR = path.join(ROOT, 'images', 'social')
@@ -22,7 +22,7 @@ function getImageFile(name) {
 async function saveFile(file) {
 	const name = path.parse(file).name
 	return new Promise((resolve, reject) => {
-		exec(`./node_modules/.bin/phantomjs phantom/capture.js ${getURL(name)} ${getImageFile(name)}`, { cwd: ROOT }, (err, stdout, stderr) => {
+		exec(`node phantom/chrome.js --url ${getURL(name)} --filename ${getImageFile(name)}`, { cwd: ROOT }, (err, stdout, stderr) => {
 			if (err) {
 				console.log(stdout)
 				console.log(stderr)
