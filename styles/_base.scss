@@ -21,7 +21,7 @@ $gray-lightest:             #f7f7f9;
 
 
 // Reassign color vars to semantic color scheme
-$brand-primary:             hsl(260, 50%, 52%);
+$brand-primary:             hsl(177.4, 100%, 31.6%);
 $brand-primary-light:       hsl(296, 24%, 40%);
 $brand-secondary:           hsl(190, 80%, 14%);
 $brand-tertiary:			hsl(28, 100%, 60%);
@@ -170,8 +170,8 @@ $grid-gutter-widths: (
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: "museo-sans-rounded", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-$font-family-serif:      "Merriweather", Georgia, "Times New Roman", Times, serif;
+$font-family-sans-serif: "Gill Sans", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-serif:      "Libre Baskerville", "Merriweather", Georgia, "Times New Roman", Times, serif;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $font-family-base:       $font-family-serif;
 

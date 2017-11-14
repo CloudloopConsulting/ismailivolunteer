@@ -1,5 +1,5 @@
 languageCode = "en-us"
-title = "Ismaili Volunteer"
+title = "Serve with Us"
 baseurl = "https://ismailivolunteer.netlify.com"
 publishDir = "dist"
 relativeURLs = true

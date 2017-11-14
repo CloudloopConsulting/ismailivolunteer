@@ -35,26 +35,28 @@ hr {
 		left: -10px;
 		right: -10px;
 		transition: background-image 0.6s ease-in-out;
+		background-image: url('/images/jumbotron/4.edited.jpg');
 		background-size: cover;
 		background-position: center center;
 		background-repeat: no-repeat;
-		filter: blur(8px);
+		// filter: blur(8px);
 		opacity: 1;
 
 		&:after {
 			content: '';
-			background: -webkit-linear-gradient(-90deg, rgba(0,0,0,0.16) 10%, rgba(0,0,0,0.1) 26%, transparent 52%);
+			background: -webkit-linear-gradient(-90deg, rgba(0,161,154,0.6) 100%, rgba(0,0,89,0.1) 26%, transparent 52%);
 			position: absolute;
 			top: 0;
 			left: 0;
 			bottom: 0;
 			right: 0;
 		}
+
 	}
 
 	header {
-		background: none;
-		opacity: 0.4;
+		background: $white;
+		color: $gray-light;
 		transition: 0.33s opacity ease-in-out;
 		&:hover {
 			opacity: 1;
@@ -62,16 +64,28 @@ hr {
 		nav {
 			// border-bottom: 1px solid $white;
 		}
+
+		a {
+			color: $gray-light;
+			font-family: $font-family-serif;
+		}
+
+		h1 {
+			font-weight: 100;
+		}
 	}
 
 	.cta {
-		color: #FFF;
+		color: $brand-primary;
+		background-color: #fff;
 		text-decoration: none;
 		padding: 1rem;
 		border: 1px solid #FFF;
 		border-radius: $border-radius;
 		display: inline-block;
 		transition: 0.33s all ease-in-out;
+		text-transform: uppercase;
+		font-size: medium;
 		&:hover {
 			cursor: pointer;
 			background-color: #FFF;
@@ -118,11 +132,24 @@ blockquote {
 	}
 }
 
+h3.intro {
+	font-family: $font-family-serif;
+}
+
+p.intro {
+	font-family: $font-family-sans-serif;
+	font-size: large;
+}
+
 section.listing-section {
 	font-family: $font-family-sans-serif;
 
-	h4 a {
+	h5 a {
 		text-decoration: none;
+
+		strong {
+			font-weight: 600; 
+		}
 	}
 
 	.item-commitment {

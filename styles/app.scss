@@ -77,6 +77,18 @@ small {
 	font-family: $font-family-sans-serif;
 }
 
+.font-family-serif {
+	$font-family: $font-family-serif;
+}
+
+h4 {
+	font-family: $font-family-sans-serif;
+	font-size: small;
+	text-transform: uppercase;
+    letter-spacing: 0.5;
+    color: $brand-primary;
+}
+
 #old-browsers {
 	background: $brand-danger;
 	color: #FFF;
