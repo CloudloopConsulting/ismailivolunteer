@@ -6,8 +6,8 @@ const $form = $('form[data-form-marker]').eq(0)
 const form = $form[0]
 let parsedConfig
 
-function formAction(config) {
-	return 'https://formspree.io/' + config.to
+function formAction() {
+	return 'http://localhost:4568/legacy/apply/'
 }
 
 function formMethod() {
@@ -15,13 +15,18 @@ function formMethod() {
 }
 
 function formCC(config) {
-	return $('<input type="hidden" name="_cc" value="' + (config.cc || []).join(',') + '">')[0]
+	const frag = document.createDocumentFragment();
+	(config.cc || []).forEach((email) => {
+		const input = $('<input type="hidden" name="_cc[]" value="' + email + '">')[0]
+		frag.appendChild(input)
+	})
+	return frag
 }
 
-function updateFormSubject() {
+function updateFormSubject(config) {
 	const name = $form.find('input[name="name"]')
 	const subject = $form.find('input[name="_subject"]')
-	subject.val(`[${name.val()}][${subject.val()}] Application`)
+	subject.val(`[${name.val()}][${config.position} for ${config.program}] Volunteer Application`)
 }
 
 try {
@@ -53,9 +58,9 @@ form.onsubmit = function onsubmit(ev) {
 		ev.preventDefault()
 		return false
 	}
-	updateFormSubject()
+	updateFormSubject(parsedConfig)
 	form.appendChild(formCC(parsedConfig))
-	form.action = formAction(parsedConfig)
+	form.action = formAction()
 	form.method = formMethod()
 	return true
 }
