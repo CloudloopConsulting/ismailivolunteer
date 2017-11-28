@@ -7,7 +7,7 @@ const form = $form[0]
 let parsedConfig
 
 function formAction() {
-	return 'http://localhost:4568/legacy/apply/'
+	return 'http://159.203.5.200/legacy/apply/'
 }
 
 function formMethod() {
