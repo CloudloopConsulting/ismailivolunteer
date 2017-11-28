@@ -17,7 +17,7 @@ function formMethod() {
 function formCC(config) {
 	const frag = document.createDocumentFragment();
 	(config.cc || []).forEach((email) => {
-		const input = $('<input type="hidden" name="_cc[]" value="' + email + '">')[0]
+		const input = $('<input type="hidden" name="cc[]" value="' + email + '">')[0]
 		frag.appendChild(input)
 	})
 	return frag
@@ -25,7 +25,7 @@ function formCC(config) {
 
 function updateFormSubject(config) {
 	const name = $form.find('input[name="name"]')
-	const subject = $form.find('input[name="_subject"]')
+	const subject = $form.find('input[name="subject"]')
 	subject.val(`[${name.val()}][${config.position} for ${config.program}] Volunteer Application`)
 }
 
