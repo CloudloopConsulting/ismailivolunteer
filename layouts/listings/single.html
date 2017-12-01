@@ -137,33 +137,36 @@
 				</div>
 			</div>
 		</form>
-		<script>
-			(function(window) {
-
-				'use strict';
-
-				window.__FORM_DATA__ = {{ dict "cc" .Params.formdata.cc "organizer" .Params.organizer "organizer_email" .Params.organizer_email  | jsonify | base64Encode }}
-
-			})(window)
-		</script>
-		<script src="{{ "scripts/form_submit.js" | relURL }}"></script>
-		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-		<script type="text/javascript">
-			(function(window) {
-				"use strict";
-				var submitEl = window.jQuery('<input id="submit" type="submit" class="btn btn-secondary" disabled value="Verify yourself to submit!">')
-				window.jQuery('#submit-container').append(submitEl);
-				window.handleCaptchaSubmit = function handleCaptchaSubmit() {
-					window.jQuery('input#submit')
-						.attr('value', 'Apply')
-						.removeAttr("disabled")
-						.addClass('btn-primary');
-					window.setTimeout(function() {
-						window.jQuery('input#submit')
-							.removeClass('btn-secondary');
-					}, 1)
-				}
-			})(window)
-		</script>
 	</section>
+{{ end }}
+
+{{ define "scripts" }}
+	<script>
+		(function(window) {
+
+			'use strict';
+
+			window.__FORM_DATA__ = {{ dict "cc" .Params.formdata.cc "organizer" .Params.organizer "organizer_email" .Params.organizer_email  | jsonify | base64Encode }}
+
+		})(window)
+	</script>
+	<script src="{{ "scripts/form_submit.js" | relURL }}"></script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<script type="text/javascript">
+		(function(window) {
+			"use strict";
+			var submitEl = window.jQuery('<input id="submit" type="submit" class="btn btn-secondary" disabled value="Verify yourself to submit!">')
+			window.jQuery('#submit-container').append(submitEl);
+			window.handleCaptchaSubmit = function handleCaptchaSubmit() {
+				window.jQuery('input#submit')
+					.attr('value', 'Apply')
+					.removeAttr("disabled")
+					.addClass('btn-primary');
+				window.setTimeout(function() {
+					window.jQuery('input#submit')
+						.removeClass('btn-secondary');
+				}, 1)
+			}
+		})(window)
+	</script>
 {{ end }}

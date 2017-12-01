@@ -11,6 +11,10 @@
 		<div id="error-container">
 
 		</div>
-		<script src="{{ "scripts/error.js" | relURL }}"></script>
+
 	</section>
+{{ end }}
+
+{{ define "scripts" }}
+	<script src="{{ "scripts/error.js" | relURL }}"></script>
 {{ end }}
