@@ -118,10 +118,13 @@
 				</div>
 			</div>
 
-			<input type="text" name="gotcha" style="display:none;" />
-			<input type="hidden" readonly name="subject" value=""/>
+			<input type="hidden" readonly name="position" value="{{ .Params.position }}"/>
+			<input type="hidden" readonly name="program" value="{{ .Params.program }}"/>
+			<input type="hidden" readonly name="this" value="{{ .URL }}"/>
 			<input type="hidden" readonly name="next" value="{{ "thankyou/apply" | absURL }}"/>
 
+			<!-- honeypot for bots - kinda unnecessary with captcha -->
+			<input type="text" name="botnectar" style="display:none;" />
 
 			<div class="row">
 				<div class="offset-sm-4 col-sm-8">
@@ -139,7 +142,7 @@
 
 				'use strict';
 
-				window.__FORM_DATA__ = {{ dict "cc" .Params.formdata.cc "position" .Params.position "program" .Params.program  | jsonify | base64Encode }}
+				window.__FORM_DATA__ = {{ dict "cc" .Params.formdata.cc "organizer" .Params.organizer "organizer_email" .Params.organizer_email  | jsonify | base64Encode }}
 
 			})(window)
 		</script>
@@ -148,12 +151,17 @@
 		<script type="text/javascript">
 			(function(window) {
 				"use strict";
-				var submitEl = window.jQuery('<input id="submit" type="submit" class="btn btn-primary" disabled value="Verify yourself to submit!">')
+				var submitEl = window.jQuery('<input id="submit" type="submit" class="btn btn-secondary" disabled value="Verify yourself to submit!">')
 				window.jQuery('#submit-container').append(submitEl);
 				window.handleCaptchaSubmit = function handleCaptchaSubmit() {
 					window.jQuery('input#submit')
 						.attr('value', 'Apply')
-						.removeAttr("disabled");
+						.removeAttr("disabled")
+						.addClass('btn-primary');
+					window.setTimeout(function() {
+						window.jQuery('input#submit')
+							.removeClass('btn-secondary');
+					}, 1)
 				}
 			})(window)
 		</script>

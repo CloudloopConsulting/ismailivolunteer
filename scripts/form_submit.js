@@ -7,26 +7,27 @@ const form = $form[0]
 let parsedConfig
 
 function formAction() {
-	return 'http://159.203.5.200/legacy/apply/'
+	return 'http://localhost:4568/legacy/apply/'
 }
 
 function formMethod() {
 	return 'POST'
 }
 
-function formCC(config) {
-	const frag = document.createDocumentFragment();
-	(config.cc || []).forEach((email) => {
-		const input = $('<input type="hidden" name="cc[]" value="' + email + '">')[0]
-		frag.appendChild(input)
-	})
-	return frag
+function formInput(key, value) {
+	return $(`<input type="hidden" readonly name="${key}" value="${value}">`)[0]
 }
 
-function updateFormSubject(config) {
-	const name = $form.find('input[name="name"]')
-	const subject = $form.find('input[name="subject"]')
-	subject.val(`[${name.val()}][${config.position} for ${config.program}] Volunteer Application`)
+function formCC(config) {
+	return (config.cc || []).map(email => formInput('cc[]', email))
+}
+
+function additionalInputs(config) {
+	const frag = document.createDocumentFragment()
+	formCC(config).forEach(input => frag.appendChild(input))
+	frag.appendChild(formInput('organizer', config.organizer))
+	frag.appendChild(formInput('organizer_email', config.organizer_email))
+	return frag
 }
 
 try {
@@ -58,8 +59,7 @@ form.onsubmit = function onsubmit(ev) {
 		ev.preventDefault()
 		return false
 	}
-	updateFormSubject(parsedConfig)
-	form.appendChild(formCC(parsedConfig))
+	form.appendChild(additionalInputs(parsedConfig))
 	form.action = formAction()
 	form.method = formMethod()
 	return true

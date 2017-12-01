@@ -7,6 +7,7 @@ position: Facilitator
 program: Seva
 org: Internal
 organizer: Alizain Feerasta
+organizer_email: alizain@feerasta.net
 description: Make sure everything works
 startdate: 2017-04-30
 enddate: 2018-01-01
@@ -18,11 +19,12 @@ commitments:
   - 2-3 hours per week of work
   - one 20-30 minute in-person visit per month at selected centres
 
-formdata:
+---
+
+<!-- formdata:
   cc:
     - alizain@feerasta.net
-    - hussein@cloudloop.ca
----
+    - hussein@cloudloop.ca -->
 
 #### About the Program
 
