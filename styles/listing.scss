@@ -2,7 +2,7 @@
 @import "listing-meta";
 
 h1 {
-	color: $brand-info;
+	color: $info;
 }
 
 section.content {
@@ -18,14 +18,14 @@ section.apply {
 	.required-label {
 		&:after {
 			content: '*';
-			color: $brand-tertiary;
+			color: $tertiary;
 			font-size: $font-size-lg;
 			line-height: 1;
 			margin-left: 3px;
 		}
 	}
 	.required-label-legend {
-		color: $gray-lighter;
+		color: $gray-400;
 	}
 }
 
