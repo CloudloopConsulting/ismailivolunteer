@@ -1,0 +1,4 @@
+---
+title: Error!
+type: error
+---
