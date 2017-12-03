@@ -56,19 +56,19 @@
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label required-label" for="name-input">Name</label>
 					<div class="col-sm-8">
-						<input required type="text" id="name-input" name="name" class="form-control" placeholder="Your full name">
+						<input required autocomplete="name" type="text" id="name-input" name="name" class="form-control" placeholder="Your full name">
 					</div>
 				</div>
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label required-label" for="email-input">Email</label>
 					<div class="col-sm-8">
-						<input required type="email" id="email-input" name="email" class="form-control" placeholder="Your email address">
+						<input required autocomplete="email" type="email" id="email-input" name="email" class="form-control" placeholder="Your email address">
 					</div>
 				</div>
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label required-label" for="phone-input">Phone</label>
 					<div class="col-sm-8">
-						<input required type="text" id="phone-input" name="phone" class="form-control" placeholder="Your phone number">
+						<input required autocomplete="tel" type="tel" id="phone-input" name="phone" class="form-control" placeholder="Your phone number">
 					</div>
 				</div>
 				<div class="form-group row">
@@ -89,7 +89,7 @@
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label required-label" for="jamatkhana-input">Primary Jamatkhana</label>
 					<div class="col-sm-8">
-						<select required id="jamatkhana-input" name="jamatkhana" class="form-control">
+						<select autocomplete="on" required id="jamatkhana-input" name="jamatkhana" class="form-control">
 							{{ partial "select_options.html" .Site.Data.constants.jamatkhanas }}
 						</select>
 					</div>
@@ -103,7 +103,7 @@
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label" for="hearabout-input">How did you hear about this website?</label>
 					<div class="col-sm-8">
-						<input type="text" id="hearabout-input" name="hear_about" class="form-control">
+						<input autocomplete="on" type="text" id="hearabout-input" name="hear_about" class="form-control">
 					</div>
 				</div>
 				<div class="form-group row">
@@ -150,6 +150,7 @@
 
 		})(window)
 	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="{{ "scripts/form_submit.js" | relURL }}"></script>
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<script type="text/javascript">

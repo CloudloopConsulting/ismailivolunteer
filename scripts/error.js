@@ -1,13 +1,16 @@
-window.jQuery = require('jquery')
-
-const $ = window.jQuery
+const $ = window.$
 const $err = $('#error-container')
 const errorEmail = 'opportunitiestoserve@iicanada.net'
+
+class FormError extends Error {}
 
 function parseQueryString() {
 	return location.search.substring(1).split('&').reduce((accum, curr) => {
 		const p = curr.split('=')
-		accum[decodeURIComponent(p[0])] = decodeURIComponent(p[1])
+		const key = decodeURIComponent(p[0])
+		if (key && key.length > 0) {
+			accum[key] = decodeURIComponent(p[1])
+		}
 		return accum
 	}, {})
 }
@@ -20,7 +23,7 @@ function parseErrors() {
 	const parsed = {}
 	const qsObj = parseQueryString()
 	Object.keys(qsObj).forEach((key) => {
-		if (qsObj[key] !== undefined) {
+		if (qsObj[key] !== undefined && qsObj[key] !== 'undefined') {
 			parsed[key] = parseEncodedErrorValue(qsObj[key])
 		}
 	})
@@ -62,7 +65,8 @@ function handleSystemChangesetErrors(obj) {
 		</div>
 		<div class="card-body">
 			<h4 class="card-title">It seems like the form was misconfigured! Please contact an <a href="mailto:${errorEmail}?subject=${errorSubject}">administrator</a>.</h4>
-			<p>Be sure to include <code class="text-${errorType}"><strong>${errorBody}</strong></code> in your email!</p>
+			<p class="mb-1">Be sure to include the following error code in your email!</p>
+			<code class="mb-0 text-${errorType}"><strong>${errorBody}</strong></code>
 		</div>
 		`, errorType))
 }
@@ -77,9 +81,24 @@ function handleErrors(obj) {
 		</div>
 		<div class="card-body">
 			<h4 class="card-title">${obj.message}. Go <a href="javascript:window.history.back()">back</a> and try again?</h4>
-			<p>Or, contact an <a href="mailto:${errorEmail}?subject=${errorSubject}">administrator</a>. Be sure to include <code class="text-${errorType}"><strong>${errorBody}</strong></code> in your email!</p>
+			<p class="mb-1">Or, contact an <a href="mailto:${errorEmail}?subject=${errorSubject}">administrator</a>. Be sure to include the following error code in your email!</p>
+			<code class="mb-0 text-${errorType}"><strong>${errorBody}</strong></code>
 		</div>
 		`, errorType))
+}
+
+function trackErrorWithSentry(errorType, errorObj) {
+	if (window.Raven !== undefined && typeof window.Raven.context === 'function') {
+		try {
+			window.Raven.context({
+				extra: errorObj
+			}, () => {
+				throw new FormError(errorType)
+			})
+		} catch (e) {
+			console.warn('Tried to log submission error with Raven, should have succeeded. Check Sentry for more details...')
+		}
+	}
 }
 
 const handlers = {
@@ -92,6 +111,7 @@ function run() {
 	const errors = parseErrors()
 	Object.keys(handlers).forEach(key => {
 		if (errors[key] !== undefined) {
+			trackErrorWithSentry(key, errors[key])
 			handlers[key](errors[key])
 		}
 	})

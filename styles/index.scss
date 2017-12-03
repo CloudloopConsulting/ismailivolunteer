@@ -98,7 +98,8 @@ hr {
 
 blockquote {
 	.quote {
-		font-family: "abril-text", $font-family-serif;
+		font-family: 'Spectral', $font-family-serif;
+		font-weight: 300;
 		font-style: italic;
 		font-size: $h4-font-size;
 		&:before {
