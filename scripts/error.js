@@ -2,10 +2,15 @@ const $ = window.jQuery
 const $err = $('#error-container')
 const errorEmail = 'opportunitiestoserve@iicanada.net'
 
+class FormError extends Error {}
+
 function parseQueryString() {
 	return location.search.substring(1).split('&').reduce((accum, curr) => {
 		const p = curr.split('=')
-		accum[decodeURIComponent(p[0])] = decodeURIComponent(p[1])
+		const key = decodeURIComponent(p[0])
+		if (key && key.length > 0) {
+			accum[key] = decodeURIComponent(p[key])
+		}
 		return accum
 	}, {})
 }
@@ -18,7 +23,7 @@ function parseErrors() {
 	const parsed = {}
 	const qsObj = parseQueryString()
 	Object.keys(qsObj).forEach((key) => {
-		if (qsObj[key] !== undefined) {
+		if (qsObj[key] !== undefined && qsObj[key] !== "undefined") {
 			parsed[key] = parseEncodedErrorValue(qsObj[key])
 		}
 	})
@@ -80,6 +85,16 @@ function handleErrors(obj) {
 		`, errorType))
 }
 
+function trackErrorWithSentry(errorType, errorObj) {
+	if (window.Raven !== undefined && typeof window.Raven.context === 'function') {
+		window.Raven.context({
+			extra: errorObj
+		}, () => {
+			throw new FormError(errorType)
+		})
+	}
+}
+
 const handlers = {
 	errors: handleErrors,
 	system_errors: handleSystemChangesetErrors,
@@ -90,6 +105,7 @@ function run() {
 	const errors = parseErrors()
 	Object.keys(handlers).forEach(key => {
 		if (errors[key] !== undefined) {
+			trackErrorWithSentry(key, errors[key])
 			handlers[key](errors[key])
 		}
 	})
