@@ -1,4 +1,4 @@
-const $ = window.jQuery
+const $ = window.$
 const $err = $('#error-container')
 const errorEmail = 'opportunitiestoserve@iicanada.net'
 
