@@ -7,6 +7,7 @@ position: Facilitator
 program: SEED
 org: Education Board
 organizer: Abidah Shamji
+organizer_email: abidah.shamji@iicanada.net
 description: Facilitate small group sessions with parents and children for early childhood development
 startdate: 2017-04-08
 enddate: 2017-06-24
@@ -22,7 +23,6 @@ commitments:
 formdata:
   cc:
     - akebo@akcfo.org
-    - abidah.shamji@iicanada.net
 ---
 
 #### About the Program

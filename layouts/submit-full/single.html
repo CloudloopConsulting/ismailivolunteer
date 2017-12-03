@@ -64,6 +64,19 @@
 				<input type="submit" class="btn btn-primary" value="Submit">
 			</div>
 		</form>
-		{{ partial "form_submit.html" . }}
 	</section>
+{{ end }}
+
+{{ define "scripts" }}
+	<script>
+		(function(window) {
+
+			'use strict';
+
+			window.__FORM_DATA__ = {{ dict "cc" .Params.formdata.cc | jsonify | base64Encode }}
+
+		})(window)
+	</script>
+	<script src="{{ "scripts/form_submit.js" | relURL }}"></script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 {{ end }}

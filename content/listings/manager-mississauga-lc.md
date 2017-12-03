@@ -7,6 +7,7 @@ position: Manager (Mississauga)
 program: Learning Centre
 org: Education Board
 organizer: Zahra Noorani
+organizer_email: zahra.noorani@iicanada.net
 description: Manage the entire centre and administer the program
 startdate: 2017-04-17
 enddate: 2018-06-30
@@ -18,10 +19,6 @@ commitments:
   - 1 hour Centre Managers call once a month
   - 2 hours quarterly in-person meeting
   - 4 hours weekly at the centre (Wednesday 6:30 pm to 8:30 pm, Sunday 10 am to 12:00 pm)
-
-formdata:
-  cc:
-    - zahra.noorani@iicanada.net
 ---
 
 #### About the Program

@@ -1,21 +1,21 @@
 .item-meta {
-	color: lighten($gray-light, 20%);
+	color: $gray-400;
 	li {
 		margin-right: 0.4rem;
 		em {
-			color: $gray-light;
+			color: $gray-600;
 			font-weight: 400;
 			font-style: normal;
 		}
 		i {
-			color: $brand-success;
+			color: $success;
 		}
 		&:last-child {
 			margin-right: 0;
 		}
 		&:after {
 			content: '|';
-			color: $gray-lighterer;
+			color: $gray-200;
 			font-family: $font-family-serif;
 			font-weight: 100;
 			margin-left: 0.6rem;

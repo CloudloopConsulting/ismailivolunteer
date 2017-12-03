@@ -7,6 +7,7 @@ position: Tutor
 program: High School Math Tutoring
 org: Education Board
 organizer: Aliyah Ramji
+organizer_email: aliya.ramji@iicanada.net
 description: Tutor math for high school students
 startdate: 2017-04-15
 enddate: 2017-12-31
@@ -14,10 +15,6 @@ enddate: 2017-12-31
 hoursperweek: 1
 weeksduration: 12
 totalhours: 12
-
-formdata:
-  cc:
-    - aliya.ramji@iicanada.net
 ---
 
 #### About the Program

@@ -6,22 +6,28 @@ const $form = $('form[data-form-marker]').eq(0)
 const form = $form[0]
 let parsedConfig
 
-function formAction(config) {
-	return 'https://formspree.io/' + config.to
+function formAction() {
+	return 'http://localhost:4568/legacy/apply/'
 }
 
 function formMethod() {
 	return 'POST'
 }
 
-function formCC(config) {
-	return $('<input type="hidden" name="_cc" value="' + (config.cc || []).join(',') + '">')[0]
+function formInput(key, value) {
+	return $(`<input type="hidden" readonly name="${key}" value="${value}">`)[0]
 }
 
-function updateFormSubject() {
-	const name = $form.find('input[name="name"]')
-	const subject = $form.find('input[name="_subject"]')
-	subject.val(`[${name.val()}][${subject.val()}] Application`)
+function formCC(config) {
+	return (config.cc || []).map(email => formInput('cc[]', email))
+}
+
+function additionalInputs(config) {
+	const frag = document.createDocumentFragment()
+	formCC(config).forEach(input => frag.appendChild(input))
+	frag.appendChild(formInput('organizer', config.organizer))
+	frag.appendChild(formInput('organizer_email', config.organizer_email))
+	return frag
 }
 
 try {
@@ -53,9 +59,8 @@ form.onsubmit = function onsubmit(ev) {
 		ev.preventDefault()
 		return false
 	}
-	updateFormSubject()
-	form.appendChild(formCC(parsedConfig))
-	form.action = formAction(parsedConfig)
+	form.appendChild(additionalInputs(parsedConfig))
+	form.action = formAction()
 	form.method = formMethod()
 	return true
 }

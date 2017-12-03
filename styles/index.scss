@@ -5,7 +5,7 @@ hr {
 	width: 10rem;
 	border: 0;
 	height: 1px;
-	background: $gray-lighterer;
+	background: $gray-200;
 	position: relative;
 	&:after {
 		content: '';
@@ -16,7 +16,7 @@ hr {
 		width: 4px;
 		height: 4px;
 		border-radius: 50%;
-		background: $gray-lighterer;
+		background: $gray-200;
 		z-index: 1;
 	}
 }
@@ -24,7 +24,7 @@ hr {
 .jumbotron {
 	font-family: $font-family-sans-serif;
 	position: relative;
-	background: $gray-dark;
+	background: transparent;
 	overflow: hidden;
 	color: $white;
 
@@ -41,6 +41,7 @@ hr {
 		background-repeat: no-repeat;
 		// filter: blur(8px);
 		opacity: 1;
+		z-index: -1;
 
 		&:after {
 			content: '';
@@ -89,7 +90,7 @@ hr {
 		&:hover {
 			cursor: pointer;
 			background-color: #FFF;
-			color: $brand-primary;
+			color: $primary;
 		}
 	}
 
@@ -99,9 +100,9 @@ blockquote {
 	.quote {
 		font-family: "abril-text", $font-family-serif;
 		font-style: italic;
-		font-size: $font-size-h4;
+		font-size: $h4-font-size;
 		&:before {
-			color: $gray-lighterer;
+			color: $gray-200;
 			content: open-quote;
 			font-size: 4em;
 			line-height: 0;
@@ -109,7 +110,7 @@ blockquote {
 			vertical-align: -0.4em;
 		}
 		&:after {
-			color: $gray-lighterer;
+			color: $gray-200;
 			content: close-quote;
 			font-size: 4em;
 			line-height: 0;
@@ -153,15 +154,15 @@ section.listing-section {
 	}
 
 	.item-commitment {
-		color: $gray-lighter;
+		color: $gray-400;
 		.time {
-			color: $gray-lighter;
-			font-size: $font-size-h1;
+			color: $gray-400;
+			font-size: $h1-font-size;
 			line-height: 1;
 		}
 	}
 }
 
 section.more {
-	color: $gray-lighter;
+	color: $gray-400;
 }

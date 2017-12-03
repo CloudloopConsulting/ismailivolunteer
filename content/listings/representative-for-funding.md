@@ -7,6 +7,7 @@ position: Account Collection Representative
 program: Funding
 org: Education Board
 organizer: Taheeza Surani
+organizer_email: taheeza.surani@iicanada.net
 description: Follow up on loans provided by AKEB
 startdate: 2017-04-30
 enddate: 2017-06-30
@@ -14,10 +15,6 @@ enddate: 2017-06-30
 hoursperweek: 2
 weeksduration: 8
 totalhours: 16
-
-formdata:
-  cc:
-    - taheeza.surani@iicanada.net
 ---
 
 #### About the Program

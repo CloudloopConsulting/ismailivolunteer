@@ -7,6 +7,7 @@ position: Facilitator
 program: Seva
 org: Internal
 organizer: Alizain Feerasta
+organizer_email: alizain@feerasta.net
 description: Make sure everything works
 startdate: 2017-04-30
 enddate: 2018-01-01
@@ -20,7 +21,6 @@ commitments:
 
 formdata:
   cc:
-    - alizain@feerasta.net
     - hussein@cloudloop.ca
 ---
 
