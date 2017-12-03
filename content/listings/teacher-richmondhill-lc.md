@@ -7,6 +7,7 @@ position: Professional Teacher (Richmond Hill)
 program: Learning Centre
 org: Education Board
 organizer: Dilshad Nathoo
+organizer_email: dilshad.nathoo@iicanada.net
 description: Teach strong numeracy and literacy foundations to children in the jamat
 startdate: 2017-04-17
 enddate: 2018-06-30
@@ -19,10 +20,6 @@ commitments:
   - 30-60 minutes of prep time per week
   - 3 meetings/year with other teachers to share best practices
 proqualifications: true
-
-formdata:
-  cc:
-    - dilshad.nathoo@iicanada.net
 ---
 
 #### About the Program
