@@ -1,5 +1,3 @@
-window.jQuery = require('jquery')
-
 const $ = window.jQuery
 const $err = $('#error-container')
 const errorEmail = 'opportunitiestoserve@iicanada.net'

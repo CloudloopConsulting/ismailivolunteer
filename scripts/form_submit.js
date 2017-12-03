@@ -1,4 +1,3 @@
-window.jQuery = require('jquery')
 require('parsleyjs')
 
 const $ = window.jQuery
