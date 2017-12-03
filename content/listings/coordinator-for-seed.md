@@ -7,6 +7,7 @@ position: Administrative Coordinator
 program: SEED
 org: Education Board
 organizer: Abidah Shamji
+organizer_email: abidah.shamji@iicanada.net
 description: Help manage the SEED program across the GTA
 startdate: 2017-04-30
 enddate: 2018-01-01
@@ -17,10 +18,6 @@ totalhours: 105
 commitments:
   - 2-3 hours per week of work
   - one 20-30 minute in-person visit per month at selected centres
-
-formdata:
-  cc:
-    - abidah.shamji@iicanada.net
 ---
 
 #### About the Program

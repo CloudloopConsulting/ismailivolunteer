@@ -72,6 +72,21 @@
 					</div>
 				</div>
 				<div class="form-group row">
+					<label class="col-sm-4 col-form-label required-label" for="phone-input">Preferred Contact Method</label>
+					<div class="col-sm-8">
+						<div class="form-check form-check-inline">
+							<label class="form-check-label">
+								<input class="form-check-input" type="radio" name="preferred_contact" id="preferred_contact-email" value="email"> Email
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<label class="form-check-label">
+								<input class="form-check-input" type="radio" name="preferred_contact" id="preferred_contact-phone" value="phone"> Phone
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group row">
 					<label class="col-sm-4 col-form-label required-label" for="jamatkhana-input">Primary Jamatkhana</label>
 					<div class="col-sm-8">
 						<select required id="jamatkhana-input" name="jamatkhana" class="form-control">
@@ -82,20 +97,20 @@
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label" for="other-input">Additional Information</label>
 					<div class="col-sm-8">
-						<textarea rows="4" type="text" id="other-input" name="other" class="form-control" placeholder="Questions, comments, concerns, feedback, or anything else..."></textarea>
+						<textarea rows="4" type="text" id="otherinfo-input" name="other_info" class="form-control" placeholder="Questions, comments, concerns, feedback, or anything else..."></textarea>
 					</div>
 				</div>
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label" for="hearabout-input">How did you hear about this website?</label>
 					<div class="col-sm-8">
-						<input type="text" id="hearabout-input" name="hearabout" class="form-control">
+						<input type="text" id="hearabout-input" name="hear_about" class="form-control">
 					</div>
 				</div>
 				<div class="form-group row">
 					<div class="offset-sm-4 col-sm-8">
 						<div class="form-check">
 							<label class="form-check-label required-label">
-								<input class="form-check-input" required name="affirm" type="checkbox" value="">
+								<input class="form-check-input" required name="affirm" type="checkbox" value="true">
 								<em>By checking this box and sending this application, you affirm that you are available for the above-mentioned time period.</em>
 							</label>
 						</div>
@@ -103,14 +118,55 @@
 				</div>
 			</div>
 
-			<input type="text" name="_gotcha" style="display:none" />
-			<input type="hidden" name="_next" value="{{ "thankyou/apply" | absURL }}" />
-			<input type="hidden" name="_subject" class="form-control" value="{{ .Params.position }} for {{ .Params.program }}" readonly />
+			<input type="hidden" readonly name="position" value="{{ .Params.position }}"/>
+			<input type="hidden" readonly name="program" value="{{ .Params.program }}"/>
+			<input type="hidden" readonly name="this" value="{{ .URL }}"/>
+			<input type="hidden" readonly name="next" value="{{ "thankyou/apply" | absURL }}"/>
 
-			<div class="mt-4 text-right">
-				<input type="submit" class="btn btn-primary" value="Apply">
+			<!-- honeypot for bots - kinda unnecessary with captcha -->
+			<input type="text" name="botnectar" style="display:none;" />
+
+			<div class="row">
+				<div class="offset-sm-4 col-sm-8">
+					<div class="mt-2">
+						<div class="g-recaptcha" data-size="normal" data-sitekey="6LfwojoUAAAAAJrvY69kP9MJCSvyvg-DakXkxh7X" data-callback="handleCaptchaSubmit"></div>
+					</div>
+					<div id="submit-container" class="mt-4">
+						<!-- subumit button gets injected here -->
+					</div>
+				</div>
 			</div>
 		</form>
-		{{ partial "form_submit.html" . }}
 	</section>
+{{ end }}
+
+{{ define "scripts" }}
+	<script>
+		(function(window) {
+
+			'use strict';
+
+			window.__FORM_DATA__ = {{ dict "cc" .Params.formdata.cc "organizer" .Params.organizer "organizer_email" .Params.organizer_email  | jsonify | base64Encode }}
+
+		})(window)
+	</script>
+	<script src="{{ "scripts/form_submit.js" | relURL }}"></script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<script type="text/javascript">
+		(function(window) {
+			"use strict";
+			var submitEl = window.jQuery('<input id="submit" type="submit" class="btn btn-secondary" disabled value="Verify yourself to submit!">')
+			window.jQuery('#submit-container').append(submitEl);
+			window.handleCaptchaSubmit = function handleCaptchaSubmit() {
+				window.jQuery('input#submit')
+					.attr('value', 'Apply')
+					.removeAttr("disabled")
+					.addClass('btn-primary');
+				window.setTimeout(function() {
+					window.jQuery('input#submit')
+						.removeClass('btn-secondary');
+				}, 1)
+			}
+		})(window)
+	</script>
 {{ end }}

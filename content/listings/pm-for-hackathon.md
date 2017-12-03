@@ -7,16 +7,13 @@ position: Project Manager
 program: High School Hackathon
 org: Education Board
 organizer: Aliyah Ramji
+organizer_email: aliya.ramji@iicanada.net
 description: Coordinate and facilitate a hackathon for high school students
 startdate: 2017-05-01
 enddate: 2017-10-01
 
 weeksduration: 22
 totalhours: 20
-
-formdata:
-  cc:
-    - aliya.ramji@iicanada.net
 ---
 
 #### About the Program

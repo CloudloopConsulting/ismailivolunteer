@@ -1,0 +1,20 @@
+{{ define "title" }}
+	<title>{{ .Title }} - {{ .Site.Title }}</title>
+{{ end }}
+
+{{ define "main" }}
+	<section class="container my-6">
+		<h1 class="text-center mb-5">Uh oh! There seems to have been an error processing your submission.</h1>
+		<noscript>
+			<p class="py-2 px-3 font-family-sans-serif rounded bg-danger text-white text-center">To show errors, JavaScript is required. We're sorry for the inconvenience!</p>
+		</noscript>
+		<div id="error-container">
+
+		</div>
+
+	</section>
+{{ end }}
+
+{{ define "scripts" }}
+	<script src="{{ "scripts/error.js" | relURL }}"></script>
+{{ end }}

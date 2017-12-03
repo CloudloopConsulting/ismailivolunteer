@@ -7,6 +7,7 @@ position: Early Childhood Educator (Mississauga)
 program: Learning Centre
 org: Education Board
 organizer: Zahra Noorani
+organizer_email: zahra.noorani@iicanada.net
 description: Teach strong numeracy and literacy foundations to children in the jamat
 startdate: 2017-04-17
 enddate: 2017-06-30
@@ -18,10 +19,6 @@ commitments:
   - 1-2 hours per week of prep time for classes  
   - 4 hours weekly at the centre (Wednesday 6:30 pm to 8:30 pm, Sunday 10 am to 12:00 pm)
 proqualifications: true
-
-formdata:
-  cc:
-    - zahra.noorani@iicanada.net
 ---
 
 #### About the Program
