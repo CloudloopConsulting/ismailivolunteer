@@ -5,7 +5,9 @@ const babel = require('rollup-plugin-babel')
 module.exports = {
 	format: 'iife',
 	external: ['jquery'],
-	globals: { jquery: '$' },
+	globals: {
+		jquery: '$'
+	},
 	plugins: [
 		nodeResolve({
 			module: true,
