@@ -3,7 +3,7 @@
 {{ end }}
 
 {{ define "head" }}
-	<link rel="stylesheet" href="{{ "styles/listing.css" | relURL }}">
+	<link rel="stylesheet" href="{{ "styles/listing.css" | absURL }}">
 {{ end }}
 
 {{ define "social_graph" }}
@@ -73,23 +73,24 @@
 				</div>
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label required-label" for="phone-input">Preferred Contact Method</label>
-					<div class="col-sm-8">
-						<div class="form-check form-check-inline">
-							<label class="form-check-label">
-								<input class="form-check-input" type="radio" name="preferred_contact" id="preferred_contact-email" value="email"> Email
-							</label>
-						</div>
-						<div class="form-check form-check-inline">
-							<label class="form-check-label">
-								<input class="form-check-input" type="radio" name="preferred_contact" id="preferred_contact-phone" value="phone"> Phone
-							</label>
-						</div>
+					<div class="col-sm-8 d-flex flex-row flex-nowrap justify-content-start align-items-center">
+						<label class="custom-control custom-radio mb-0">
+							<input type="radio" name="preferred_contact" id="preferred_contact-email" required value="email" class="custom-control-input">
+							<span class="custom-control-indicator"></span>
+							<span class="custom-control-description">Email</span>
+						</label>
+						<label class="custom-control custom-radio mb-0">
+							<input type="radio" name="preferred_contact" id="preferred_contact-phone" required value="phone" class="custom-control-input">
+							<span class="custom-control-indicator"></span>
+							<span class="custom-control-description">Phone</span>
+						</label>
 					</div>
 				</div>
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label required-label" for="jamatkhana-input">Primary Jamatkhana</label>
 					<div class="col-sm-8">
 						<select autocomplete="on" required id="jamatkhana-input" name="jamatkhana" class="form-control">
+							<option selected disabled hidden style='display: none' value=''></option>
 							{{ partial "select_options.html" .Site.Data.constants.jamatkhanas }}
 						</select>
 					</div>
@@ -106,14 +107,13 @@
 						<input autocomplete="on" type="text" id="hearabout-input" name="hear_about" class="form-control">
 					</div>
 				</div>
-				<div class="form-group row">
+				<div class="form-group row mt-4">
 					<div class="offset-sm-4 col-sm-8">
-						<div class="form-check">
-							<label class="form-check-label required-label">
-								<input class="form-check-input" required name="affirm" type="checkbox" value="true">
-								<em>By checking this box and sending this application, you affirm that you are available for the above-mentioned time period.</em>
-							</label>
-						</div>
+						<label class="custom-control custom-checkbox required-label mb-0">
+							<input required name="affirm" type="checkbox" value="true" type="checkbox" class="custom-control-input">
+							<span class="custom-control-indicator"></span>
+							<span class="custom-control-description"><em>By checking this box and sending this application, you affirm that you are available for the above-mentioned time period.</em></span>
+						</label>
 					</div>
 				</div>
 			</div>
@@ -128,7 +128,7 @@
 
 			<div class="row">
 				<div class="offset-sm-4 col-sm-8">
-					<div class="mt-2">
+					<div class="">
 						<div class="g-recaptcha" data-size="normal" data-sitekey="6LfwojoUAAAAAJrvY69kP9MJCSvyvg-DakXkxh7X" data-callback="handleCaptchaSubmit"></div>
 					</div>
 					<div id="submit-container" class="mt-4">
@@ -151,22 +151,19 @@
 		})(window)
 	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="{{ "scripts/form_submit.js" | relURL }}"></script>
+	<script src="{{ "scripts/form_submit.js" | absURL }}"></script>
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<script type="text/javascript">
 		(function(window) {
 			"use strict";
-			var submitEl = window.jQuery('<input id="submit" type="submit" class="btn btn-secondary" disabled value="Verify yourself to submit!">')
+			var submitEl = window.jQuery('<input id="submit" type="submit" class="btn btn-lg btn-secondary" disabled value="Verify yourself to submit!">')
 			window.jQuery('#submit-container').append(submitEl);
 			window.handleCaptchaSubmit = function handleCaptchaSubmit() {
 				window.jQuery('input#submit')
 					.attr('value', 'Apply')
-					.removeAttr("disabled")
-					.addClass('btn-primary');
-				window.setTimeout(function() {
-					window.jQuery('input#submit')
-						.removeClass('btn-secondary');
-				}, 1)
+					.removeAttr('disabled')
+					.addClass('btn-primary')
+					.removeClass('btn-secondary');
 			}
 		})(window)
 	</script>
