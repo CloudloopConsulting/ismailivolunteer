@@ -1,6 +1,6 @@
 languageCode = "en-us"
 title = "Ismaili Volunteer"
-baseurl = "https://ismailivolunteer.netlify.com"
+baseurl = "//ismailivolunteer.netlify.com/serve"
 publishDir = "dist"
 relativeURLs = true
 canonifyURLs = false

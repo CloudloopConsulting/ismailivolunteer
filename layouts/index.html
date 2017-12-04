@@ -1,5 +1,5 @@
 {{ define "head" }}
-	<link rel="stylesheet" href="{{ "styles/index.css" | relURL }}">
+	<link rel="stylesheet" href="{{ "styles/index.css" | absURL }}">
 {{ end }}
 
 {{ define "header" }}
@@ -8,8 +8,7 @@
 
 {{ define "main" }}
 	<section class="jumbotron jumbotron-fluid mb-6 p-0">
-		<div id="images-target" class="jumbotron-background" style="background-image: url('/images/jumbotron/4.edited.jpg');"></div>
-		<!-- Yes, the image above (4.edited.jpg) is a cheat. This angle doesn't actually exist. I've flipped the image along its vertical axis. In the original image, the prayer hall is on the left side. This was intentionally done, to create a right-to-left eye movement that begins at the top of the page (at the prayer hall), and ends at Open Opportunities. -->
+		<div id="images-target" class="jumbotron-background" style="background-image: url('/serve/images/jumbotron/4.edited.jpg');"></div>
 		<header>
 			{{ partial "header.html" . }}
 		</header>
