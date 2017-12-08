@@ -1,0 +1,14 @@
+{{ define "main" }}
+	<section class="container title my-6">
+		<h1>{{ .Title | safeHTML }}</h1>
+	</section>
+	<section class="container mb-6">
+		<div class="card">
+			<div class="card-body">
+				<h4 class="card-title">Card title</h4>
+				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				<a href="#" class="btn btn-primary font-family-sans-serif">Go somewhere</a>
+			</div>
+		</div>
+	</section>
+{{ end }}
