@@ -11,7 +11,7 @@
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-		<link rel="stylesheet" href="{{ "styles/app.css" | absURL }}">
+		<link rel="stylesheet" href="{{ "styles/app.css" | relURL }}">
 
         {{ block "head" . }}
         {{ end }}
@@ -22,7 +22,7 @@
 			<meta property="og:type" content="website" />
 			<meta property="og:title" content="{{ .Site.Title }}" />
 			<meta property="og:description" content="{{ .Site.Params.description }}" />
-			<meta property="og:image" content="{{ "images/jumbotron/4.edited.jpg" | absURL }}" />
+			<meta property="og:image" content="{{ "images/jumbotron/4.edited.jpg" | relURL }}" />
 		{{ end }}
 
 		<link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i" rel="stylesheet">

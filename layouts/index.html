@@ -1,5 +1,5 @@
 {{ define "head" }}
-	<link rel="stylesheet" href="{{ "styles/index.css" | absURL }}">
+	<link rel="stylesheet" href="{{ "styles/index.css" | relURL }}">
 {{ end }}
 
 {{ define "header" }}
@@ -8,7 +8,7 @@
 
 {{ define "main" }}
 	<section class="jumbotron jumbotron-fluid mb-6 p-0">
-		<div id="images-target" class="jumbotron-background" style="background-image: url('/serve/images/jumbotron/4.edited.jpg');"></div>
+		<div id="images-target" class="jumbotron-background"></div>
 		<header>
 			{{ partial "header.html" . }}
 		</header>
