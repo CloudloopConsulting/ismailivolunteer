@@ -57,7 +57,7 @@ hr {
 
 	header {
 		background: $white;
-		color: $gray-light;
+		color: $gray-600;
 		transition: 0.33s opacity ease-in-out;
 		&:hover {
 			opacity: 1;
@@ -67,7 +67,7 @@ hr {
 		}
 
 		a {
-			color: $gray-light;
+			color: $secondary;
 			font-family: $font-family-serif;
 		}
 
@@ -77,7 +77,7 @@ hr {
 	}
 
 	.cta {
-		color: $brand-primary;
+		color: $primary;
 		background-color: #fff;
 		text-decoration: none;
 		padding: 1rem;
@@ -136,6 +136,7 @@ blockquote {
 
 h3.intro {
 	font-family: $font-family-serif;
+	font-size: $font-size-lg;
 }
 
 p.intro {
@@ -148,6 +149,7 @@ section.listing-section {
 
 	h5 a {
 		text-decoration: none;
+		color: $primary;
 
 		strong {
 			font-weight: 600; 
@@ -155,9 +157,9 @@ section.listing-section {
 	}
 
 	.item-commitment {
-		color: $gray-400;
+		color: $gray-600;
 		.time {
-			color: $gray-400;
+			color: $gray-600;
 			font-size: $h1-font-size;
 			line-height: 1;
 		}
