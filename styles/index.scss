@@ -125,7 +125,7 @@ blockquote {
 	.avatar {
 		width: 72px;
 		height: 72px;
-		background: url('/images/agakhanquote.png');
+		background: url('../images/agakhanquote.png');
 		background-position: center;
 		background-size: cover;
 		border-radius: 50%;
@@ -152,7 +152,7 @@ section.listing-section {
 		color: $primary;
 
 		strong {
-			font-weight: 600; 
+			font-weight: 600;
 		}
 	}
 
@@ -163,6 +163,10 @@ section.listing-section {
 			font-size: $h1-font-size;
 			line-height: 1;
 		}
+	}
+
+	.found-none {
+		color: $gray-400;
 	}
 }
 

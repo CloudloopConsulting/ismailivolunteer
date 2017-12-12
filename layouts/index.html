@@ -8,15 +8,14 @@
 
 {{ define "main" }}
 	<section class="jumbotron jumbotron-fluid mb-6 p-0">
-		<!-- Yes, the image above (4.edited.jpg) is a cheat. This angle doesn't actually exist. I've flipped the image along its vertical axis. In the original image, the prayer hall is on the left side. This was intentionally done, to create a right-to-left eye movement that begins at the top of the page (at the prayer hall), and ends at Open Opportunities. -->
 		<header>
 			{{ partial "header.html" . }}
 		</header>
-		<div id="images-target" class="jumbotron-background" style="'"	></div>
+		<div id="images-target" class="jumbotron-background"></div>
 		<div class="container-fluid pt-9 pb-6 pl-5">
-			<h1 class="display-5 mb-4 ")>Accessible volunteer <br> opportunites within <br>your skillset</h1>
+			<h1 class="display-5 mb-4">Accessible volunteer opportunities<br>within your skillset<br>in the jamat.</h1>
 			<div class="mt-4 mb-3">
-				<a data-smooth data-smooth-offset="-64" href="#opportunities"><h5 class="cta mb-0">Find opportunities <i class="ml-1 fa fa-chevron-right" style="font-size: 0.92em;"aria-hidden="true"></i></h5></a>
+				<a data-smooth data-smooth-offset="-64" href="#opportunities"><h5 class="cta mb-0">Find Opportunities <i class="ml-1 fa fa-chevron-right" style="font-size: 0.92em;"aria-hidden="true"></i></h5></a>
 			</div>
 		</div>
 	</section>
@@ -50,7 +49,7 @@
 	<hr></hr>
 	<section id="opportunities" class="container listing-section my-8">
 		<h2 class="section-title mb-4">Open opportunities</h2>
-		<ul class="listing list-unstyled">
+		<ul class="listing list-unstyled mb-4">
 			{{ range ( ( where ( where .Data.Pages "Section" "listings" ) ".Params.approved" true ).ByParam "position" ) }}
 				<li class="listing-item mb-4">
 					<h5 class="item-title mb-2"><a href="{{ .RelPermalink }}"><strong>{{ .Params.position }}</strong> for {{ .Params.program }}</a></h5>
@@ -59,8 +58,12 @@
 				</li>
 			{{ end }}
 		</ul>
+		<div class="found-none">
+			<h5 class="mb-2">Didn't find anything?</h5>
+			<p>Keep checking back! We'll be adding more organizations and opportunities in the coming weeks.</p>
+		</div>
 	</section>
-	<hr></hr>
+	<!-- <hr></hr>
 	<section class="container more my-6 text-center">
 		<div class="row justify-content-sm-center">
 			<div class="col col-md-7">
@@ -68,7 +71,7 @@
 				<p>Keep checking back! We'll be adding more organizations and opportunities in the coming weeks.</p>
 			</div>
 		</div>
-	</section>
+	</section> -->
 {{ end }}
 
 {{ define "scripts" }}
