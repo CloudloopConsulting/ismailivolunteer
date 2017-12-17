@@ -27,6 +27,7 @@ hr {
 	background: transparent;
 	overflow: hidden;
 	color: $white;
+	border-radius: unset;
 
 	.jumbotron-background {
 		position: absolute;
@@ -133,15 +134,14 @@ blockquote {
 		flex: 0 0 auto;
 	}
 }
-
-h3.intro {
+h2{
 	font-family: $font-family-serif;
-	font-size: $font-size-lg;
 }
 
 p.intro {
 	font-family: $font-family-sans-serif;
-	font-size: large;
+	font-size: $font-size-lg;
+	font-weight: $font-weight-light;
 }
 
 section.listing-section {
@@ -166,10 +166,18 @@ section.listing-section {
 	}
 
 	.found-none {
-		color: $gray-400;
+		color: $gray-600;
 	}
 }
 
 section.more {
-	color: $gray-400;
+	color: $gray-600;
+}
+
+a {
+	color: $primary;
+}
+
+a:hover {
+	color: $secondary;
 }

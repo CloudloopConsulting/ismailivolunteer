@@ -7,12 +7,12 @@
 {{ end }}
 
 {{ define "main" }}
-	<section class="jumbotron jumbotron-fluid mb-6 p-0">
+	<section class="jumbotron jumbotron mb-6 p-0">
 		<header>
 			{{ partial "header.html" . }}
 		</header>
 		<div id="images-target" class="jumbotron-background"></div>
-		<div class="container-fluid pt-9 pb-6 pl-5">
+		<div class="container pt-9 pb-6">
 			<h1 class="display-5 mb-4">Accessible volunteer opportunities<br>within your skillset<br>in the jamat.</h1>
 			<div class="mt-4 mb-3">
 				<a data-smooth data-smooth-offset="-64" href="#opportunities"><h5 class="cta mb-0">Find Opportunities <i class="ml-1 fa fa-chevron-right" style="font-size: 0.92em;"aria-hidden="true"></i></h5></a>
@@ -20,19 +20,26 @@
 		</div>
 	</section>
 	<section class="container my-8">
-		<div class="row justify-content-sm-center text-center">
-			<h3 class="mb-3 text-center intro">Give your time in the areas that you care most about</h3>
-			<p class="justify-content-sm-center intro">Our effort is to provide the jamat access to volunteer opportunities within the local community that allow us to serve in our own capacity, both in time and relevancy to our areas of expertise.</p>
+		<div class="row justify-content-sm-left text-left">
+			<h3 class="mb-3">What is ServeOntario?</h3>
+			<p class="justify-content-sm-left intro">ServeOntario is a new initative by the Ismaili Council for Ontario, aimed to allow our Jamat to give of their time and knowledge within our local institutions. Our goal is to make insitutional opportunities more accessible to the entire Jamat, and better match positions with volunteers who already have the skillsets required. </p>
+			</br>
+		</div>
+		<div class="row justify-content-sm-left text-left">
+			<h4 class="display-5 mb-3 text-center">Process</h4>
+			<br>
+			<p class="justify-content-sm-left intro">We will regularly post opportunities, requiring both specialized and non-specialized skills.</p>
 		</div>
 	</section>
-	<section class="container my-8">
+	<section class="container-fluid">
 		<div class="row justify-content-sm-center">
-			<div class="col col-md-9">
+			<div class="col col-md-6"></div>
+			<div class="col col-md-6">
 				<blockquote>
-					<p class="quote mb-3">... Canadian [volunteering] spirit resonates with a cherished principle in Shia Ismaili culture – the importance of contributing one's individual energies on a voluntary basis to improving the lives of others. This is not a matter of philanthropy, but rather of self-fulfillment – "enlightened self-fulfillment."</p>
+					<p class="quote mb-3 pr-6">... Canadian [volunteering] spirit resonates with a cherished principle in Shia Ismaili culture – the importance of contributing one's individual energies on a voluntary basis to improving the lives of others. This is not a matter of philanthropy, but rather of self-fulfillment – "enlightened self-fulfillment."</p>
 					<div class="row">
 						<div class="col col-12">
-							<cite class="d-flex flex-row align-items-center justify-content-center mt-3">
+							<cite class="d-flex flex-row mt-3">
 								<div class="avatar mr-4"></div>
 								<div>
 									<h4 class="mb-1">His Highness the Aga Khan</h4>
@@ -41,14 +48,13 @@
 							</cite>
 						</div>
 					</div>
-
+					<hr></hr>
 				</blockquote>
 			</div>
 		</div>
 	</section>
-	<hr></hr>
 	<section id="opportunities" class="container listing-section my-8">
-		<h2 class="section-title mb-4">Open opportunities</h2>
+		<h3 class="section-title mb-4">Open opportunities</h3>
 		<ul class="listing list-unstyled mb-4">
 			{{ range ( ( where ( where .Data.Pages "Section" "listings" ) ".Params.approved" true ).ByParam "position" ) }}
 				<li class="listing-item mb-4">
