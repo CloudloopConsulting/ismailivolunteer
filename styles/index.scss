@@ -21,6 +21,7 @@ hr {
 	}
 }
 
+
 .jumbotron {
 	font-family: $font-family-sans-serif;
 	position: relative;
@@ -54,27 +55,6 @@ hr {
 			right: 0;
 		}
 
-	}
-
-	header {
-		background: $white;
-		color: $gray-600;
-		transition: 0.33s opacity ease-in-out;
-		&:hover {
-			opacity: 1;
-		}
-		nav {
-			// border-bottom: 1px solid $white;
-		}
-
-		a {
-			color: $secondary;
-			font-family: $font-family-serif;
-		}
-
-		h1 {
-			font-weight: 100;
-		}
 	}
 
 	.cta {
@@ -120,20 +100,22 @@ blockquote {
 			vertical-align: -0.62em;
 		}
 	}
-	cite {
-		font-style: normal;
-	}
-	.avatar {
-		width: 72px;
-		height: 72px;
-		background: url('../images/agakhanquote.png');
-		background-position: center;
-		background-size: cover;
-		border-radius: 50%;
-		overflow: hidden;
-		flex: 0 0 auto;
+}
+
+cite {
+	font-style: normal;
+
+	.h4 { 
+		color: $primary;
 	}
 }
+.avatar {
+	border-radius: 50%;
+	overflow: hidden;
+	flex: 0 0 auto;
+	max-width: 100%;
+}
+
 h2{
 	font-family: $font-family-serif;
 }

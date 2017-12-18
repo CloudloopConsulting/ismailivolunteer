@@ -9,12 +9,12 @@
 {{ define "main" }}
 	<section class="jumbotron jumbotron mb-6 p-0">
 		<header>
-			{{ partial "header.html" . }}
 		</header>
 		<div id="images-target" class="jumbotron-background"></div>
 		<div class="container pt-9 pb-6">
+			<img class="mb-4" src="{{ "/images/logo-white.png" | relURL }}" width="auto" height="25" alt="{{ .Site.Title }}">
 			<h1 class="display-5 mb-4">Accessible volunteer opportunities<br>within your skillset<br>in the jamat.</h1>
-			<div class="mt-4 mb-3">
+			<div class="mt-4 mb-4">
 				<a data-smooth data-smooth-offset="-64" href="#opportunities"><h5 class="cta mb-0">Find Opportunities <i class="ml-1 fa fa-chevron-right" style="font-size: 0.92em;"aria-hidden="true"></i></h5></a>
 			</div>
 		</div>
@@ -28,31 +28,31 @@
 			</div>
 		</div>
 	</section>
-	<section class="container-fluid">
+	<section class="container">
 		<div class="row justify-content-sm-center">
-			<div class="col col-md-6">
+			<div class="col col-md-3 d-none d-md-block">
 				<div class="row">
-					<div class="col col-12">
-						<cite class="d-flex flex-row mt-3">
-							<div class="avatar mr-4"></div>
-							<div>
-								<h4 class="mb-1">His Highness the Aga Khan</h4>
-								<small><p style="max-width: 330px;" class="mb-0 font-family-sans-serif">From his address to both Houses of the Parliament of Canada in Ottawa on Thursday, 27 February 2014</p></small>
-							</div>
-						</cite>
+					<div class=" ml-4">
+						<img class="avatar img-responsive" src={{ "/images/agakhanquote.png" | relURL }}></img>
 					</div>
 				</div>
 			</div>
-			<div class="col col-md-6">
+			<div class="col col-md-8 offset-md-1">
 				<blockquote>
-					<p class="quote mb-3 pr-6">... Canadian [volunteering] spirit resonates with a cherished principle in Shia Ismaili culture – the importance of contributing one's individual energies on a voluntary basis to improving the lives of others. This is not a matter of philanthropy, but rather of self-fulfillment – "enlightened self-fulfillment."</p>
+					<p class="quote mb-3">... Canadian [volunteering] spirit resonates with a cherished principle in Shia Ismaili culture – the importance of contributing one's individual energies on a voluntary basis to improving the lives of others. This is not a matter of philanthropy, but rather of self-fulfillment – "enlightened self-fulfillment."</p>
 					<hr></hr>
+					<cite class="d-flex flex-row mt-3">
+						<div>
+							<h4 class="mb-1">His Highness the Aga Khan</h4>
+							<small><p style="max-width: 330px;" class="mb-0 font-family-sans-serif">From his address to both Houses of the Parliament of Canada in Ottawa on Thursday, 27 February 2014</p></small>
+						</div>
+					</cite>
 				</blockquote>
 			</div>
 		</div>
 	</section>
 	<section id="opportunities" class="container listing-section my-8">
-		<h3 class="section-title mb-4">Open opportunities</h3>
+		<h3 class="section-title mb-3">Open opportunities</h3>
 		<ul class="listing list-unstyled mb-4">
 			{{ range ( ( where ( where .Data.Pages "Section" "listings" ) ".Params.approved" true ).ByParam "position" ) }}
 				<li class="listing-item mb-4">
