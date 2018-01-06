@@ -1,0 +1,12 @@
+[build]
+  publish = "dist"
+  command = "npm run compile"
+
+[context.branch-deploy.environment]
+  HUGO_VERSION = "0.31.1"
+
+[context.deploy-preview.environment]
+  HUGO_VERSION = "0.31.1"
+
+[context.production.environment]
+  HUGO_VERSION = "0.31.1"
