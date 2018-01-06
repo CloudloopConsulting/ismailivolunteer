@@ -8,14 +8,14 @@
 			font-style: normal;
 		}
 		i {
-			color: $success;
+			color: $primary-dark;
 		}
 		&:last-child {
 			margin-right: 0;
 		}
 		&:after {
 			content: '|';
-			color: $gray-200;
+			color: $gray-300;
 			font-family: $font-family-serif;
 			font-weight: 100;
 			margin-left: 0.6rem;

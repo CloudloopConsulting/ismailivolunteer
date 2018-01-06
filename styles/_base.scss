@@ -3,15 +3,16 @@
 @import "bootstrap/scss/mixins";
 
 
-$primary:				hsl(177.4, 100%, 31.6%);
-$primary-light:			hsl(296, 24%, 40%);
-$secondary:				hsl(190, 80%, 14%);
+$primary:				hsl(177, 100%, 34%);
+$primary-dark:			desaturate(darken($primary, 6%), 64%);
+$secondary:				hsl(296, 32%, 48%);
 $tertiary:				hsl(28, 100%, 60%);
-$success:				hsl(158, 80%, 38%);
-$info:					hsl(190, 78%, 24%);
-$warning:				hsl(36, 86%, 56%);
-$danger:				hsl(0, 84%, 64%);
-$inverse:				$gray-800;
+
+$theme-colors: map-merge((
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "tertiary":   $tertiary,
+), $theme-colors);
 
 
 $enable-caret:              true;
@@ -45,6 +46,11 @@ $border-width: 1px;
 $body-bg:						$white;
 $body-color:					$gray-800;
 
+$link-color:                	$primary;
+$link-decoration:				none;
+$link-hover-color:				$primary-dark;
+$link-hover-decoration:			underline;
+
 
 // $container-max-widths: (
 //   sm: 560px,
@@ -59,7 +65,7 @@ $grid-gutter-width:				32px;
 
 
 $line-height-lg:         		2;
-$line-height-sm:         		1.4;
+$line-height-sm:         		1.6;
 
 $border-width:					1px;
 $border-color:					$gray-200;
@@ -74,11 +80,13 @@ $font-family-serif:				"Libre Baskerville", Georgia, "Times New Roman", Times, s
 $font-family-monospace:			"SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $font-family-base:				$font-family-serif;
 
-
 $font-size-base:				1rem; // Assumes the browser default, typically `16px`
 $font-size-lg:					1.25rem;
 $font-size-sm:					.9rem;
 $font-size-xs:					.64rem;
+
+$font-size-scale-sans-serif:	1.12;
+$font-size-base-sans-serif:		$font-size-base * $font-size-scale-sans-serif;
 
 $font-weight-light:				300;
 $font-weight-normal: 			400;
@@ -87,12 +95,12 @@ $font-weight-bold:				600;
 $font-weight-base: 				$font-weight-normal;
 $line-height-base: 				1.8;
 
-$h1-font-size: 					3.052rem;
-$h2-font-size: 					2.441rem;
-$h3-font-size: 					1.953rem;
-$h4-font-size: 					1.563rem;
-$h5-font-size: 					1.25rem;
-$h6-font-size: 					1rem;
+$h1-font-size: 					3.052rem * $font-size-scale-sans-serif;
+$h2-font-size: 					2.441rem * $font-size-scale-sans-serif;
+$h3-font-size: 					1.953rem * $font-size-scale-sans-serif;
+$h4-font-size: 					1.563rem * $font-size-scale-sans-serif;
+$h5-font-size: 					1.25rem * $font-size-scale-sans-serif;
+$h6-font-size: 					1rem * $font-size-scale-sans-serif;
 
 
 $headings-margin-bottom:		$spacer;

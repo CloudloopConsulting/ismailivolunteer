@@ -7,64 +7,77 @@
 {{ end }}
 
 {{ define "main" }}
-	<section class="jumbotron jumbotron mb-6 p-0">
-		<header>
-		</header>
+	<section class="jumbotron jumbotron py-9">
 		<div id="images-target" class="jumbotron-background"></div>
-		<div class="container pt-9 pb-6">
-			<img class="mb-4" src="{{ "/images/logo-white.png" | relURL }}" width="auto" height="25" alt="{{ .Site.Title }}">
-			<h1 class="display-5 mb-4">Accessible volunteer opportunities<br>within your skillset<br>in the jamat.</h1>
-			<div class="mt-4 mb-4">
+		<div class="container mt-5">
+			<header class="mb-4">
+				<img src="{{ "/images/logo-white.png" | relURL }}" width="auto" height="25" alt="{{ .Site.Title }}">
+			</header>
+			<h1 class="mb-4">Find volunteer opportunities<br>within jamati programs and institutions</h1>
+			<div>
 				<a data-smooth data-smooth-offset="-64" href="#opportunities"><h5 class="cta mb-0">Find Opportunities <i class="ml-1 fa fa-chevron-right" style="font-size: 0.92em;"aria-hidden="true"></i></h5></a>
 			</div>
 		</div>
 	</section>
-	<section class="container my-8">
-		<div class="row justify-content-sm-left text-left">
-			<div class="col-lg-12">
-				<h3 class="mb-3">What is ServeOntario?</h3>
-				<p class="justify-content-sm-left intro">ServeOntario is a new initative by the Ismaili Council for Ontario, aimed to allow our Jamat to give of their time and knowledge within our local institutions. Our goal is to make insitutional opportunities more accessible to the entire Jamat, and better match positions with volunteers who already have the skillsets required. Positions will include those requiring both specialized and non-specialized skills. </p>
-				</br>
+	<section class="container my-9">
+		<h2 class="mb-5">Why ServeOntario?</h2>
+		<div class="row font-family-sans-serif">
+			<div class="col-md-4">
+				<img class="mb-1" src="{{ "/images/icon-transparent-green.png" | relURL }}" width="auto" height="60">
+				<h5 class="mb-1 mt-3">Transparent & Accessible</h5>
+				<p class="mb-0 font-weight-light">Find opportunities no matter<br>where you are or who you know.</p>
+			</div>
+			<div class="col-md-4">
+				<img class="mb-1" src="{{ "/images/icon-fit-green.png" | relURL }}" width="auto" height="60">
+				<h5 class="mb-1 mt-3">The Right Fit</h5>
+				<p class="mb-0 font-weight-light">Contribute with your skillset and<br>expertise wherever you're interested.</p>
+			</div>
+			<div class="col-md-4">
+				<img class="mb-1" src="{{ "/images/icon-apply-green.png" | relURL }}" width="auto" height="60">
+				<h5 class="mb-1 mt-3">Apply Here</h5>
+				<p class="mb-0 font-weight-light">Once you've found something,<br>apply here to get started.</p>
 			</div>
 		</div>
 	</section>
-	<section class="container">
+	<section class="container my-9">
 		<div class="row justify-content-sm-center">
 			<div class="col col-md-3 d-none d-md-block">
-				<div class="row">
-					<div class=" ml-4">
-						<img class="avatar img-responsive" src={{ "/images/agakhanquote.png" | relURL }}></img>
-					</div>
-				</div>
+				<img class="avatar img-responsive" src={{ "/images/agakhanquote.png" | relURL }}></img>
 			</div>
-			<div class="col col-md-8 offset-md-1">
-				<blockquote>
-					<p class="quote mb-3">... Canadian [volunteering] spirit resonates with a cherished principle in Shia Ismaili culture – the importance of contributing one's individual energies on a voluntary basis to improving the lives of others. This is not a matter of philanthropy, but rather of self-fulfillment – "enlightened self-fulfillment."</p>
-					<hr></hr>
-					<cite class="d-flex flex-row mt-3">
-						<div>
-							<h4 class="mb-1">His Highness the Aga Khan</h4>
-							<small><p style="max-width: 330px;" class="mb-0 font-family-sans-serif">From his address to both Houses of the Parliament of Canada in Ottawa on Thursday, 27 February 2014</p></small>
+			<div class="col col-md-7">
+				<blockquote class="mb-0">
+					<p class="quote mb-3">... Canadian [volunteering] spirit resonates with a cherished principle in Shia Ismaili culture – the importance of contributing one's individual energies on a voluntary basis to improving the lives of others. This is not a matter of philanthropy, but rather of self-fulfillment – “enlightened self-fulfillment.”</p>
+					<cite class="row d-flex flex-row mt-3">
+						<div class="col d-md-none">
+							<img class="avatar img-responsive" src={{ "/images/agakhanquote.png" | relURL }}></img>
+						</div>
+						<div class="col col-9 col-md-12">
+							<h5 class="mb-1">His Highness the Aga Khan</h5>
+							<p style="max-width: 400px;" class="mb-0 font-weight-light font-family-sans-serif">From his address to both Houses of the Parliament of Canada in Ottawa on 27<sup>th</sup> February 2014</p>
 						</div>
 					</cite>
 				</blockquote>
 			</div>
 		</div>
 	</section>
-	<section id="opportunities" class="container listing-section my-8">
-		<h3 class="section-title mb-3">Open opportunities</h3>
-		<ul class="listing list-unstyled mb-4">
+	<section id="opportunities" class="container listing-section my-9">
+		<h2 class="section-title mb-5">Open opportunities</h2>
+		<ul class="listing list-unstyled mb-0">
 			{{ range ( ( where ( where .Data.Pages "Section" "listings" ) ".Params.approved" true ).ByParam "position" ) }}
-				<li class="listing-item mb-4">
+				<li class="listing-item mt-4">
 					<h5 class="item-title mb-2"><a href="{{ .RelPermalink }}"><strong>{{ .Params.position }}</strong> for {{ .Params.program }}</a></h5>
-					<p class="mb-0">{{ .Description }}</p>
+					<p class="mb-1">{{ .Description }}</p>
 					{{ partial "listing_meta.html" . }}
 				</li>
 			{{ end }}
 		</ul>
-		<div class="found-none">
-			<h5 class="mb-2">Didn't find anything?</h5>
-			<p>Keep checking back! We'll be adding more organizations and opportunities in the coming weeks.</p>
+		<div class="row">
+			<div class="col-md-8">
+				<div class="found-none mt-5">
+					<h5 class="mb-2">Didn't find anything?</h5>
+					<p class="mb-0">Keep checking back! We'll be adding more organizations and opportunities in the coming weeks.</p>
+				</div>
+			</div>
 		</div>
 	</section>
 	<!-- <hr></hr>

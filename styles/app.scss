@@ -14,8 +14,6 @@ html {
 }
 
 header {
-	background: $white;
-	color: $gray-600;
 	transition: 0.33s opacity ease-in-out;
 	&:hover {
 		opacity: 1;
@@ -37,44 +35,34 @@ header {
 footer {
 	border-top: 1px solid $gray-200;
 	font-family: $font-family-serif;
-	color: $gray-800;
-	.content p {
-		&:after {
-			content: "∙";
-			margin: 0 1rem;
-			color: $gray-600;
-		}
-		&:last-child:after {
-			content: "";
-		}
-	}
+	color: $gray-700;
+	// .content p {
+	// 	&:after {
+	// 		content: "∙";
+	// 		margin: 0 1rem;
+	// 		color: $gray-600;
+	// 	}
+	// 	&:last-child:after {
+	// 		content: "";
+	// 	}
+	// }
 }
 
 a {
-	text-decoration: underline;
-}
-
-form {
-	font-family: $font-family-sans-serif;
+	// text-decoration: underline;
 }
 
 small {
-	line-height: 1.4;
+	line-height: $line-height-sm;
 }
 
 .font-family-sans-serif {
 	font-family: $font-family-sans-serif;
+	font-size: $font-size-base-sans-serif;
 }
 
 .font-family-serif {
-	$font-family: $font-family-serif;
-}
-
-h4 {
-	font-family: $font-family-sans-serif;
-	font-size: 1rem;
-	text-transform: uppercase;
-    color: $primary;
+	font-family: $font-family-serif;
 }
 
 #old-browsers {
