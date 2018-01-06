@@ -26,7 +26,7 @@
 		"social_prepare": "rm -rf content/__social && cp -r content/listings content/__social",
 		"social_puppeteer": "./node_modules/.bin/babel ./puppeteer/social.js | node",
 		"social": "npm run social_prepare && npm run social_puppeteer",
-		"compile": "rm -rf ./dist && npm run static && npm run public && hugo && npm run minify && npm run social",
+		"compile": "rm -rf ./dist && npm run static && npm run public && hugo && npm run minify && npm run social"
 	},
 	"repository": {
 		"type": "git",
