@@ -12,7 +12,7 @@
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="{{ .Params.Position }} for {{ .Params.program }}" />
 	<meta property="og:description" content="{{ .Description }}" />
-	<meta property="og:image" content="{{ printf "%s%s%s" "images/social/" .File.BaseFileName ".png" | relURL }}" />
+	<meta property="og:image" content="{{ printf "%s%s%s" "images/__social/" .File.BaseFileName ".png" | relURL }}" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
 {{ end }}
