@@ -1,18 +1,33 @@
 @import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins";
 
 
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #868e96;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+
+$grays: ();
+
 $primary:				hsl(177, 100%, 34%);
 $primary-dark:			desaturate(darken($primary, 6%), 64%);
-$secondary:				hsl(296, 32%, 48%);
-$tertiary:				hsl(28, 100%, 60%);
+$complement-one:		hsl(296, 32%, 48%);
+$complement-two:		hsl(28, 100%, 60%);
+$info:					$primary;
+$danger:				hsl(6, 100%, 60%);
+$success:				hsl(140, 68%, 60%);
 
-$theme-colors: map-merge((
-  "primary":    $primary,
-  "secondary":  $secondary,
-  "tertiary":   $tertiary,
-), $theme-colors);
+$theme-colors: (
+  "complement-one": $complement-one,
+  "complement-two": $complement-two,
+);
 
 
 $enable-caret:              true;
@@ -108,3 +123,6 @@ $headings-font-family:			$font-family-sans-serif;
 $headings-font-weight:			500;
 $headings-line-height:        	1.4;
 $headings-color:				inherit;
+
+
+@import "bootstrap/scss/variables";

@@ -19,7 +19,7 @@
 
 {{ define "main" }}
 	<section class="container title mt-6 mb-6">
-		<h1><strong>{{ .Params.Position }}</strong> for {{ .Params.program }}</h1>
+		<h1 class="mb-1"><strong>{{ .Params.Position }}</strong> for {{ .Params.program }}</h1>
 		<ul class="posted-expiry item-meta list-inline font-family-sans-serif">
 			<li class="list-inline-item mb-1">Organized by <em>{{ .Params.organizer }}</em></li>
 			<li class="list-inline-item mb-1">An initiative of the <em>{{ .Params.org }}</em></li>
@@ -52,7 +52,7 @@
 				<p class="py-2 px-3 font-family-sans-serif rounded bg-danger text-white text-center">To prevent spam, JavaScript is required to validate and submit this form. We're sorry for the inconvenience!</p>
 			</noscript>
 			<p class="font-family-sans-serif text-right required-label required-label-legend">Required</p>
-			<form data-form-marker>
+			<form data-form-marker class="font-family-sans-serif">
 				<div class="form-section">
 					<div class="form-group row">
 						<label class="col-sm-4 col-form-label required-label" for="name-input">Name</label>
@@ -139,7 +139,7 @@
 				</div>
 			</form>
 		</div>
-		
+
 	</section>
 {{ end }}
 

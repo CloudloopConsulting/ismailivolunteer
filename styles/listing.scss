@@ -2,7 +2,7 @@
 @import "listing-meta";
 
 h1 {
-	color: $secondary;
+	// color: $complement-one;
 }
 
 section.content {
@@ -22,7 +22,7 @@ section.apply {
 	.required-label {
 		&:after {
 			content: '*';
-			color: $tertiary;
+			color: $complement-two;
 			font-size: $font-size-lg;
 			line-height: 1;
 			margin-left: 3px;
