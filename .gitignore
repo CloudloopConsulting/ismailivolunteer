@@ -31,4 +31,7 @@ node_modules
 # Hugo related builds
 dist
 static
+
+# Social images
 content/__social
+images/__social
