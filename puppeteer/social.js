@@ -10,7 +10,7 @@ const server = spawn('hugo', ['serve', '-p', serverPort])
 
 const sourceDir = './content/__social'
 const serverURL = (title) => `http://localhost:${serverPort}/__social/${title}`
-const outDir = './images/__social/'
+const outDir = './images/__social'
 const outPath = (title) => join(outDir, `${title}.png`)
 
 function getTitles(dir) {

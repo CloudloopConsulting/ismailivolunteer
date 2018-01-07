@@ -5,23 +5,33 @@
 	"main": "none",
 	"private": true,
 	"scripts": {
-		"scss": "./node_modules/.bin/node-sass -r ./styles -o ./static/styles --include-path ./node_modules --output-style compressed",
-		"styles": "npm run scss && ./node_modules/.bin/postcss static/styles/*.css --replace",
-		"social_prepare": "rm -rf content/__social && cp -r content/listings content/__social",
-		"social_puppeteer": "./node_modules/.bin/babel ./puppeteer/social.js | node",
-		"social": "npm run social_prepare && npm run social_puppeteer",
-		"images": "npm run social && cp -r images static",
 		"modernizr": "./node_modules/.bin/modernizr -c modernizr-config.json -d static/scripts",
 		"rollup": "./node_modules/.bin/rollup -c ./rollup.config.js",
 		"scripts": "npm run modernizr && npm run rollup",
+
+		"scss": "./node_modules/.bin/node-sass -r ./styles -o ./static/styles --include-path ./node_modules --output-style compressed",
+		"styles": "npm run scss && ./node_modules/.bin/postcss static/styles/*.css --replace",
+
+		"social_clean": "rm -rf content/__social",
+		"social_copy": "cp -r content/listings content/__social",
+		"social_puppeteer": "./node_modules/.bin/babel ./puppeteer/social.js | node",
+		"social": "npm run social_clean && npm run social_copy && npm run social_puppeteer && npm run social_clean",
+
+		"images": "cp -r images static",
+
 		"fontawesome": "cp -r node_modules/font-awesome/fonts/ fonts",
 		"fonts": "npm run fontawesome && cp -r fonts static",
+
 		"public": "cp -r public/ static",
-		"static": "rm -rf ./static && npm run styles && npm run public && npm run images && npm run scripts && npm run fonts",
+
+		"static_clean": "rm -rf ./static",
+		"static": "npm run static_clean && npm run scripts && npm run styles && npm run social && npm run images && npm run fonts && npm run public",
+
 		"minify_html": "./node_modules/.bin/html-minifier --collapse-whitespace --remove-comments --minify-js --minify-css --file-ext html --input-dir ./dist --output-dir ./dist",
 		"minify_scripts": "find . -path '*dist/scripts*' -name '*.js' -exec ./node_modules/.bin/uglifyjs '{}' -o '{}' ';'",
 		"minify_images": "find . -path '*dist/images*' -exec bash -c './node_modules/.bin/imagemin {} --out-dir `dirname {}`' ';'",
 		"minify": "npm run minify_html && npm run minify_scripts",
+
 		"compile": "rm -rf ./dist && npm run static && npm run public && hugo && npm run minify"
 	},
 	"repository": {
