@@ -18,18 +18,18 @@ section.content {
 }
 
 section.apply {
-	.required-label {
-		&:after {
-			content: '*';
-			color: $complement-two;
-			font-size: $font-size-lg;
-			line-height: 1;
-			margin-left: 3px;
-		}
-	}
-	.required-label-legend {
-		color: $gray-400;
-	}
+	// .required-label {
+	// 	&:after {
+	// 		content: '*';
+	// 		color: $complement-two;
+	// 		font-size: $font-size-lg;
+	// 		line-height: 1;
+	// 		margin-left: 3px;
+	// 	}
+	// }
+	// .required-label-legend {
+	// 	color: $gray-400;
+	// }
 }
 
 .posted-expiry {
