@@ -7,9 +7,8 @@ h1 {
 
 section.content {
 	h4 {
-		margin-top: get-spacers( 4, 'x');
-		font-family: $font-family-sans-serif;
-		font-size: 1rem;
+		margin-top: map-get($spacers, 4);
+		font-size: $h6-font-size;
 		text-transform: uppercase;
 	    color: $primary;
 		&:first-of-type {

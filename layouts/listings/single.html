@@ -33,20 +33,18 @@
 				<h4 class="mb-3">Time Commitment</h4>
 				{{ partial "listing_meta.html" . }}
 				{{ if isset .Params "commitments" }}
-					<p>If you are not available for some time within this period, please let us know, we'll do our best to accomodate. Your commitments for this program will primarily be:</p>
+					<p>Your commitment will include:</p>
 					<ul>
 						{{ range .Params.commitments }}
 							<li>{{ . }}</li>
 						{{ end }}
 					</ul>
-				{{ else }}
-					<p>If you are not available for some time within this period, please let us know, we'll do our best to accomodate.</p>
 				{{ end }}
 			</div>
 		</div>
 	</section>
 	<section class="container apply mb-8">
-		<div class="col-md-10 col-sm-12">
+		<div class="col-lg-9">
 			<h2 class="mb-4">Apply</h2>
 			<noscript>
 				<p class="py-2 px-3 font-family-sans-serif rounded bg-danger text-white text-center">To prevent spam, JavaScript is required to validate and submit this form. We're sorry for the inconvenience!</p>
@@ -55,26 +53,26 @@
 			<form data-form-marker class="font-family-sans-serif">
 				<div class="form-section">
 					<div class="form-group row">
-						<label class="col-sm-4 col-form-label required-label" for="name-input">Name</label>
-						<div class="col-sm-8">
+						<label class="col-md-4 col-form-label required-label" for="name-input">Name</label>
+						<div class="col-md-8">
 							<input required autocomplete="name" type="text" id="name-input" name="name" class="form-control" placeholder="Your full name">
 						</div>
 					</div>
 					<div class="form-group row">
-						<label class="col-sm-4 col-form-label required-label" for="email-input">Email</label>
-						<div class="col-sm-8">
+						<label class="col-md-4 col-form-label required-label" for="email-input">Email</label>
+						<div class="col-md-8">
 							<input required autocomplete="email" type="email" id="email-input" name="email" class="form-control" placeholder="Your email address">
 						</div>
 					</div>
 					<div class="form-group row">
-						<label class="col-sm-4 col-form-label required-label" for="phone-input">Phone</label>
-						<div class="col-sm-8">
+						<label class="col-md-4 col-form-label required-label" for="phone-input">Phone</label>
+						<div class="col-md-8">
 							<input required autocomplete="tel" type="tel" id="phone-input" name="phone" class="form-control" placeholder="Your phone number">
 						</div>
 					</div>
 					<div class="form-group row">
-						<label class="col-sm-4 col-form-label required-label" for="phone-input">Preferred Contact Method</label>
-						<div class="col-sm-8 d-flex flex-row flex-nowrap justify-content-start align-items-center">
+						<label class="col-md-4 col-form-label required-label" for="phone-input">Preferred Contact Method</label>
+						<div class="col-md-8 d-flex flex-row flex-nowrap justify-content-start align-items-center">
 							<label class="custom-control custom-radio mb-0">
 								<input type="radio" name="preferred_contact" id="preferred_contact-email" required value="email" class="custom-control-input">
 								<span class="custom-control-indicator"></span>
@@ -88,8 +86,8 @@
 						</div>
 					</div>
 					<div class="form-group row">
-						<label class="col-sm-4 col-form-label required-label" for="jamatkhana-input">Primary Jamatkhana</label>
-						<div class="col-sm-8">
+						<label class="col-md-4 col-form-label required-label" for="jamatkhana-input">Primary Jamatkhana</label>
+						<div class="col-md-8">
 							<select autocomplete="on" required id="jamatkhana-input" name="jamatkhana" class="form-control">
 								<option selected disabled hidden style='display: none' value=''></option>
 								{{ partial "select_options.html" .Site.Data.constants.jamatkhanas }}
@@ -97,8 +95,8 @@
 						</div>
 					</div>
 					<div class="form-group row">
-						<div class="col-sm-4 col-form-label required-label" for="jamatkhana-input">Confirm Availability</div>
-						<div class="col-sm-8 col-form-label">
+						<div class="col-md-4 col-form-label required-label" for="jamatkhana-input">Confirm Availability</div>
+						<div class="col-md-8 col-form-label">
 							<label class="custom-control custom-checkbox mb-0">
 								<input required name="affirm" type="checkbox" value="true" type="checkbox" class="custom-control-input">
 								<span class="custom-control-indicator"></span>
@@ -107,14 +105,14 @@
 						</div>
 					</div>
 					<div class="form-group row">
-						<label class="col-sm-4 col-form-label" for="other-input">Additional Information</label>
-						<div class="col-sm-8">
+						<label class="col-md-4 col-form-label" for="other-input">Additional Information</label>
+						<div class="col-md-8">
 							<textarea rows="4" type="text" id="otherinfo-input" name="other_info" class="form-control" placeholder="Questions, comments, concerns, feedback, or anything else..."></textarea>
 						</div>
 					</div>
 					<div class="form-group row">
-						<label class="col-sm-4 col-form-label" for="hearabout-input">How did you hear about this website?</label>
-						<div class="col-sm-8">
+						<label class="col-md-4 col-form-label" for="hearabout-input">How did you hear about this website?</label>
+						<div class="col-md-8">
 							<input autocomplete="on" type="text" id="hearabout-input" name="hear_about" class="form-control">
 						</div>
 					</div>
@@ -128,7 +126,7 @@
 				<input type="text" name="botnectar" style="display:none;" />
 
 				<div class="row">
-					<div class="offset-sm-4 col-sm-8">
+					<div class="offset-md-4 col-md-8">
 						<div class="mt-4">
 							<div class="g-recaptcha" data-size="normal" data-sitekey="6LfwojoUAAAAAJrvY69kP9MJCSvyvg-DakXkxh7X" data-callback="handleCaptchaSubmit"></div>
 						</div>
