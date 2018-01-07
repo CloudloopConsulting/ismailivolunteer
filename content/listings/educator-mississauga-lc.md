@@ -1,6 +1,6 @@
 ---
 date: 2017-04-14
-expirydate: 2018-06-14
+expirydate: 2017-06-14
 approved: true
 
 position: Early Childhood Educator (Mississauga)
