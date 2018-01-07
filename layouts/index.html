@@ -22,38 +22,42 @@
 	<section class="container my-9">
 		<h2 class="mb-5">Why ServeOntario?</h2>
 		<div class="row font-family-sans-serif">
-			<div class="col-md-4">
-				<img class="mb-1" src="{{ "/images/icon-transparent-green.png" | relURL }}" width="auto" height="60">
-				<h5 class="mb-1 mt-3">Transparent & Accessible</h5>
-				<p class="mb-0 font-weight-light">Find opportunities no matter<br>where you are or who you know.</p>
+			<div class="col-md-4 px-md-4 d-flex flex-row">
+				<img class="mb-1" src="{{ "/images/icon-transparent-green.png" | relURL }}" width="auto" height="68">
+				<div class="ml-4">
+					<h5 class="mb-1">Transparent & Accessible</h5>
+					<p class="mb-0 font-weight-light">Find opportunities regardless of where you live or who you know in the jamat.</p>
+				</div>
+
 			</div>
-			<div class="col-md-4">
-				<img class="mb-1" src="{{ "/images/icon-fit-green.png" | relURL }}" width="auto" height="60">
-				<h5 class="mb-1 mt-3">The Right Fit</h5>
-				<p class="mb-0 font-weight-light">Contribute with your skillset and<br>expertise wherever you're interested.</p>
+			<div class="col-md-4 px-md-4 d-flex flex-row">
+				<img class="mb-1" src="{{ "/images/icon-fit-green.png" | relURL }}" width="auto" height="68">
+				<div class="ml-4">
+					<h5 class="mb-1">The Right Fit</h5>
+					<p class="mb-0 font-weight-light">Contribute with your skillset and expertise wherever you're interested.</p>
+				</div>
 			</div>
-			<div class="col-md-4">
-				<img class="mb-1" src="{{ "/images/icon-apply-green.png" | relURL }}" width="auto" height="60">
-				<h5 class="mb-1 mt-3">Apply Now</h5>
-				<p class="mb-0 font-weight-light">Once you've found something,<br>apply here to get started.</p>
+			<div class="col-md-4 px-md-4 d-flex flex-row">
+				<img class="mb-1" src="{{ "/images/icon-apply-green.png" | relURL }}" width="auto" height="68">
+				<div class="ml-4">
+					<h5 class="mb-1">Apply Now</h5>
+					<p class="mb-0 font-weight-light">Once you find something, apply right here to start the process.</p>
+				</div>
 			</div>
 		</div>
 	</section>
-	<section class="container my-9">
+	<section class="container my-9 pb-3">
 		<div class="row justify-content-sm-center">
-			<div class="col col-md-3 d-none d-md-block">
-				<img class="avatar img-responsive" src={{ "/images/agakhanquote.png" | relURL }}></img>
-			</div>
-			<div class="col col-md-7">
+			<div class="col col-md-11 col-lg-8">
 				<blockquote class="mb-0">
 					<p class="quote mb-3">... Canadian [volunteering] spirit resonates with a cherished principle in Shia Ismaili culture – the importance of contributing one's individual energies on a voluntary basis to improving the lives of others. This is not a matter of philanthropy, but rather of self-fulfillment – “enlightened self-fulfillment.”</p>
-					<cite class="row d-flex flex-row mt-3">
-						<div class="col d-md-none">
-							<img class="avatar img-responsive" src={{ "/images/agakhanquote.png" | relURL }}></img>
+					<cite class="row d-flex flex-row mt-3 justify-content-center align-items-center">
+						<div class="col-auto">
+							<img style="max-height: 140px;" class="avatar img-responsive" src={{ "/images/agakhanquote.png" | relURL }}></img>
 						</div>
-						<div class="col col-9 col-md-12">
+						<div class="col-auto">
 							<h5 class="mb-1">His Highness the Aga Khan</h5>
-							<p style="max-width: 400px;" class="mb-0 font-weight-light font-family-sans-serif">From his address to both Houses of the Parliament of Canada in Ottawa on 27<sup>th</sup> February 2014</p>
+							<p style="max-width: 260px;" class="mb-0 font-weight-light font-family-sans-serif">From his address to both Houses of the Parliament of Canada in Ottawa on the 27<sup>th</sup> of February 2014.</p>
 						</div>
 					</cite>
 				</blockquote>
@@ -80,15 +84,6 @@
 			</div>
 		</div>
 	</section>
-	<!-- <hr></hr>
-	<section class="container more my-6 text-center">
-		<div class="row justify-content-sm-center">
-			<div class="col col-md-7">
-				<h5 class="mb-2">Didn't find anything?</h5>
-				<p>Keep checking back! We'll be adding more organizations and opportunities in the coming weeks.</p>
-			</div>
-		</div>
-	</section> -->
 {{ end }}
 
 {{ define "scripts" }}
