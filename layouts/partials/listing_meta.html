@@ -2,15 +2,15 @@
 	{{ if isset .Params "proqualifications"}}
 		<li class="list-inline-item"><i class="fa fa-certificate mr-2" aria-hidden="true"></i><em>Professional qualifications</em> required</li>
 	{{ end }}
-	<li class="list-inline-item"><i class="fa fa-calendar mr-2" aria-hidden="true"></i><em>{{ partial "date_format.html" .Params.startdate }}</em> to <em>{{ partial "date_format.html" .Params.enddate }}</em></li>
+	<li class="list-inline-item"><i class="fa fa-calendar mr-2" aria-hidden="true"></i><em>{{ dateFormat .Site.Params.dateformat .Params.startdate }}</em> to <em>{{ dateFormat .Site.Params.dateformat .Params.enddate }}</em></li>
 	{{ if isset .Params "hoursperweek"}}
-		<li class="list-inline-item"><i class="fa fa-clock-o mr-2" aria-hidden="true"></i><em>
+		<li class="list-inline-item"><i class="fa fa-clock-o mr-2" aria-hidden="true"></i>
 			{{ if eq .Params.hoursperweek 1 }}
-				{{ .Params.hoursperweek }} hour/week
+				<em>{{ .Params.hoursperweek }} hour/week</em>
 			{{ else }}
-				{{ .Params.hoursperweek }} hours/week
+				<em>{{ .Params.hoursperweek }} hours/week</em>
 			{{ end }}
-		</em></li>
+		</li>
 	{{ end }}
 	<li class="list-inline-item"><i class="fa fa-hourglass-half mr-2" aria-hidden="true"></i><em>{{ .Params.weeksduration }} week</em> program</li>
 	<!-- <li class="list-inline-item"><i class="fa fa-check-square mr-2" aria-hidden="true"></i><em>

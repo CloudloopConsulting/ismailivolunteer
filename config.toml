@@ -8,3 +8,4 @@ canonifyURLs = false
 [params]
   description = "Find volunteer opportunities within the community"
 	facebookappid = "1852662151661154"
+	dateformat = "January 2, 2006"

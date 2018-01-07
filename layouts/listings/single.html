@@ -20,15 +20,15 @@
 {{ define "main" }}
 	<section class="container title mt-6 mb-6">
 		<h1 class="mb-1"><strong>{{ .Params.Position }}</strong> for {{ .Params.program }}</h1>
-		<ul class="posted-expiry item-meta list-inline font-family-sans-serif">
+		<ul class="posted-expiry item-meta item-meta-underline list-inline font-family-sans-serif">
 			<li class="list-inline-item mb-1">Organized by <em>{{ .Params.organizer }}</em></li>
 			<li class="list-inline-item mb-1">An initiative of the <em>{{ .Params.org }}</em></li>
-			<!-- <li class="list-inline-item mb-1">This opportunity was <em>posted on {{ partial "date_format.html" .Date }}</em>, and will <em>expire on {{ partial "date_format.html" .ExpiryDate }}</em></li> -->
+			<!-- <li class="list-inline-item mb-1">This opportunity was <em>posted on {{ dateFormat .Site.Params.dateformat .Date }}</em>, and will <em>expire on {{ dateFormat .Site.Params.dateformat .ExpiryDate }}</em></li> -->
 		</ul>
 	</section>
 	<section class="container content mb-6">
 		<div class="row">
-			<div class="col-lg-9 last-child-mb-0">
+			<div class="col-lg-9 last-child-mb-0 item-meta-underline">
 				{{ .Content }}
 				<h4 class="mb-3">Time Commitment</h4>
 				{{ partial "listing_meta.html" . }}

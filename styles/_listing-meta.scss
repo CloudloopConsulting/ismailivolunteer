@@ -1,3 +1,5 @@
+@import "tufte";
+
 .item-meta {
 	color: $gray-600;
 	li {
@@ -22,6 +24,15 @@
 		}
 		&:last-child:after {
 			content: none;
+		}
+	}
+}
+
+
+.item-meta-underline {
+	li {
+		em {
+			@include tufte-underline($body-bg, $gray-600);
 		}
 	}
 }
