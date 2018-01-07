@@ -14,15 +14,15 @@
 		"fontawesome": "cp -r node_modules/font-awesome/fonts/ fonts",
 		"fonts": "npm run fontawesome && cp -r fonts static",
 		"public": "cp -r public/ static",
-		"static": "rm -rf ./static && npm run styles && npm run public && npm run images && npm run scripts && npm run fonts",
+		"social_prepare": "rm -rf content/__social && cp -r content/listings content/__social",
+		"social_puppeteer": "./node_modules/.bin/babel ./puppeteer/social.js | node",
+		"social": "npm run social_prepare && npm run social_puppeteer",
+		"static": "rm -rf ./static && npm run styles && npm run public && npm run images && npm run scripts && npm run fonts && npm run social",
 		"minify_html": "./node_modules/.bin/html-minifier --collapse-whitespace --remove-comments --minify-js --minify-css --file-ext html --input-dir ./dist --output-dir ./dist",
 		"minify_scripts": "find . -path '*dist/scripts*' -name '*.js' -exec ./node_modules/.bin/uglifyjs '{}' -o '{}' ';'",
 		"minify_images": "find . -path '*dist/images*' -exec bash -c './node_modules/.bin/imagemin {} --out-dir `dirname {}`' ';'",
 		"minify": "npm run minify_html && npm run minify_scripts",
-		"social_prepare": "rm -rf content/__social && cp -r content/listings content/__social",
-		"social_puppeteer": "./node_modules/.bin/babel ./puppeteer/social.js | node",
-		"social": "npm run social_prepare && npm run social_puppeteer",
-		"compile": "rm -rf ./dist && npm run static && npm run public && hugo && npm run minify && npm run social"
+		"compile": "rm -rf ./dist && npm run static && npm run public && hugo && npm run minify"
 	},
 	"repository": {
 		"type": "git",
