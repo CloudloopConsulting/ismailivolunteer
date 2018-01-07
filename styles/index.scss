@@ -10,6 +10,10 @@
 	color: $white;
 	border-radius: unset;
 
+	h1 {
+		line-height: 1.2;
+	}
+
 	.jumbotron-background {
 		position: absolute;
 		top: -10px;
@@ -38,11 +42,10 @@
 	}
 
 	.cta {
-		color: $secondary;
+		color: $primary;
 		background-color: #FFF;
 		text-decoration: none;
 		padding: 1rem;
-		border: 1px solid #FFF;
 		border-radius: $border-radius;
 		box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.2);
 		display: inline-block;
@@ -53,8 +56,7 @@
 		&:hover {
 			cursor: pointer;
 			color: #FFF;
-			border-color: darken($secondary, 4%);
-			background-color: darken($secondary, 8%);
+			background-color: $primary;
 			box-shadow: 0px 4px 12px 1px rgba(0, 0, 0, 0.32);
 		}
 	}
