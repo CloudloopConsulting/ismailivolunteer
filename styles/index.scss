@@ -1,4 +1,5 @@
 @import "base";
+@import "tufte";
 @import "listing-meta";
 
 
@@ -99,6 +100,8 @@ cite {
 }
 
 section.listing-section {
+
+	@include tufte-anchor-underline($body-bg, $link-color, $link-hover-color);
 
 	h5 a {
 
