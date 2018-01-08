@@ -22,6 +22,8 @@ commitments:
 formdata:
   cc:
     - hussein@cloudloop.ca
+    - seva@rishmanathoo.com
+    - zahra.budhwani@gmail.com
 ---
 
 #### About the Program
