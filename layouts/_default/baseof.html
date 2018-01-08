@@ -38,10 +38,13 @@
 			</header>
 		{{ end }}
 
-		<main class="">
-	        {{ block "main" . }}
-	        {{ end }}
-		</main>
+
+		{{ block "main_wrapper" . }}
+			<main class="">
+		        {{ block "main" . }}
+		        {{ end }}
+			</main>
+		{{ end }}
 
 		{{ block "footer" .}}
 			<footer class="">

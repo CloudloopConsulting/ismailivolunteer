@@ -4,17 +4,21 @@
 
 {{ define "header" }}<!-- nothing -->{{ end }}
 
-{{ define "main" }}
-	<div class="font-family-sans-serif">
-		<div class="d-flex p-4 top align-items-center">
-			<img height="100" width="100" src="/images/logo-v3.png"/>
-			<h2 class="ml-4 my-0">OpportunitiesToServe</h2>
+{{ define "main_wrapper" }}
+	<main class="d-flex flex-row font-family-sans-serif">
+		<div class="bg-white d-flex flex-column align-items-center justify-content-center p-5 text-center">
+			<img class="mb-3" height="100" src="/images/logo.png"/>
+			<!-- <hr class="my-4">
+			<h5 class="mb-0 about">Find volunteer opportunities<br>within Jamati programs</h5> -->
+			<hr class="my-4">
+			<h4 class="mb-0 cta">Click here to apply for<br>this volunteer opportunity!</h4>
 		</div>
-		<div style="min-height: 466px;" class="bottom d-flex flex-column flex-nowrap justify-content-center">
-			<h1><strong>{{ .Params.Position }}</strong> for {{ .Params.program }}</h1>
+		<div style="flex-grow: 1;" class="listing text-white p-5 d-flex flex-column flex-nowrap justify-content-center">
+			<h1 class="mb-0"><strong>{{ .Params.Position }}</strong> for {{ .Params.program }}</h1>
+			<p class="description mb-3">{{ .Description }}</p>
 			{{ partial "listing_meta.html" . }}
 		</div>
-	</div>
+	</main>
 {{ end }}
 
 {{ define "footer" }}<!-- nothing -->{{ end }}

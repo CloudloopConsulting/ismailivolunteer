@@ -4,13 +4,7 @@
 	{{ end }}
 	<li class="list-inline-item"><i class="fa fa-calendar mr-2" aria-hidden="true"></i><em>{{ dateFormat .Site.Params.dateformat .Params.startdate }}</em> to <em>{{ dateFormat .Site.Params.dateformat .Params.enddate }}</em></li>
 	{{ if isset .Params "hoursperweek"}}
-		<li class="list-inline-item"><i class="fa fa-clock-o mr-2" aria-hidden="true"></i>
-			{{ if eq .Params.hoursperweek 1 }}
-				<em>{{ .Params.hoursperweek }} hour/week</em>
-			{{ else }}
-				<em>{{ .Params.hoursperweek }} hours/week</em>
-			{{ end }}
-		</li>
+		<li class="list-inline-item"><i class="fa fa-clock-o mr-2" aria-hidden="true"></i>{{ if eq .Params.hoursperweek 1 }}<em>{{ .Params.hoursperweek }} hour/week</em>{{ else }}<em>{{ .Params.hoursperweek }} hours/week</em>{{ end }}</li>
 	{{ end }}
 	<li class="list-inline-item"><i class="fa fa-hourglass-half mr-2" aria-hidden="true"></i><em>{{ .Params.weeksduration }} week</em> program</li>
 	<!-- <li class="list-inline-item"><i class="fa fa-check-square mr-2" aria-hidden="true"></i><em>
