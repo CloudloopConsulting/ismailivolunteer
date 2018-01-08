@@ -32,9 +32,7 @@
 		"minify_images": "find . -path '*dist/images*' -exec bash -c './node_modules/.bin/imagemin {} --out-dir `dirname {}`' ';'",
 		"minify": "npm run minify_html && npm run minify_scripts",
 
-		"manifest": "find ./dist > ./dist/.manifest.txt",
-
-		"compile": "rm -rf ./dist && npm run static && hugo && npm run minify && npm run manifest"
+		"compile": "rm -rf ./dist && npm run static && hugo && npm run minify"
 	},
 	"repository": {
 		"type": "git",
