@@ -64,7 +64,7 @@ function handleSystemChangesetErrors(obj) {
 			System Error
 		</div>
 		<div class="card-body">
-			<h4 class="card-title">It seems like the form was misconfigured! Please contact an <a href="mailto:${errorEmail}?subject=${errorSubject}">administrator</a>.</h4>
+			<h4 class="card-title">It seems like the form was misconfigured! Please contact an <a href="mailto:${errorEmail}?subject=${errorSubject}&body=${errorBody}">administrator</a>.</h4>
 			<p class="mb-1">Be sure to include the following error code in your email!</p>
 			<code class="mb-0 text-${errorType}"><strong>${errorBody}</strong></code>
 		</div>
@@ -80,8 +80,8 @@ function handleErrors(obj) {
 			${obj.component} Error
 		</div>
 		<div class="card-body">
-			<h4 class="card-title">${obj.message}. Go <a href="javascript:window.history.back()">back</a> and try again?</h4>
-			<p class="mb-1">Or, contact an <a href="mailto:${errorEmail}?subject=${errorSubject}">administrator</a>. Be sure to include the following error code in your email!</p>
+			<h4 class="card-title">${obj.message}. Go <a href="javascript:window.history.back()">back</a>?</h4>
+			<p class="mb-1">Or, contact an <a href="mailto:${errorEmail}?subject=${errorSubject}&body=${errorBody}">administrator</a>. Be sure to include the following error code in your email!</p>
 			<code class="mb-0 text-${errorType}"><strong>${errorBody}</strong></code>
 		</div>
 		`, errorType))
