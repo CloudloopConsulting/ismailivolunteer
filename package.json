@@ -25,14 +25,16 @@
 		"public": "cp -r public/ static",
 
 		"static_clean": "rm -rf ./static",
-		"static": "npm run static_clean && npm run scripts && npm run styles && npm run social && npm run images && npm run fonts && npm run public",
+		"static": "npm run static_clean && npm run scripts && npm run styles && npm run images && npm run fonts && npm run public",
 
 		"minify_html": "./node_modules/.bin/html-minifier --collapse-whitespace --remove-comments --minify-js --minify-css --file-ext html --input-dir ./dist --output-dir ./dist",
 		"minify_scripts": "find . -path '*dist/scripts*' -name '*.js' -exec ./node_modules/.bin/uglifyjs '{}' -o '{}' ';'",
 		"minify_images": "find . -path '*dist/images*' -exec bash -c './node_modules/.bin/imagemin {} --out-dir `dirname {}`' ';'",
 		"minify": "npm run minify_html && npm run minify_scripts",
 
-		"compile": "rm -rf ./dist && npm run static && hugo && npm run minify"
+		"manifest": "find ./dist > ./dist/.manifest.txt",
+
+		"compile": "rm -rf ./dist && npm run static && hugo && npm run minify && npm run manifest"
 	},
 	"repository": {
 		"type": "git",
