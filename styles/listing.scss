@@ -2,12 +2,15 @@
 @import "listing-meta";
 
 h1 {
-	color: $info;
+	// color: $complement-one;
 }
 
 section.content {
 	h4 {
-		margin-top: get-spacers( 4, 'x');
+		margin-top: map-get($spacers, 4);
+		font-size: $h6-font-size;
+		text-transform: uppercase;
+	    color: $primary;
 		&:first-of-type {
 			margin-top: 0;
 		}
@@ -18,15 +21,15 @@ section.apply {
 	.required-label {
 		&:after {
 			content: '*';
-			color: $tertiary;
+			color: $complement-two;
 			font-size: $font-size-lg;
 			line-height: 1;
 			margin-left: 3px;
 		}
 	}
-	.required-label-legend {
-		color: $gray-400;
-	}
+	// .required-label-legend {
+	// 	color: $gray-400;
+	// }
 }
 
 .posted-expiry {

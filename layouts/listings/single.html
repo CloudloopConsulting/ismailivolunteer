@@ -19,124 +19,127 @@
 
 {{ define "main" }}
 	<section class="container title mt-6 mb-6">
-		<h1><strong>{{ .Params.Position }}</strong> for {{ .Params.program }}</h1>
-		<ul class="posted-expiry item-meta list-inline font-family-sans-serif">
+		<h1 class="mb-1"><strong>{{ .Params.Position }}</strong> for {{ .Params.program }}</h1>
+		<ul class="posted-expiry item-meta item-meta-underline list-inline font-family-sans-serif">
 			<li class="list-inline-item mb-1">Organized by <em>{{ .Params.organizer }}</em></li>
 			<li class="list-inline-item mb-1">An initiative of the <em>{{ .Params.org }}</em></li>
-			<!-- <li class="list-inline-item mb-1">This opportunity was <em>posted on {{ partial "date_format.html" .Date }}</em>, and will <em>expire on {{ partial "date_format.html" .ExpiryDate }}</em></li> -->
+			<!-- <li class="list-inline-item mb-1">This opportunity was <em>posted on {{ dateFormat .Site.Params.dateformat .Date }}</em>, and will <em>expire on {{ dateFormat .Site.Params.dateformat .ExpiryDate }}</em></li> -->
 		</ul>
 	</section>
 	<section class="container content mb-6">
 		<div class="row">
-			<div class="col-lg-10 last-child-mb-0">
+			<div class="col-lg-9 last-child-mb-0 item-meta-underline">
 				{{ .Content }}
-				<h4>Time Commitment</h4>
+				<h4 class="mb-3">Time Commitment</h4>
 				{{ partial "listing_meta.html" . }}
 				{{ if isset .Params "commitments" }}
-					<p>If you are not available for some time within this period, please let us know, we'll do our best to accomodate. Your commitments for this program will primarily be:</p>
+					<p>Your commitment will include:</p>
 					<ul>
 						{{ range .Params.commitments }}
 							<li>{{ . }}</li>
 						{{ end }}
 					</ul>
-				{{ else }}
-					<p>If you are not available for some time within this period, please let us know, we'll do our best to accomodate.</p>
 				{{ end }}
 			</div>
 		</div>
 	</section>
 	<section class="container apply mb-8">
-		<h2 class="mb-4">Apply</h2>
-		<noscript>
-			<p class="py-2 px-3 font-family-sans-serif rounded bg-danger text-white text-center">To prevent spam, JavaScript is required to validate and submit this form. We're sorry for the inconvenience!</p>
-		</noscript>
-		<p class="font-family-sans-serif text-right required-label required-label-legend">Required</p>
-		<form data-form-marker>
-			<div class="form-section">
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label required-label" for="name-input">Name</label>
-					<div class="col-sm-8">
-						<input required autocomplete="name" type="text" id="name-input" name="name" class="form-control" placeholder="Your full name">
+		<div class="row">
+			<div class="col-lg-9">
+				<h2 class="mb-4">Apply</h2>
+				<noscript>
+					<p class="py-2 px-3 font-family-sans-serif rounded bg-danger text-white text-center">To prevent spam, JavaScript is required to validate and submit this form. We're sorry for the inconvenience!</p>
+				</noscript>
+				<!-- <p class="font-family-sans-serif text-right required-label required-label-legend">Required</p> -->
+				<form data-form-marker class="font-family-sans-serif">
+					<div class="form-section">
+						<div class="form-group row">
+							<label class="col-md-4 col-form-label required-label" for="name-input">Name</label>
+							<div class="col-md-8">
+								<input required autocomplete="name" type="text" id="name-input" name="name" class="form-control" placeholder="Your full name">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-md-4 col-form-label required-label" for="email-input">Email</label>
+							<div class="col-md-8">
+								<input required autocomplete="email" type="email" id="email-input" name="email" class="form-control" placeholder="Your email address">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-md-4 col-form-label required-label" for="phone-input">Phone</label>
+							<div class="col-md-8">
+								<input required autocomplete="tel" type="tel" id="phone-input" name="phone" class="form-control" placeholder="Your phone number">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-md-4 col-form-label required-label" for="phone-input">Preferred Contact Method</label>
+							<div class="col-md-8 d-flex flex-row flex-nowrap justify-content-start align-items-center">
+								<label class="custom-control custom-radio mb-0">
+									<input type="radio" name="preferred_contact" id="preferred_contact-email" required value="email" class="custom-control-input">
+									<span class="custom-control-indicator"></span>
+									<span class="custom-control-description">Email</span>
+								</label>
+								<label class="custom-control custom-radio mb-0">
+									<input type="radio" name="preferred_contact" id="preferred_contact-phone" required value="phone" class="custom-control-input">
+									<span class="custom-control-indicator"></span>
+									<span class="custom-control-description">Phone</span>
+								</label>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-md-4 col-form-label required-label" for="jamatkhana-input">Primary Jamatkhana</label>
+							<div class="col-md-8">
+								<select autocomplete="on" required id="jamatkhana-input" name="jamatkhana" class="form-control">
+									<option selected disabled hidden style='display: none' value=''></option>
+									{{ partial "select_options.html" .Site.Data.constants.jamatkhanas }}
+								</select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4 col-form-label required-label" for="jamatkhana-input">Confirm Availability</div>
+							<div class="col-md-8 col-form-label">
+								<label class="custom-control custom-checkbox mb-0">
+									<input required name="affirm" type="checkbox" value="true" type="checkbox" class="custom-control-input">
+									<span class="custom-control-indicator"></span>
+									<span class="custom-control-description"><em>By checking this box, you affirm that you will commit your time for the above-mentioned periods to the best of your ability.</em></span>
+								</label>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-md-4 col-form-label" for="other-input">Additional Information</label>
+							<div class="col-md-8">
+								<textarea rows="4" type="text" id="otherinfo-input" name="other_info" class="form-control" placeholder="Questions, comments, concerns, feedback, or anything else..."></textarea>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-md-4 col-form-label" for="hearabout-input">How did you hear about this website?</label>
+							<div class="col-md-8">
+								<input autocomplete="on" type="text" id="hearabout-input" name="hear_about" class="form-control">
+							</div>
+						</div>
 					</div>
-				</div>
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label required-label" for="email-input">Email</label>
-					<div class="col-sm-8">
-						<input required autocomplete="email" type="email" id="email-input" name="email" class="form-control" placeholder="Your email address">
+
+					<input type="hidden" readonly name="position" value="{{ .Params.position }}"/>
+					<input type="hidden" readonly name="program" value="{{ .Params.program }}"/>
+					<input type="hidden" readonly name="this" value="{{ .URL }}"/>
+
+					<!-- honeypot for bots - kinda unnecessary with captcha -->
+					<input type="text" name="botnectar" style="display:none;" />
+
+					<div class="row">
+						<div class="offset-md-4 col-md-8">
+							<div class="mt-4">
+								<div class="g-recaptcha" data-size="normal" data-sitekey="6LfwojoUAAAAAJrvY69kP9MJCSvyvg-DakXkxh7X" data-callback="handleCaptchaSubmit"></div>
+							</div>
+							<div id="submit-container" class="mt-3">
+								<!-- subumit button gets injected here -->
+							</div>
+						</div>
 					</div>
-				</div>
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label required-label" for="phone-input">Phone</label>
-					<div class="col-sm-8">
-						<input required autocomplete="tel" type="tel" id="phone-input" name="phone" class="form-control" placeholder="Your phone number">
-					</div>
-				</div>
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label required-label" for="phone-input">Preferred Contact Method</label>
-					<div class="col-sm-8 d-flex flex-row flex-nowrap justify-content-start align-items-center">
-						<label class="custom-control custom-radio mb-0">
-							<input type="radio" name="preferred_contact" id="preferred_contact-email" required value="email" class="custom-control-input">
-							<span class="custom-control-indicator"></span>
-							<span class="custom-control-description">Email</span>
-						</label>
-						<label class="custom-control custom-radio mb-0">
-							<input type="radio" name="preferred_contact" id="preferred_contact-phone" required value="phone" class="custom-control-input">
-							<span class="custom-control-indicator"></span>
-							<span class="custom-control-description">Phone</span>
-						</label>
-					</div>
-				</div>
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label required-label" for="jamatkhana-input">Primary Jamatkhana</label>
-					<div class="col-sm-8">
-						<select autocomplete="on" required id="jamatkhana-input" name="jamatkhana" class="form-control">
-							<option selected disabled hidden style='display: none' value=''></option>
-							{{ partial "select_options.html" .Site.Data.constants.jamatkhanas }}
-						</select>
-					</div>
-				</div>
-				<div class="form-group row">
-					<div class="col-sm-4 col-form-label required-label" for="jamatkhana-input">Confirm Availability</div>
-					<div class="col-sm-8 col-form-label">
-						<label class="custom-control custom-checkbox mb-0">
-							<input required name="affirm" type="checkbox" value="true" type="checkbox" class="custom-control-input">
-							<span class="custom-control-indicator"></span>
-							<span class="custom-control-description"><em>By checking this box, you affirm that you will commit your time for the above-mentioned periods to the best of your ability.</em></span>
-						</label>
-					</div>
-				</div>
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="other-input">Additional Information</label>
-					<div class="col-sm-8">
-						<textarea rows="4" type="text" id="otherinfo-input" name="other_info" class="form-control" placeholder="Questions, comments, concerns, feedback, or anything else..."></textarea>
-					</div>
-				</div>
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="hearabout-input">How did you hear about this website?</label>
-					<div class="col-sm-8">
-						<input autocomplete="on" type="text" id="hearabout-input" name="hear_about" class="form-control">
-					</div>
-				</div>
+				</form>
 			</div>
 
-			<input type="hidden" readonly name="position" value="{{ .Params.position }}"/>
-			<input type="hidden" readonly name="program" value="{{ .Params.program }}"/>
-			<input type="hidden" readonly name="this" value="{{ .URL }}"/>
-
-			<!-- honeypot for bots - kinda unnecessary with captcha -->
-			<input type="text" name="botnectar" style="display:none;" />
-
-			<div class="row">
-				<div class="offset-sm-4 col-sm-8">
-					<div class="mt-4">
-						<div class="g-recaptcha" data-size="normal" data-sitekey="6LfwojoUAAAAAJrvY69kP9MJCSvyvg-DakXkxh7X" data-callback="handleCaptchaSubmit"></div>
-					</div>
-					<div id="submit-container" class="mt-3">
-						<!-- subumit button gets injected here -->
-					</div>
-				</div>
-			</div>
-		</form>
+		</div>
 	</section>
 {{ end }}
 
@@ -150,7 +153,7 @@
 
 		})(window)
 	</script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js"></script>
 	<script src="{{ "scripts/form_submit.js" | relURL }}"></script>
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<script type="text/javascript">

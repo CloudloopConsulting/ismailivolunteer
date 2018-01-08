@@ -7,65 +7,96 @@
 {{ end }}
 
 {{ define "main" }}
-	<section class="jumbotron jumbotron-fluid mb-6 p-0">
+	<section class="jumbotron py-0">
 		<div id="images-target" class="jumbotron-background"></div>
-		<header>
-			{{ partial "header.html" . }}
-		</header>
-		<div class="container pt-8 pb-9 text-center">
-			<h1 class="display-5 mb-4">Accessible volunteer<br>opportunities in the jamat.</h1>
-			<div class="mt-4 mb-3">
+		<div class="container">
+			<header class="mt-4 mb-9">
+				<nav class="navbar navbar-expand-lg navbar-dark px-0 py-0">
+					<a class="navbar-brand p-0" href="{{ "/" | relURL }}">
+						<img src="{{ "/images/logo-light.png" | relURL }}" width="auto" height="66" alt="{{ .Site.Title }}">
+					</a>
+					{{ partial "navbar.html" . }}
+				</nav>
+			</header>
+			<h1 class="mb-4">Find volunteer opportunities<br>within Jamati programs and institutions</h1>
+			<div class="mb-9">
 				<a data-smooth data-smooth-offset="-64" href="#opportunities"><h5 class="cta mb-0">Find Opportunities <i class="ml-1 fa fa-chevron-right" style="font-size: 0.92em;"aria-hidden="true"></i></h5></a>
 			</div>
 		</div>
 	</section>
-	<section class="container my-6">
-		<div class="row justify-content-sm-center">
-			<div class="col col-md-9">
-				<blockquote>
-					<p class="quote mb-3">... Canadian [volunteering] spirit resonates with a cherished principle in Shia Ismaili culture – the importance of contributing one's individual energies on a voluntary basis to improving the lives of others. This is not a matter of philanthropy, but rather of self-fulfillment – "enlightened self-fulfillment."</p>
-					<div class="row">
-						<div class="col col-12 offset-sm-2">
-							<cite class="d-flex flex-row align-items-center justify-content-start">
-								<div class="avatar mr-3"></div>
-								<div>
-									<h6 class="mb-1">His Highness the Aga Khan</h6>
-									<small><p style="max-width: 340px; font-weight: 300;" class="mb-0">From his address to both Houses of the Parliament of Canada in Ottawa on Thursday, 27 February 2014</p></small>
-								</div>
-							</cite>
-						</div>
-					</div>
+	<section class="container my-9">
+		<h2 class="mb-5">Why OpportunitiesToServe?</h2>
+		<div class="row font-family-sans-serif">
+			<div class="col-md-12 col-lg-4 px-md-4 d-flex flex-row mb-4 mb-lg-0">
+				<img class="mb-1" src="{{ "/images/icon-transparent-green.png" | relURL }}" width="auto" height="68">
+				<div class="ml-4">
+					<h5 class="mb-1">Transparent & Accessible</h5>
+					<p class="mb-0 font-weight-light">Find opportunities regardless of where you live or who you know in the jamat.</p>
+				</div>
 
+			</div>
+			<div class="col-md-12 col-lg-4 px-md-4 d-flex flex-row mb-4 mb-lg-0">
+				<img class="mb-1" src="{{ "/images/icon-fit-green.png" | relURL }}" width="auto" height="68">
+				<div class="ml-4">
+					<h5 class="mb-1">The Right Fit</h5>
+					<p class="mb-0 font-weight-light">Contribute with your skillset and expertise wherever you're interested.</p>
+				</div>
+			</div>
+			<div class="col-md-12 col-lg-4 px-md-4 d-flex flex-row">
+				<img class="mb-1" src="{{ "/images/icon-apply-green.png" | relURL }}" width="auto" height="68">
+				<div class="ml-4">
+					<h5 class="mb-1">Apply Now</h5>
+					<p class="mb-0 font-weight-light">Once you find something, apply right here to start the process.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="container my-9 pb-3">
+		<div class="row justify-content-sm-center">
+			<div class="col col-md-11 col-lg-8">
+				<blockquote class="mb-0">
+					<p class="quote mb-3">... Canadian [volunteering] spirit resonates with a cherished principle in Shia Ismaili culture – the importance of contributing one's individual energies on a voluntary basis to improving the lives of others. This is not a matter of philanthropy, but rather of self-fulfillment – “enlightened self-fulfillment.”</p>
+					<cite class="row d-flex flex-row mt-3 justify-content-center align-items-center">
+						<div class="col-auto">
+							<img style="max-height: 140px;" class="avatar img-responsive" src={{ "/images/agakhanquote.small.png" | relURL }}></img>
+						</div>
+						<div class="col-auto">
+							<h5 class="mb-1">His Highness the Aga Khan</h5>
+							<p style="max-width: 260px;" class="mb-0 font-weight-light font-family-sans-serif">From his address to both Houses of the Parliament of Canada in Ottawa on the 27<sup>th</sup> of February 2014.</p>
+						</div>
+					</cite>
 				</blockquote>
 			</div>
 		</div>
 	</section>
-	<hr></hr>
-	<section id="opportunities" class="container listing-section mt-6 mb-8">
-		<h2 class="section-title mb-4">Open opportunities</h2>
-		<ul class="listing list-unstyled mb-4">
-			{{ range ( ( where ( where .Data.Pages "Section" "listings" ) ".Params.approved" true ).ByParam "position" ) }}
-				<li class="listing-item mb-4">
-					<h4 class="item-title mb-2"><a href="{{ .RelPermalink }}"><strong>{{ .Params.position }}</strong> for {{ .Params.program }}</a></h4>
-					<p class="mb-0">{{ .Description }}</p>
+	<section id="opportunities" class="container listing-section my-9">
+		<h2 class="section-title mb-5">Current opportunities</h2>
+		<ul class="listing list-unstyled mb-0">
+			{{ $listings := ( where ( where .Data.Pages "Section" "listings" ) ".Params.approved" true ) }}
+			{{ range ( $listings.ByParam "position" ) }}
+				<li class="listing-item mt-4">
+					<h5 class="item-title mb-0"><a href="{{ .RelPermalink }}"><strong>{{ .Params.position }}</strong> for {{ .Params.program }}</a></h5>
 					{{ partial "listing_meta.html" . }}
+					<p class="mt-0 mb-0">{{ .Description }}</p>
 				</li>
 			{{ end }}
 		</ul>
-		<div class="found-none">
-			<h5 class="mb-2">Didn't find anything?</h5>
-			<p>Keep checking back! We'll be adding more organizations and opportunities in the coming weeks.</p>
-		</div>
-	</section>
-	<!-- <hr></hr>
-	<section class="container more my-6 text-center">
-		<div class="row justify-content-sm-center">
-			<div class="col col-md-7">
-				<h5 class="mb-2">Didn't find anything?</h5>
-				<p>Keep checking back! We'll be adding more organizations and opportunities in the coming weeks.</p>
+		<div class="row">
+			<div class="col-md-8">
+				{{ if (len $listings) }}
+					<div class="found-none mt-5">
+						<h5 class="mb-2">Didn't find anything?</h5>
+						<p class="mb-0">Keep checking back, we're adding more opportunities as soon as they come up!</p>
+					</div>
+				{{ else }}
+					<div class="found-none mb-9">
+						<h5 class="mb-2">Oops! It seems like there are no openings right now.</h5>
+						<p class="mb-0">Keep checking back, we're adding more opportunities as soon as they come up!</p>
+					</div>
+				{{ end }}
 			</div>
 		</div>
-	</section> -->
+	</section>
 {{ end }}
 
 {{ define "scripts" }}
