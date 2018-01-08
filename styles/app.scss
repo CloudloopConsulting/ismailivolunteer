@@ -1,12 +1,33 @@
 // Base variables
 @import "base";
 
-// Reset and dependencies
-@import "bootstrap/scss/bootstrap";
-@import "convenience";
-
-// Other dependencies
+// Dependencies
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/print";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/code";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/button-group";
+@import "bootstrap/scss/input-group";
+@import "bootstrap/scss/custom-forms";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/jumbotron";
+@import "bootstrap/scss/alert";
+@import "bootstrap/scss/media";
+@import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+@import "bootstrap/scss/utilities";
 @import "font-awesome/css/font-awesome";
+
+// Other files
+@import "convenience";
 
 
 html {
@@ -24,7 +45,7 @@ header {
 
 	a {
 		color: $primary;
-		font-family: $font-family-serif;
+		// font-family: $font-family-serif;
 	}
 
 	h1 {
