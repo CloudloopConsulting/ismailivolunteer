@@ -7,38 +7,56 @@ main {
 	background: $primary;
 }
 
-
-h1 {
-	font-size: 4.768rem;
-	color: #FFF;
-	font-weight: 300;
-	strong {
-		font-weight: 600;
-	}
+hr {
+	// border-color: rgba(0,0,0,0.08);
+	width: 32px;
 }
 
-.item-meta {
-	font-size: 1.953rem;
-	color: rgba(255, 255, 255, 0.8);
+.about {
 	font-weight: 100;
-	margin-bottom: 0;
-	li.list-inline-item {
-		display: block;
-		em {
-			color: rgba(255, 255, 255, 1.0);
-			font-weight: 300;
-		}
-		i {
-			color: rgba(255, 255, 255, 0.40);
-			margin-right: 1.5rem !important;
-		}
-		&:after {
-			content: none;
-		}
-	}
+	font-style: italic;
+	color: $gray-600;
 }
 
-.description {
-	font-size: 2.441rem;
-	color: #FFF;
+.cta {
+	// color: $complement-two;
+}
+
+.listing {
+
+	h1 {
+		font-size: 4.768rem;
+		font-weight: 300;
+		strong {
+			font-weight: 600;
+		}
+	}
+
+	.item-meta {
+		font-size: $h3-font-size;
+		color: rgba(255, 255, 255, 0.8);
+		font-weight: 100;
+		margin-bottom: 0;
+		li.list-inline-item {
+			display: block;
+			em {
+				color: rgba(255, 255, 255, 1.0);
+				font-weight: 300;
+			}
+			i {
+				color: rgba(255, 255, 255, 0.40);
+				margin-right: 1.5rem !important;
+			}
+			&:after {
+				color: rgba(255, 255, 255, 0.10);
+				content: none;
+			}
+		}
+	}
+
+	.description {
+		font-size: $h3-font-size;
+		color: #FFF;
+	}
+
 }

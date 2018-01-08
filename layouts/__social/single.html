@@ -6,12 +6,16 @@
 
 {{ define "main_wrapper" }}
 	<main class="d-flex flex-row font-family-sans-serif">
-		<div class="bg-white d-flex flex-row align-items-center px-5">
-			<img height="120" src="/images/logo.png"/>
+		<div class="bg-white d-flex flex-column align-items-center justify-content-center p-5 text-center">
+			<img class="mb-3" height="100" src="/images/logo.png"/>
+			<hr class="my-4">
+			<h5 class="mb-0 about">Find volunteer opportunities<br>within Jamati programs</h5>
+			<hr class="my-4">
+			<h5 class="mb-0 cta">Click here to apply for<br>this volunteer opportunity!</h5>
 		</div>
-		<div style="min-height: 466px;" class="px-5 d-flex flex-column flex-nowrap justify-content-center">
+		<div style="flex-grow: 1;" class="listing text-white p-5 d-flex flex-column flex-nowrap justify-content-center">
 			<h1 class="mb-0"><strong>{{ .Params.Position }}</strong> for {{ .Params.program }}</h1>
-			<p class="description mb-5">{{ .Description }}</p>
+			<p class="description mb-3">{{ .Description }}</p>
 			{{ partial "listing_meta.html" . }}
 		</div>
 	</main>
