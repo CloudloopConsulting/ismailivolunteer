@@ -26,6 +26,9 @@
 
 html {
 	font-size: 16px;
+	font-variant-ligatures: common-ligatures contextual;
+    font-feature-settings: "liga", "clig", "calt", "kern";
+    font-kerning: normal;
 }
 
 header {

@@ -7,47 +7,38 @@ main {
 	background: $primary;
 }
 
-.top {
-	background: #FFF;
-}
-
-.bottom {
-	padding: 2.6rem 2.6rem;
-	overflow: none;
-}
-
-h2 {
-	font-size: 3.052rem;
-    padding-top: 0.60rem;
-	color: $success;
-}
 
 h1 {
 	font-size: 4.768rem;
 	color: #FFF;
-	font-weight: 100;
-	margin-bottom: 1.6rem;
+	font-weight: 300;
 	strong {
-		font-weight: 500;
+		font-weight: 600;
 	}
 }
 
 .item-meta {
 	font-size: 1.953rem;
-	color: rgba(255, 255, 255, 1.0);
+	color: rgba(255, 255, 255, 0.8);
 	font-weight: 100;
 	margin-bottom: 0;
-	li {
+	li.list-inline-item {
+		display: block;
 		em {
 			color: rgba(255, 255, 255, 1.0);
 			font-weight: 300;
 		}
 		i {
-			color: #ff8b33;
-			text-shadow: 0px 0px 1px #6842b3;
+			color: rgba(255, 255, 255, 0.40);
+			margin-right: 1.5rem !important;
 		}
 		&:after {
-			color: rgba(255, 255, 255, 0.15);
+			content: none;
 		}
 	}
+}
+
+.description {
+	font-size: 2.441rem;
+	color: #FFF;
 }
