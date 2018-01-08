@@ -23,10 +23,47 @@
 {{ define "main" }}
 	<section class="container title mt-6 mb-6">
 		<h1 class="mb-1"><strong>{{ .Params.Position }}</strong> for {{ .Params.program }}</h1>
-		<ul class="posted-expiry item-meta item-meta-underline list-inline font-family-sans-serif">
+		<ul class="mb-1 posted-expiry item-meta item-meta-underline list-inline font-family-sans-serif">
 			<li class="list-inline-item mb-1">Organized by <em>{{ .Params.organizer }}</em></li>
 			<li class="list-inline-item mb-1">An initiative of the <em>{{ .Params.org }}</em></li>
 			<!-- <li class="list-inline-item mb-1">This opportunity was <em>posted on {{ dateFormat .Site.Params.dateformat .Date }}</em>, and will <em>expire on {{ dateFormat .Site.Params.dateformat .ExpiryDate }}</em></li> -->
+		</ul>
+		<ul class="social list-inline d-print-none">
+			<li class="list-inline-item">
+				<a href="https://www.facebook.com/dialog/share?app_id={{ .Site.Params.facebookappid }}&display=popup&href={{ .Permalink }}" onclick="window.open(this.href, '_blank', 'left=100,top=100,width=900,height=600,toolbar=1,resizable=1'); return false;">
+					<i class="fa fa-facebook-square" aria-hidden="true"></i>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a href="https://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink }}&title={{ .Params.Position }} for {{ .Params.program }}&summary=&source=" onclick="window.open(this.href, '_blank', 'left=100,top=100,width=900,height=600,toolbar=1,resizable=1'); return false;">
+					<i class="fa fa-linkedin-square" aria-hidden="true"></i>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a href="https://twitter.com/intent/tweet?url={{ .Permalink }}" onclick="window.open(this.href, '_blank', 'left=100,top=100,width=900,height=600,toolbar=1,resizable=1'); return false;">
+					<i class="fa fa-twitter-square" aria-hidden="true"></i>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a href="" onclick="window.open(this.href, '_blank', 'left=100,top=100,width=900,height=600,toolbar=1,resizable=1'); return false;">
+					<i class="fa fa-google-plus-square" aria-hidden="true"></i>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a href="" onclick="window.open(this.href, '_blank', 'left=100,top=100,width=900,height=600,toolbar=1,resizable=1'); return false;">
+					<i class="fa fa-pinterest-square" aria-hidden="true"></i>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a href="" onclick="window.open(this.href, '_blank', 'left=100,top=100,width=900,height=600,toolbar=1,resizable=1'); return false;">
+					<i class="fa fa-envelope" aria-hidden="true"></i>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a href="#" onclick="window.print(0); return false;">
+					<i class="fa fa-print" aria-hidden="true"></i>
+				</a>
+			</li>
 		</ul>
 	</section>
 	<section class="container content mb-6">
@@ -46,7 +83,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="container apply mb-8">
+	<section class="container apply mb-8 d-print-none">
 		<div class="row">
 			<div class="col-lg-9">
 				<h2 class="mb-4">Apply</h2>
