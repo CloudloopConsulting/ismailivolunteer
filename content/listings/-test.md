@@ -18,11 +18,11 @@ totalhours: 105
 commitments:
   - 2-3 hours per week of work
   - one 20-30 minute in-person visit per month at selected centres
-
-formdata:
-  cc:
-    - hussein@cloudloop.ca
 ---
+
+<!-- formdata:
+  cc:
+    - hussein@cloudloop.ca -->
 
 #### About the Program
 

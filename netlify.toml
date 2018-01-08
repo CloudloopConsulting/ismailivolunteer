@@ -4,7 +4,7 @@
 
 [context.production.environment]
   HUGO_VERSION = "0.31.1"
-	FORM_SUBMIT_URL = "https://volunteer.iicanada.eightzerothree.co"
+	FORM_SUBMIT_URL = "https://volunteer.iicanada.eightzerothree.co/legacy/apply"
 
 [context.branch-deploy.environment]
   HUGO_VERSION = "0.31.1"
