@@ -2,11 +2,12 @@
   publish = "dist"
   command = "npm run compile"
 
+[context.production.environment]
+  HUGO_VERSION = "0.31.1"
+	FORM_SUBMIT_URL = "https://volunteer.iicanada.eightzerothree.co"
+
 [context.branch-deploy.environment]
   HUGO_VERSION = "0.31.1"
 
 [context.deploy-preview.environment]
-  HUGO_VERSION = "0.31.1"
-
-[context.production.environment]
   HUGO_VERSION = "0.31.1"
