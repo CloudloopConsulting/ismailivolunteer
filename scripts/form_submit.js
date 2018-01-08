@@ -6,7 +6,7 @@ const form = $form[0]
 let parsedConfig
 
 function formAction() {
-	return 'http://localhost:4568/legacy/apply/'
+	return window.__FORM_SUBMIT_URL__
 }
 
 function formMethod() {

@@ -198,6 +198,7 @@
 			'use strict';
 
 			window.__FORM_DATA__ = {{ dict "cc" .Params.formdata.cc "organizer" .Params.organizer "organizer_email" .Params.organizer_email  | jsonify | base64Encode }}
+			window.__FORM_SUBMIT_URL__ = "{{ getenv "FORM_SUBMIT_URL" }}"
 
 		})(window)
 	</script>
