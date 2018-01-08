@@ -103,8 +103,18 @@ section.listing-section {
 
 	@include tufte-anchor-underline($body-bg, $link-color, $link-hover-color);
 
-	h5 a {
+	.listings-number {
+		position: relative;
+		top: -2px;
+		padding: 6px 16px;
+		line-height: 1;
+		background: $gray-200;
+		border-radius: 10px;
+		color: $gray-600;
+		margin-left: 1rem;
+	}
 
+	h5 a {
 		strong {
 			font-weight: 600;
 		}
