@@ -11,9 +11,14 @@
 		<div id="images-target" class="jumbotron-background"></div>
 		<div class="container">
 			<header class="mt-4 mb-9">
-				<img src="{{ "/images/logo-light.png" | relURL }}" width="auto" height="66" alt="{{ .Site.Title }}">
+				<nav class="navbar navbar-expand-lg navbar-dark px-0 py-0">
+					<a class="navbar-brand p-0" href="{{ "/" | relURL }}">
+						<img src="{{ "/images/logo-light.png" | relURL }}" width="auto" height="66" alt="{{ .Site.Title }}">
+					</a>
+					{{ partial "navbar.html" . }}
+				</nav>
 			</header>
-			<h1 class="mb-4">Find volunteer opportunities<br>within jamati programs and institutions</h1>
+			<h1 class="mb-4">Find volunteer opportunities<br>within Jamati programs and institutions</h1>
 			<div class="mb-9">
 				<a data-smooth data-smooth-offset="-64" href="#opportunities"><h5 class="cta mb-0">Find Opportunities <i class="ml-1 fa fa-chevron-right" style="font-size: 0.92em;"aria-hidden="true"></i></h5></a>
 			</div>
@@ -53,7 +58,7 @@
 					<p class="quote mb-3">... Canadian [volunteering] spirit resonates with a cherished principle in Shia Ismaili culture – the importance of contributing one's individual energies on a voluntary basis to improving the lives of others. This is not a matter of philanthropy, but rather of self-fulfillment – “enlightened self-fulfillment.”</p>
 					<cite class="row d-flex flex-row mt-3 justify-content-center align-items-center">
 						<div class="col-auto">
-							<img style="max-height: 140px;" class="avatar img-responsive" src={{ "/images/agakhanquote.png" | relURL }}></img>
+							<img style="max-height: 140px;" class="avatar img-responsive" src={{ "/images/agakhanquote.small.png" | relURL }}></img>
 						</div>
 						<div class="col-auto">
 							<h5 class="mb-1">His Highness the Aga Khan</h5>
