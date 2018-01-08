@@ -52,17 +52,20 @@
 			</footer>
 		{{ end }}
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/raven.js/3.21.0/raven.min.js" crossorigin="anonymous"></script>
+		{{ block "sentry" . }}
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/raven.js/3.21.0/raven.min.js" crossorigin="anonymous"></script>
+			<script type="text/javascript">
+				Raven.config('https://8130b93bc1e74deab16568c276e3134e@sentry.io/253594').install()
+			</script>
+		{{ end }}
 
-		<script type="text/javascript">
-			Raven.config('https://8130b93bc1e74deab16568c276e3134e@sentry.io/253594').install()
-		</script>
-
-        <script type="text/javascript">
-            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-            ga('create','UA-110560509-1','auto');ga('send','pageview')
-        </script>
-        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+		{{ block "analytics" . }}
+	        <script type="text/javascript">
+	            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+	            ga('create','UA-110560509-1','auto');ga('send','pageview')
+	        </script>
+	        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+		{{ end }}
 
 		<script>
 			{{ readFile "static/scripts/modernizr.js" | safeJS }}

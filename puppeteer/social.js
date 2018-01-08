@@ -28,7 +28,7 @@ async function saveImages(allTitles) {
 	const allShots = allTitles.map(async title => {
 		const page = await browser.newPage()
 		const response = await page.goto(serverURL(title), {
-			waitUntil: 'networkidle2'
+			waitUntil: 'networkidle0'
 		})
 		if (Math.floor(response.status / 100) === 2) {
 			await page.screenshot({
