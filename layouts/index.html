@@ -65,7 +65,7 @@
 		</div>
 	</section>
 	<section id="opportunities" class="container listing-section my-9">
-		<h2 class="section-title mb-5">Open opportunities</h2>
+		<h2 class="section-title mb-5">Current opportunities</h2>
 		<ul class="listing list-unstyled mb-0">
 			{{ $listings := ( where ( where .Data.Pages "Section" "listings" ) ".Params.approved" true ) }}
 			{{ range ( $listings.ByParam "position" ) }}
