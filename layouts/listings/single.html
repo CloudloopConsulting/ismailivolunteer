@@ -9,7 +9,7 @@
 {{ define "social_graph" }}
 	{{ $social_title := (printf "%s%s%s%s" "Apply now! " .Params.Position " for " .Params.Program) }}
 	{{ $social_desc := .Description }}
-	{{ $social_img := (printf "%s%s%s" "images/__social/" .File.BaseFileName ".png") }}
+	{{ $social_img := (printf "%s%s%s" "images/social/" .File.BaseFileName ".png") }}
 	<meta property="fb:app_id" content="{{ .Site.Params.facebookappid }}" />
 	<meta property="og:url" content="{{ .Permalink }}" />
 	<meta property="og:type" content="article" />
@@ -25,7 +25,7 @@
 {{ define "main" }}
 	{{ $social_title := (printf "%s%s%s%s" "Apply now! " .Params.Position " for " .Params.Program) }}
 	{{ $social_desc := .Description }}
-	{{ $social_img := (printf "%s%s%s" "images/__social/" .File.BaseFileName ".png") }}
+	{{ $social_img := (printf "%s%s%s" "images/social/" .File.BaseFileName ".png") }}
 	{{ $social_popup_js := "window.open(this.href, '_blank', 'left=100,top=100,width=900,height=600,menubar=no,toolbar=no,resizable=yes,scrollbars=yes'); return false;" }}
 	<section class="container title mt-6 mb-6">
 		<h1 class="mb-1"><strong>{{ .Params.Position }}</strong> for {{ .Params.program }}</h1>
