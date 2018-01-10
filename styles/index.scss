@@ -31,8 +31,7 @@
 
 		&:after {
 			content: '';
-			// background: -webkit-linear-gradient(-90deg, rgba(0,0,0,0.7) 100%, rgba(0,0,89,0.1) 26%, transparent 52%);
-			background: -webkit-linear-gradient(-90deg, hsla(177, 26%, 6%, 0.68), hsla(177, 26%, 2%, 0.78));
+			background: -webkit-linear-gradient(-90deg, hsla(177, 26%, 6%, 0.60), hsla(177, 26%, 2%, 0.90));
 			position: absolute;
 			top: 0;
 			left: 0;
