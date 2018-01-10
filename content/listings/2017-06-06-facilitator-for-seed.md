@@ -8,6 +8,8 @@ program: SEED
 org: Education Board
 organizer: Abidah Shamji
 organizer_email: abidah.shamji@iicanada.net
+cc:
+  - akebo@akcfo.org
 description: Facilitate small group sessions with parents and children for early childhood development
 startdate: 2017-04-08
 enddate: 2017-06-24
@@ -19,10 +21,6 @@ commitments:
   - class on Saturdays from 10:30am to 12:30pm
   - 1-2 hours of prep time per week
   - 1 hour monthly meeting
-
-formdata:
-  cc:
-    - akebo@akcfo.org
 ---
 
 #### About the Program

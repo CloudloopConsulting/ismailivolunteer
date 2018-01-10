@@ -36,43 +36,47 @@
 			<li class="list-inline-item mb-1">An initiative of the <em>{{ .Params.org }}</em></li>
 			<!-- <li class="list-inline-item mb-1">This opportunity was <em>posted on {{ dateFormat .Site.Params.dateformat .Date }}</em>, and will <em>expire on {{ dateFormat .Site.Params.dateformat .ExpiryDate }}</em></li> -->
 		</ul>
-		<ul class="social list-inline d-print-none">
-			<li class="list-inline-item">
-				<a href="https://www.facebook.com/dialog/share?{{ querify "app_id" .Site.Params.facebookappid "display" "popup" "href" .Permalink | safeURL }}" onclick="{{ $social_popup_js }}">
-					<i class="fa fa-facebook-square" aria-hidden="true"></i>
-				</a>
-			</li>
-			<li class="list-inline-item">
-				<a href="https://www.linkedin.com/shareArticle?{{ querify "mini" "true" "url" .Permalink "title" $social_title "summary" $social_desc "source" "" | safeURL }}" onclick="{{ $social_popup_js }}">
-					<i class="fa fa-linkedin-square" aria-hidden="true"></i>
-				</a>
-			</li>
-			<li class="list-inline-item">
-				<a href="https://twitter.com/intent/tweet?{{ querify "url" .Permalink "text" $social_title | safeURL }}" onclick="{{ $social_popup_js }}">
-					<i class="fa fa-twitter-square" aria-hidden="true"></i>
-				</a>
-			</li>
-			<li class="list-inline-item">
-				<a href="https://plus.google.com/share?{{ querify "url" .Permalink | safeURL }}" onclick="{{ $social_popup_js }}">
-					<i class="fa fa-google-plus-square" aria-hidden="true"></i>
-				</a>
-			</li>
-			<li class="list-inline-item">
-				<a href="http://pinterest.com/pin/create/button/?{{ querify "url" .Permalink "media" $social_img_abs "description" $social_desc | safeURL }}" onclick="{{ $social_popup_js }}">
-					<i class="fa fa-pinterest-square" aria-hidden="true"></i>
-				</a>
-			</li>
-			<li class="list-inline-item">
-				<a href="mailto:?to=&body={{ .Permalink }}&subject={{ $social_title }}">
-					<i class="fa fa-envelope" aria-hidden="true"></i>
-				</a>
-			</li>
-			<li class="list-inline-item">
-				<a href="#" onclick="window.print(0); return false;">
-					<i class="fa fa-print" aria-hidden="true"></i>
-				</a>
-			</li>
-		</ul>
+		{{ if not .Params.approved }}
+			<p class="mb-0 py-2 px-3 font-family-sans-serif rounded bg-danger text-white text-center">This position has not yet been <strong>approved</strong> by the respective board or portfolio for public distribution.</p>
+		{{ else }}
+			<ul class="social list-inline d-print-none">
+				<li class="list-inline-item">
+					<a href="https://www.facebook.com/dialog/share?{{ querify "app_id" .Site.Params.facebookappid "display" "popup" "href" .Permalink | safeURL }}" onclick="{{ $social_popup_js }}">
+						<i class="fa fa-facebook-square" aria-hidden="true"></i>
+					</a>
+				</li>
+				<li class="list-inline-item">
+					<a href="https://www.linkedin.com/shareArticle?{{ querify "mini" "true" "url" .Permalink "title" $social_title "summary" $social_desc "source" "" | safeURL }}" onclick="{{ $social_popup_js }}">
+						<i class="fa fa-linkedin-square" aria-hidden="true"></i>
+					</a>
+				</li>
+				<li class="list-inline-item">
+					<a href="https://twitter.com/intent/tweet?{{ querify "url" .Permalink "text" $social_title | safeURL }}" onclick="{{ $social_popup_js }}">
+						<i class="fa fa-twitter-square" aria-hidden="true"></i>
+					</a>
+				</li>
+				<li class="list-inline-item">
+					<a href="https://plus.google.com/share?{{ querify "url" .Permalink | safeURL }}" onclick="{{ $social_popup_js }}">
+						<i class="fa fa-google-plus-square" aria-hidden="true"></i>
+					</a>
+				</li>
+				<li class="list-inline-item">
+					<a href="http://pinterest.com/pin/create/button/?{{ querify "url" .Permalink "media" $social_img_abs "description" $social_desc | safeURL }}" onclick="{{ $social_popup_js }}">
+						<i class="fa fa-pinterest-square" aria-hidden="true"></i>
+					</a>
+				</li>
+				<li class="list-inline-item">
+					<a href="mailto:?to=&body={{ .Permalink }}&subject={{ $social_title }}">
+						<i class="fa fa-envelope" aria-hidden="true"></i>
+					</a>
+				</li>
+				<li class="list-inline-item">
+					<a href="#" onclick="window.print(0); return false;">
+						<i class="fa fa-print" aria-hidden="true"></i>
+					</a>
+				</li>
+			</ul>
+		{{ end }}
 	</section>
 	<section class="container content mb-6">
 		<div class="row">
@@ -80,10 +84,10 @@
 				{{ .Content }}
 				<h4 class="mb-3">Time Commitment</h4>
 				{{ partial "listing_meta.html" . }}
-				{{ if isset .Params "commitments" }}
+				{{ with .Params.commitments }}
 					<p>Your commitment will include:</p>
 					<ul>
-						{{ range .Params.commitments }}
+						{{ range . }}
 							<li>{{ . }}</li>
 						{{ end }}
 					</ul>
@@ -197,7 +201,7 @@
 
 			'use strict';
 
-			window.__FORM_DATA__ = {{ dict "cc" .Params.formdata.cc "organizer" .Params.organizer "organizer_email" .Params.organizer_email  | jsonify | base64Encode }}
+			window.__FORM_DATA__ = {{ dict "approved" .Params.approved "cc" .Params.cc "organizer" .Params.organizer "organizer_email" .Params.organizer_email  | jsonify | base64Encode }}
 			window.__FORM_SUBMIT_URL__ = "{{ getenv "FORM_SUBMIT_URL" }}"
 
 		})(window)

@@ -24,9 +24,29 @@ function formCC(config) {
 function additionalInputs(config) {
 	const frag = document.createDocumentFragment()
 	formCC(config).forEach(input => frag.appendChild(input))
+	frag.appendChild(formInput('approved', config.approved))
 	frag.appendChild(formInput('organizer', config.organizer))
 	frag.appendChild(formInput('organizer_email', config.organizer_email))
 	return frag
+}
+
+function submitBtnClassStr(...names) {
+	return ['btn', 'btn-lg', ...names].join(' ')
+}
+
+function submitButton() {
+	return $form.find('input#submit[type="submit"]')
+}
+
+function setErrorState() {
+	// submitButton()
+	// $submit[0].className = submitBtnClassStr('btn-warning', 'text-white')
+}
+
+function setLoadingState() {
+	submitButton()
+		.attr('disabled', 'disabled')
+		.attr('value', 'Applying... this may take a few moments (don\'t refresh!)')
 }
 
 try {
@@ -52,25 +72,6 @@ const instance = $form.parsley({
 	errorsWrapper: '<div class="feedback-container col-sm-8 offset-4"></div>',
 	errorTemplate: '<div class="invalid-feedback mt-2" style="display: inherit;"></div>'
 })
-
-function submitBtnClassStr(...names) {
-	return ['btn', 'btn-lg', ...names].join(' ')
-}
-
-function submitButton() {
-	return $form.find('input#submit[type="submit"]')
-}
-
-function setErrorState() {
-	// submitButton()
-	// $submit[0].className = submitBtnClassStr('btn-warning', 'text-white')
-}
-
-function setLoadingState() {
-	submitButton()
-		.attr('disabled', 'disabled')
-		.attr('value', 'Applying... this may take a few moments (don\'t refresh!)')
-}
 
 instance.on('form:error', function () {
 	this.element.className += ' was-validated'

@@ -1,7 +1,7 @@
 ---
 date: 2017-01-01
 expirydate: 2021-01-01
-approved: false
+approved: TEST
 
 position: Facilitator
 program: Seva
@@ -19,11 +19,10 @@ commitments:
   - 2-3 hours per week of work
   - one 20-30 minute in-person visit per month at selected centres
 
-formdata:
-  cc:
-    - hussein@cloudloop.ca
-    - seva@rishmanathoo.com
-    - zahra.budhwani@gmail.com
+cc:
+  - hussein@cloudloop.ca
+  - seva@rishmanathoo.com
+  - zahra.budhwani@gmail.com
 ---
 
 #### About the Program

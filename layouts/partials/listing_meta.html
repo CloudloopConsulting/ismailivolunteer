@@ -1,17 +1,29 @@
 <ul class="item-meta list-inline font-family-sans-serif">
-	{{ if isset .Params "proqualifications"}}
-		<li class="list-inline-item"><i class="fa fa-certificate mr-2" aria-hidden="true"></i><em>Professional qualifications</em> required</li>
-	{{ end }}
-	<li class="list-inline-item"><i class="fa fa-calendar mr-2" aria-hidden="true"></i><em>{{ dateFormat .Site.Params.dateformat .Params.startdate }}</em> to <em>{{ dateFormat .Site.Params.dateformat .Params.enddate }}</em></li>
-	{{ if isset .Params "hoursperweek"}}
-		<li class="list-inline-item"><i class="fa fa-clock-o mr-2" aria-hidden="true"></i>{{ if eq .Params.hoursperweek 1 }}<em>{{ .Params.hoursperweek }} hour/week</em>{{ else }}<em>{{ .Params.hoursperweek }} hours/week</em>{{ end }}</li>
-	{{ end }}
-	<li class="list-inline-item"><i class="fa fa-hourglass-half mr-2" aria-hidden="true"></i><em>{{ .Params.weeksduration }} week</em> program</li>
-	<!-- <li class="list-inline-item"><i class="fa fa-check-square mr-2" aria-hidden="true"></i><em>
-		{{ if eq .Params.totalhours 1 }}
-			{{ .Params.totalhours }} hour
-		{{ else }}
-			{{ .Params.totalhours }} hours
+	{{ with .Params.proqualifications }}
+		{{ if . }}
+			<li class="list-inline-item"><i class="fa fa-certificate mr-2" aria-hidden="true"></i><em>Professional qualifications</em> required</li>
 		{{ end }}
-	</em> in total</li> -->
+	{{ end }}
+
+	{{ with .Params.hoursperweek}}
+		<li class="list-inline-item"><i class="fa fa-clock-o mr-2" aria-hidden="true"></i>{{ if eq . 1 }}<em>{{ . }} hour/week</em>{{ else }}<em>{{ . }} hours/week</em>{{ end }}</li>
+	{{ end }}
+
+	{{ if and (not .Params.startdate) (.Params.enddate) }}
+		<li class="list-inline-item"><i class="fa fa-calendar mr-2" aria-hidden="true"></i><em>Starting immediately</em> to <em>{{ dateFormat .Site.Params.dateformat .Params.enddate }}</em></li>
+	{{ else if and (.Params.startdate) (not .Params.enddate) }}
+		<li class="list-inline-item"><i class="fa fa-calendar mr-2" aria-hidden="true"></i><em>On-going position</em> starting on <em>{{ dateFormat .Site.Params.dateformat .Params.startdate }}</li>
+	{{ else if and (not .Params.startdate) (not .Params.enddate) }}
+		<li class="list-inline-item"><i class="fa fa-calendar mr-2" aria-hidden="true"></i><em>On-going position starting immediately</li>
+	{{ else }}
+		<li class="list-inline-item"><i class="fa fa-calendar mr-2" aria-hidden="true"></i><em>{{ dateFormat .Site.Params.dateformat .Params.startdate }}</em> to <em>{{ dateFormat .Site.Params.dateformat .Params.enddate }}</em></li>
+	{{ end }}
+
+	{{ with .Params.weeksduration }}
+		<li class="list-inline-item"><i class="fa fa-hourglass-half mr-2" aria-hidden="true"></i><em>{{ . }} week</em> program</li>
+	{{ end }}
+
+	{{ with .Params.totalhours }}
+		<li class="list-inline-item"><i class="fa fa-check-square mr-2" aria-hidden="true"></i><em>{{ if eq . 1 }}{{ . }} hour{{ else }}{{ . }} hours{{ end }}</em> in total</li>
+	{{ end }}
 </ul>
