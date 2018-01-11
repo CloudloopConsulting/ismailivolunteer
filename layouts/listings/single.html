@@ -34,7 +34,7 @@
 		<ul class="mb-1 posted-expiry item-meta item-meta-underline list-inline font-family-sans-serif">
 			<li class="list-inline-item mb-1">Organized by <em>{{ .Params.organizer }}</em></li>
 			<li class="list-inline-item mb-1">An initiative of the <em>{{ .Params.org }}</em></li>
-			<!-- <li class="list-inline-item mb-1">This opportunity was <em>posted on {{ dateFormat .Site.Params.dateformat .Date }}</em>, and will <em>expire on {{ dateFormat .Site.Params.dateformat .ExpiryDate }}</em></li> -->
+			<li class="list-inline-item mb-1">Listing expires on <em>{{ dateFormat .Site.Params.dateformat .ExpiryDate }}</em></li>
 		</ul>
 		{{ if not .Params.approved }}
 			<p class="mb-0 py-2 px-3 font-family-sans-serif rounded bg-danger text-white text-center">This position has not yet been <strong>approved</strong> by the respective board or portfolio for public distribution.</p>
