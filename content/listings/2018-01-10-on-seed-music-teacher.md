@@ -1,7 +1,7 @@
 ---
 date: 2018-01-10
 expirydate: 2018-02-10
-approved: false
+approved: true
 
 position: Music Teacher
 program: SEED
