@@ -5,9 +5,21 @@ const $form = $('form[data-form-marker]').eq(0)
 const form = $form[0]
 let parsedConfig
 
-function makeID(len = 12) {
-	const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+function simpleHash(str) {
+	let hash = 0
+	if (str.length === 0) {
+		return hash
+	}
+	for (let i = 0; i < str.length; i += 1) {
+		const char = str.charCodeAt(i)
+		hash = (hash << 5) - hash + char
+		hash = hash & hash // Convert to 32bit integer
+	}
+	return hash
+}
 
+function makeID(len = 8) {
+	const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 	return new Array(len)
 		.fill(0)
 		.map(_ => possible.charAt(Math.floor(Math.random() * possible.length)))
@@ -37,6 +49,7 @@ function additionalInputs(config) {
 	frag.appendChild(formInput('approved', config.approved))
 	frag.appendChild(formInput('organizer', config.organizer))
 	frag.appendChild(formInput('organizer_email', config.organizer_email))
+	frag.appendChild(formInput('this_id', simpleHash(config.basename)))
 	return frag
 }
 
