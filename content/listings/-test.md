@@ -8,6 +8,7 @@ program: Seva
 org: Internal
 organizer: Alizain Feerasta
 organizer_email: alizain@feerasta.net
+cc:
 description: Make sure everything works
 startdate: 2017-04-30
 enddate: 2018-01-01
@@ -18,11 +19,6 @@ totalhours: 105
 commitments:
   - 2-3 hours per week of work
   - one 20-30 minute in-person visit per month at selected centres
-
-cc:
-  - hussein@cloudloop.ca
-  - seva@rishmanathoo.com
-  - zahra.budhwani@gmail.com
 ---
 
 #### About the Program
