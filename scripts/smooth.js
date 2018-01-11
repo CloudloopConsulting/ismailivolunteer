@@ -15,8 +15,8 @@ function onclick(el) {
 	}
 }
 
-document
-	.querySelectorAll('a[data-smooth]')
+window.jQuery('a[data-smooth]')
+	.toArray()
 	.forEach(el => {
 		el.onclick = onclick(el)
 	})

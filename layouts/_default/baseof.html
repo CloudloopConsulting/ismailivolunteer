@@ -52,30 +52,26 @@
 			</footer>
 		{{ end }}
 
-		{{ block "sentry" . }}
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/raven.js/3.21.0/raven.min.js" crossorigin="anonymous"></script>
-			<script type="text/javascript">
-				Raven.config('https://8130b93bc1e74deab16568c276e3134e@sentry.io/253594').install()
-			</script>
-		{{ end }}
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js"></script>
 
-		{{ block "analytics" . }}
-	        <script type="text/javascript">
-	            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-	            ga('create','UA-110560509-1','auto');ga('send','pageview')
-	        </script>
-	        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
-		{{ end }}
-
-		<script>
-			{{ readFile "static/scripts/modernizr.js" | safeJS }}
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/raven.js/3.21.0/raven.min.js" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			Raven.config('https://8130b93bc1e74deab16568c276e3134e@sentry.io/253594').install()
 		</script>
+
+		<script src="{{ "scripts/modernizr.js" | relURL }}"></script>
+
 		<script>
 			{{ readFile "static/scripts/old_browsers.js" | safeJS }}
 		</script>
 
-        {{ block "scripts" . }}
-        {{ end }}
+		{{ block "scripts" . }}{{ end }}
+
+        <script type="text/javascript">
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','UA-110560509-1','auto');ga('send','pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
 
     </body>
 </html>
