@@ -5,6 +5,15 @@ const $form = $('form[data-form-marker]').eq(0)
 const form = $form[0]
 let parsedConfig
 
+function makeID(len = 12) {
+	const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+
+	return new Array(len)
+		.fill(0)
+		.map(_ => possible.charAt(Math.floor(Math.random() * possible.length)))
+		.join('')
+}
+
 function formAction() {
 	return window.__FORM_SUBMIT_URL__
 }
@@ -24,6 +33,7 @@ function formCC(config) {
 function additionalInputs(config) {
 	const frag = document.createDocumentFragment()
 	formCC(config).forEach(input => frag.appendChild(input))
+	frag.appendChild(formInput('submission_id', makeID()))
 	frag.appendChild(formInput('approved', config.approved))
 	frag.appendChild(formInput('organizer', config.organizer))
 	frag.appendChild(formInput('organizer_email', config.organizer_email))
@@ -73,7 +83,7 @@ const instance = $form.parsley({
 	errorTemplate: '<div class="invalid-feedback mt-2" style="display: inherit;"></div>'
 })
 
-instance.on('form:error', function () {
+instance.on('form:error', function formOnError() {
 	this.element.className += ' was-validated'
 	setErrorState()
 })
