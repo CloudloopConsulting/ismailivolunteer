@@ -4,9 +4,9 @@ expirydate: 2018-02-10
 approved: false
 
 position: AutoCAD Drawer
-program: Darbar Team (Venue)
+program: Diamond Jubilee (Venue)
 org: Council for Ontario
-description: Assist in developing drawings and plans for the upcoming Darbar
+description: Assist in developing drawings and plans for upcoming Diamond Jubilee initiatives
 
 organizer: Hanif Nanji
 organizer_email: hanif.nanji@iicanada.net
@@ -15,15 +15,15 @@ cc:
 startdate: false
 enddate: 2018-07-31
 hoursperweek: 2
-weeksduration: ~24
-totalhours: ~48
+weeksduration:
+totalhours:
 commitments:
 proqualifications: false
 ---
 
 #### About the Program
 
-The Darbar Team - Venue is actively recruiting for 3 AutoCAD drafters to assist us in developing drawings and plans for the upcoming Darbar. These drawings will be used by the Venue team for the planning and implementation of Darbar 2018. Completion of a certificate program or associate’s degree with a focus on drafting is generally required to work as an AutoCAD drafter.
+The Diamond Jubilee Venue team is actively recruiting for 3 AutoCAD drafters to assist us in developing drawings and plans for upcoming Diamond Jubilee events. These drawings will be used by the Venue team for the planning and implementation purposes. Completion of a certificate program or associate’s degree with a focus on drafting is generally required to work as an AutoCAD drafter.
 
 #### The Role
 
