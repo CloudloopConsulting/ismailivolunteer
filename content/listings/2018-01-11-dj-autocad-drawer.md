@@ -4,7 +4,7 @@ expirydate: 2018-02-10
 approved: false
 
 position: AutoCAD Drawer
-program: Diamond Jubilee (Venue)
+program: Diamond Jubilee - Venue Team
 org: Council for Ontario
 description: Assist in developing drawings and plans for upcoming Diamond Jubilee initiatives
 
