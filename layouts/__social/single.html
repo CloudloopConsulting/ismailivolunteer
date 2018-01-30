@@ -14,9 +14,9 @@
 			<h4 class="mb-0 cta">Click here to apply for<br>this volunteer opportunity!</h4>
 		</div>
 		<div style="flex-grow: 1;" class="listing text-white p-5 d-flex flex-column flex-nowrap justify-content-center">
-			<h1 class="mb-0"><strong>{{ .Params.Position }}</strong> for {{ .Params.program }}</h1>
+			<h1 class="mb-0">{{ partial "listings/title_html.html" . }}</h1>
 			<p class="description mb-3">{{ .Description }}</p>
-			{{ partial "listing_meta.html" . }}
+			{{ partial "listings/meta.html" . }}
 		</div>
 	</main>
 {{ end }}

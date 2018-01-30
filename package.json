@@ -15,7 +15,9 @@
 		"social_clean": "rm -rf content/__social",
 		"social_copy": "cp -r content/listings content/__social",
 		"social_puppeteer": "./node_modules/.bin/babel ./puppeteer/social.js | node",
-		"social": "npm run social_clean && npm run social_copy && npm run social_puppeteer && npm run social_clean",
+		"social_dev": "npm run social_clean && npm run social_copy",
+		"social": "npm run social_dev && npm run social_puppeteer && npm run social_clean",
+
 
 		"images": "cp -r images static",
 
