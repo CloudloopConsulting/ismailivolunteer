@@ -3,10 +3,10 @@ date: 2018-01-30
 expirydate: 2018-03-01
 approved: true
 
-position: Tutor (Richmond Hill)
+position: Tutor (Unionville JK)
 program: false
 org: Aga Khan Education Board for Ontario
-description: Tutor high school students in the Richmond Hill area
+description: Tutor students at Unionville JK
 
 organizer: Abidah Shamji
 organizer_email: abidah.shamji@iicanada.net
@@ -23,7 +23,7 @@ proqualifications: false
 
 #### About the Program
 
-AKEBO is seeking tutors in Math, English, French and Science for high school students in the Richmond Hill area.
+AKEBO is seeking tutors in Math, English, French and Science for homework help at Unionville JK.
 
 #### The Role
 
