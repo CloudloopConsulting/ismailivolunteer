@@ -1,11 +1,11 @@
 ---
 date: 2018-01-10
-expirydate: 2018-02-10
+expirydate: 2018-02-15
 approved: true
 
 position: Facilitator
 program: SEED
-org: Education Board (Ontario)
+org: Aga Khan Education Board for Ontario
 description: Work with children aged 0-3 years and their parents in engaging programming
 
 organizer: Abidah Shamji

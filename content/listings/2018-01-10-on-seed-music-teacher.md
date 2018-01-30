@@ -1,11 +1,11 @@
 ---
 date: 2018-01-10
-expirydate: 2018-02-10
+expirydate: 2018-02-15
 approved: true
 
 position: Music Teacher
 program: SEED
-org: Education Board (Ontario)
+org: Aga Khan Education Board for Ontario
 description: Deliver and facilitate energetic and fun music programming to children aged 0-3 and their parents
 
 organizer: Abidah Shamji

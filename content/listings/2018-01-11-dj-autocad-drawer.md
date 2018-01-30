@@ -1,12 +1,12 @@
 ---
 date: 2018-01-10
-expirydate: 2018-02-10
-approved: false
+expirydate: 2018-02-15
+approved: true
 
 position: AutoCAD Drawer
 program: Diamond Jubilee - Venue Team
 org: Council for Ontario
-description: Assist in developing drawings and plans for upcoming Diamond Jubilee initiatives
+description: Assist in developing drawings and plans for upcoming Diamond Jubilee events
 
 organizer: Hanif Nanji
 organizer_email: hanif.nanji@iicanada.net

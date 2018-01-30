@@ -1,6 +1,6 @@
 ---
 date: 2018-01-10
-expirydate: 2018-02-10
+expirydate: 2018-01-30
 approved: false
 
 position: OJCMS Training & Support
