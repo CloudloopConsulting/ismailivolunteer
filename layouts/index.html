@@ -1,5 +1,5 @@
 {{ define "head" }}
-	<link rel="stylesheet" href="{{ "styles/index.css" | relURL }}">
+	<link rel="stylesheet" href="/styles/index.css">
 {{ end }}
 
 {{ define "header" }}
@@ -12,8 +12,8 @@
 		<div class="container text-center">
 			<header class="mt-4 mb-9">
 				<nav class="navbar navbar-expand-lg navbar-dark px-0 py-0">
-					<a class="navbar-brand p-0" href="{{ "/" | relURL }}">
-						<img src="{{ "/images/logo-light.png" | relURL }}" width="auto" height="72" alt="{{ .Site.Title }}">
+					<a class="navbar-brand p-0" href="/">
+						<img src="/images/logo-light.png" width="auto" height="72" alt="{{ .Site.Title }}">
 					</a>
 					{{ partial "navbar.html" . }}
 				</nav>
@@ -32,7 +32,7 @@
 		<h2 class="mb-5">Why OpportunitiesToServe?</h2>
 		<div class="row font-family-sans-serif">
 			<div class="col-md-12 col-lg-4 px-md-4 d-flex flex-row mb-4 mb-lg-0">
-				<img class="mb-1" src="{{ "/images/icon-transparent-green.png" | relURL }}" width="auto" height="68">
+				<img class="mb-1" src="/images/icon-transparent-green.png" width="auto" height="68">
 				<div class="ml-4">
 					<h5 class="mb-1">Transparent & Accessible</h5>
 					<p class="mb-0 font-weight-light">Find opportunities regardless of where you live or who you know in the jamat.</p>
@@ -40,14 +40,14 @@
 
 			</div>
 			<div class="col-md-12 col-lg-4 px-md-4 d-flex flex-row mb-4 mb-lg-0">
-				<img class="mb-1" src="{{ "/images/icon-fit-green.png" | relURL }}" width="auto" height="68">
+				<img class="mb-1" src="/images/icon-fit-green.png" width="auto" height="68">
 				<div class="ml-4">
 					<h5 class="mb-1">The Right Fit</h5>
 					<p class="mb-0 font-weight-light">Contribute with your skillset and expertise wherever you're interested.</p>
 				</div>
 			</div>
 			<div class="col-md-12 col-lg-4 px-md-4 d-flex flex-row">
-				<img class="mb-1" src="{{ "/images/icon-apply-green.png" | relURL }}" width="auto" height="68">
+				<img class="mb-1" src="/images/icon-apply-green.png" width="auto" height="68">
 				<div class="ml-4">
 					<h5 class="mb-1">Apply Now</h5>
 					<p class="mb-0 font-weight-light">Once you find something, apply right here to start the process.</p>
@@ -62,7 +62,7 @@
 					<p class="quote mb-3">... Canadian [volunteering] spirit resonates with a cherished principle in Shia Ismaili culture – the importance of contributing one's individual energies on a voluntary basis to improving the lives of others. This is not a matter of philanthropy, but rather of self-fulfillment – “enlightened self-fulfillment.”</p>
 					<cite class="row d-flex flex-row mt-3 justify-content-center align-items-center">
 						<div class="col-auto">
-							<img style="max-height: 140px;" class="avatar img-responsive" src={{ "/images/agakhanquote.small.png" | relURL }}></img>
+							<img style="max-height: 140px;" class="avatar img-responsive" src="/images/agakhanquote.small.png"></img>
 						</div>
 						<div class="col-auto">
 							<h5 class="mb-1">His Highness the Aga Khan</h5>

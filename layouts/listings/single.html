@@ -4,7 +4,7 @@
 {{ end }}
 
 {{ define "head" }}
-	<link rel="stylesheet" href="{{ "styles/listing.css" | relURL }}">
+	<link rel="stylesheet" href="/styles/listing.css">
 {{ end }}
 
 {{ define "social_graph" }}
@@ -13,8 +13,8 @@
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="{{ $.Scratch.Get "social_title" }}" />
 	<meta property="og:description" content="{{ $.Scratch.Get "social_desc" }}" />
-	<meta property="og:image" content="{{ $.Scratch.Get "social_img_abs" }}" />
-	{{ with (imageConfig ($.Scratch.Get "social_img_rel")) }}
+	<meta property="og:image" content="{{ $.Scratch.Get "social_img_url" }}" />
+	{{ with (imageConfig ($.Scratch.Get "social_img_path")) }}
 		<meta property="og:image:width" content="{{ .Width }}" />
 		<meta property="og:image:height" content="{{ .Height }}" />
 	{{ end }}
@@ -97,7 +97,7 @@
 
 		})(window)
 	</script>
-	<script src="{{ "scripts/form_submit.js" | relURL }}"></script>
+	<script src="/scripts/form_submit.js"></script>
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<script type="text/javascript">
 		(function(window) {

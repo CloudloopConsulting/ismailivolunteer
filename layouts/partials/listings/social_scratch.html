@@ -5,6 +5,6 @@
 {{ end }}
 
 {{ $.Scratch.Set 		"social_desc"			.Description }}
-{{ $.Scratch.Set 		"social_img_rel"		(printf "%s%s%s" "images/social/" .File.BaseFileName ".png") }}
-{{ $.Scratch.Set 		"social_img_abs"		($.Scratch.Get "social_img_rel" | absURL) }}
+{{ $.Scratch.Set 		"social_img_path"		(printf "%s%s%s" "images/social/" .File.BaseFileName ".png") }}
+{{ $.Scratch.Set 		"social_img_url"		($.Scratch.Get "social_img_path" | absURL) }}
 {{ $.Scratch.Set 		"social_popup_js"		"window.open(this.href, '_blank', 'left=100,top=100,width=900,height=600,menubar=no,toolbar=no,resizable=yes,scrollbars=yes'); return false;" }}
