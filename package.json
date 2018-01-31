@@ -19,7 +19,7 @@
 		"social": "npm run social_dev && npm run social_puppeteer && npm run social_clean",
 
 
-		"images": "npm run social && cp -r images static",
+		"images": "cp -r images static",
 
 		"fontawesome": "cp -r node_modules/font-awesome/fonts/ fonts",
 		"fonts": "npm run fontawesome && cp -r fonts static",
