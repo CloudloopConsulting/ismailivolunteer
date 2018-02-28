@@ -3,7 +3,7 @@ date: 2018-01-30
 expirydate: 2018-03-01
 approved: true
 
-position: Tutor (Unionville JK)
+position: Tutor (Unionville)
 program: false
 org: Aga Khan Education Board for Ontario
 description: Tutor students at Unionville JK

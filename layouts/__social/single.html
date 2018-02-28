@@ -7,14 +7,14 @@
 {{ define "main_wrapper" }}
 	<main class="d-flex flex-row font-family-sans-serif">
 		<div class="bg-white d-flex flex-column align-items-center justify-content-center p-5 text-center">
-			<img class="mb-3" height="116" src="/images/logo.png"/>
+			<img class="mb-3 mx-5" height="116" src="/images/logo.png"/>
 			<!-- <hr class="my-4">
 			<h5 class="mb-0 about">Find volunteer opportunities<br>within Jamati programs</h5> -->
 			<hr class="my-4">
-			<h4 class="mb-0 cta">Click here to apply for<br>this volunteer opportunity!</h4>
+			<h4 class="mb-0 cta">Apply today!</h4>
 		</div>
 		<div style="flex-grow: 1;" class="listing text-white p-5 d-flex flex-column flex-nowrap justify-content-center">
-			<h1 class="mb-0">{{ partial "listings/title_html.html" . }}</h1>
+			<h1 class="mb-3">{{ partial "listings/title_html.html" . }}</h1>
 			<p class="description mb-3">{{ .Description }}</p>
 			{{ partial "listings/meta.html" . }}
 		</div>
