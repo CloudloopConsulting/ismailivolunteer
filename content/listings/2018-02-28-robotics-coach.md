@@ -11,6 +11,7 @@ description: Use LEGO and WeDo (programming) to engage children about STEM at Pi
 organizer: Abidah Shamji
 organizer_email: abidah.shamji@iicanada.net
 cc:
+  - farzana.bhanji@iicanada.net
 
 startdate: 2018-03-31
 enddate: 2018-06-03
@@ -31,7 +32,7 @@ The Robotics Program is designed to use LEGO and WeDo 2.0 software to motivate, 
 
 #### The Role
 
-This role reports directly to the Project Manager for the Robotics initiative to be held at Pickering Jamatkhana over a 9 week period. Coaches must attend a mandatory 3-hour training session prior to the beginning of the program at the end of March.
+This role reports directly to the Project Manager for the Robotics initiative to be held at Pickering Jamatkhana over a 9 week period. Coaches must attend a mandatory 3-hour training session prior to the beginning of the program at the end of March. Note, no classes will be held on May 13 and May 20, 2018.
 
 As a Coach, you will:
 
