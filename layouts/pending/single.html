@@ -13,6 +13,7 @@
 			{{ range ( $listings.ByParam "organizer" ) }}
 				<li class="listing-item mt-4">
 					<h5 class="item-title mb-0"><a href="{{ .RelPermalink }}">{{ partial "listings/title_html.html" . }}</a></h5>
+					{{ partial "listings/meta.html" . }}
 					<p class="mt-0 mb-0 font-family-sans-serif">{{ partial "listings/organizer.html" . }}</p>
 				</li>
 			{{ end }}
