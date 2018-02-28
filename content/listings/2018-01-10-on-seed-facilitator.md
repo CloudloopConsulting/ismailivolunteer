@@ -19,6 +19,19 @@ weeksduration:
 totalhours:
 commitments:
 proqualifications: false
+jamatkhanas:
+  - Barrie
+  - Brampton
+  - Durham
+  - East York
+  - Guelph
+  - Hamilton
+  - Kitchener
+  - Meadowvale
+  - Scarborough
+  - Unionville
+  - Don Mills
+  - Downtown
 ---
 
 #### About the Program

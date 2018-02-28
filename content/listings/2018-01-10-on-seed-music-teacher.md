@@ -1,6 +1,6 @@
 ---
 date: 2018-01-10
-expirydate: 2018-02-15
+expirydate: 2018-03-01
 approved: true
 
 position: Music Teacher
@@ -19,6 +19,14 @@ weeksduration:
 totalhours:
 commitments:
 proqualifications: false
+jamatkhanas:
+  - Brampton
+  - Durham
+  - Hamilton
+  - Meadowvale
+  - Unionville
+  - Don Mills
+  - Downtown
 ---
 
 #### About the Program

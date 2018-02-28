@@ -38,6 +38,9 @@
 		<div class="row">
 			<div class="col-lg-9 last-child-mb-0 item-meta-underline">
 				{{ .Content }}
+				{{ with .Params.vulnerablesectorcheck }}
+					<p><strong>Vulnerable Sector Check:</strong> As part of our institutions' ongoing efforts to ensure the safety and security of children and vulnerable members of the jamat, volunteers for this position may asked to provide a <em>Vulnerable Sector Check (VSC)</em>. If required, the program organizer will help you obtain one from your regional police. For more information, please contact the organizer.</p>
+				{{ end }}
 				<h4 class="mb-3">Time Commitment</h4>
 				{{ partial "listings/meta.html" . }}
 				{{ with .Params.commitments }}

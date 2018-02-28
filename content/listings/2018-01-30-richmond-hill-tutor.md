@@ -19,6 +19,8 @@ weeksduration:
 totalhours:
 commitments:
 proqualifications: false
+jamatkhanas:
+  - richmond-hill
 ---
 
 #### About the Program

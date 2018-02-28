@@ -19,6 +19,8 @@ weeksduration:
 totalhours:
 commitments:
 proqualifications: false
+jamatkhanas:
+  - unionville
 ---
 
 #### About the Program
