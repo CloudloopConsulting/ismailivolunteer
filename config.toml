@@ -2,7 +2,7 @@ languageCode = "en-us"
 title = "OpportunitiesToServe"
 baseurl = "https://ismailivolunteer.netlify.com"
 publishDir = "dist"
-relativeURLs = true
+relativeURLs = false
 canonifyURLs = false
 
 [params]
