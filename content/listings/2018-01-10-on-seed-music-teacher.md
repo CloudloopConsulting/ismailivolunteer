@@ -1,6 +1,6 @@
 ---
 date: 2018-01-10
-expirydate: 2018-03-01
+expirydate: 2018-04-01
 approved: true
 
 position: Music Teacher

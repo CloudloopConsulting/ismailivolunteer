@@ -1,6 +1,6 @@
 ---
 date: 2018-02-28
-expirydate: 2018-03-01
+expirydate: 2018-04-01
 approved: false
 
 position: Manager
