@@ -27,7 +27,7 @@ jamatkhanas:
 
 #### About the Program
 
-???
+Learning Centres provide professional academic assistance to students in English and Mathematics. This includes homework help as well as additional instruction and guidance on fundamentals.
 
 #### The Role
 
