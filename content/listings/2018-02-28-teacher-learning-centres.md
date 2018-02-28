@@ -6,7 +6,7 @@ approved: false
 position: Teacher
 program: Learning Centres (Durham)
 org: Aga Khan Education Board for Ontario
-description: Manage, support, and work directly with AKEBO Chairman and the Learning Centre Director to ensure program success
+description: Work with children, teach the curriculum, engage them for future success
 
 organizer: Abidah Shamji
 organizer_email: abidah.shamji@iicanada.net
