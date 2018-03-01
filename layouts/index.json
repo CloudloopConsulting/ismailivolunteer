@@ -7,72 +7,9 @@
 
 			"title": "{{ partial "listings/title_text.html" $element }}",
 			"permalink": "{{ $element.Permalink }}",
-
-			"expiry_date": "{{ dateFormat .Site.Params.dateformat $element.ExpiryDate }}",
-
-			"position": "{{ $element.Params.position }}",
-			"program": "{{ $element.Params.program }}",
-			"org": "{{ $element.Params.org }}",
 			"description": "{{ $element.Description }}",
-			"organizer": "{{ $element.Params.organizer }}",
 
-			{{ if $element.Params.startdate }}
-				"startdate": "{{ dateFormat .Site.Params.dateformat $element.Params.startdate }}",
-			{{ else }}
-				"startdate": false,
-			{{ end }}
-
-			{{ if $element.Params.enddate }}
-				"enddate": "{{ dateFormat .Site.Params.dateformat $element.Params.enddate }}",
-			{{ else }}
-				"enddate": false,
-			{{ end }}
-
-			{{ if $element.Params.hoursperweek }}
-				"hoursperweek": {{ $element.Params.hoursperweek }},
-			{{ else }}
-				"hoursperweek": null,
-			{{ end }}
-
-			{{ if $element.Params.weeksduration }}
-				"weeksduration": {{ $element.Params.weeksduration }},
-			{{ else }}
-				"weeksduration": null,
-			{{ end }}
-
-			{{ if $element.Params.totalhours }}
-				"totalhours": {{ $element.Params.totalhours }},
-			{{ else }}
-				"totalhours": null,
-			{{ end }}
-
-			{{ if $element.Params.proqualifications }}
-				"proqualifications": {{ $element.Params.proqualifications }},
-			{{ else }}
-				"proqualifications": false,
-			{{ end }}
-
-			{{ if $element.Params.vulnerablesectorcheck }}
-				"vulnerablesectorcheck": {{ $element.Params.vulnerablesectorcheck }},
-			{{ else }}
-				"vulnerablesectorcheck": false,
-			{{ end }}
-
-			"commitments": [
-				{{ with $element.Params.commitments }}
-					{{ range . }}
-						"{{ . }}",
-					{{ end }}
-				{{ end }}
-			],
-
-			"jamatkhanas": [
-				{{ with $element.Params.jamatkhanas }}
-					{{ range . }}
-						"{{ . }}",
-					{{ end }}
-				{{ end }}
-			],
+			"params": {{ $element.Params | jsonify }},
 
 			"social": {
 				"title": "{{ $element.Scratch.Get "social_title" }}",
