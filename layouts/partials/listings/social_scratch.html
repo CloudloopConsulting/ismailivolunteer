@@ -1,10 +1,10 @@
 {{ if and (isset .Params "Program") (.Params.Program) }}
-	{{ $.Scratch.Set 	"social_title"			(printf "%s%s%s%s" "Apply now! " .Params.Position " for " .Params.Program) }}
+	{{ .Scratch.Set 	"social_title"			(printf "%s%s%s%s" "Apply now! " .Params.Position " for " .Params.Program) }}
 {{ else }}
-	{{ $.Scratch.Set 	"social_title"			(printf "%s%s%s" "Apply now for " .Params.Position "!") }}
+	{{ .Scratch.Set 	"social_title"			(printf "%s%s%s" "Apply now for " .Params.Position "!") }}
 {{ end }}
 
-{{ $.Scratch.Set 		"social_desc"			.Description }}
-{{ $.Scratch.Set 		"social_img_path"		(printf "%s%s%s" "images/social/" .File.BaseFileName ".png") }}
-{{ $.Scratch.Set 		"social_img_url"		($.Scratch.Get "social_img_path" | absURL) }}
-{{ $.Scratch.Set 		"social_popup_js"		"window.open(this.href, '_blank', 'left=100,top=100,width=900,height=600,menubar=no,toolbar=no,resizable=yes,scrollbars=yes'); return false;" }}
+{{ .Scratch.Set 		"social_desc"			.Description }}
+{{ .Scratch.Set 		"social_img_path"		(printf "%s%s%s" "images/social/" .File.BaseFileName ".png") }}
+{{ .Scratch.Set 		"social_img_url"		(.Scratch.Get "social_img_path" | absURL) }}
+{{ .Scratch.Set 		"social_popup_js"		"window.open(this.href, '_blank', 'left=100,top=100,width=900,height=600,menubar=no,toolbar=no,resizable=yes,scrollbars=yes'); return false;" }}

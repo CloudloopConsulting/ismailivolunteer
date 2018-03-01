@@ -5,7 +5,7 @@ indent_style = tab
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
-insert_final_newline = true
+insert_final_newline = false
 
 [*.{js,jsx,yaml}]
 indent_style = tab
@@ -18,6 +18,9 @@ indent_size = 2
 [*.{json,html,css,scss}]
 indent_style = tab
 indent_size = 4
+
+[*.{html}]
+insert_final_newline = false
 
 [.eslintrc]
 indent_style = space
