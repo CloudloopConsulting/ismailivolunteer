@@ -18,7 +18,6 @@
 		"social_dev": "npm run social_clean && npm run social_copy",
 		"social": "npm run social_dev && npm run social_puppeteer && npm run social_clean",
 
-
 		"images": "cp -r images static",
 
 		"fontawesome": "cp -r node_modules/font-awesome/fonts/ fonts",
@@ -32,7 +31,8 @@
 		"minify_html": "./node_modules/.bin/html-minifier --collapse-whitespace --remove-comments --minify-js --minify-css --file-ext html --input-dir ./dist --output-dir ./dist",
 		"minify_scripts": "find . -path '*dist/scripts*' -name '*.js' -exec ./node_modules/.bin/uglifyjs '{}' -o '{}' ';'",
 		"minify_images": "find . -path '*dist/images*' -exec bash -c './node_modules/.bin/imagemin {} --out-dir `dirname {}`' ';'",
-		"minify": "npm run minify_html && npm run minify_scripts",
+		"minify_json": "node ./index.json.js",
+		"minify": "npm run minify_html && npm run minify_scripts && npm run minify_json",
 
 		"compile": "rm -rf ./dist && npm run static && hugo && npm run minify",
 
