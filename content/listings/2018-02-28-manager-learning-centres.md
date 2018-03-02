@@ -24,7 +24,7 @@ vulnerablesectorcheck: false
 
 marketing_blurb: The Aga Khan Education Board for Ontario is looking for a manager to help manage the Richmond Hill Learning Center.
 marketing_jamatkhanas:
-  - jk: richmond-hill
+  - [richmond-hill, 0]
 ---
 
 #### About the Program

@@ -25,7 +25,7 @@ vulnerablesectorcheck: false
 
 marketing_blurb: The Robotics Program is actively looking for coaches who are interested in working with children 6-12 years old using LEGO and programming.
 marketing_jamatkhanas:
-  - jk: pickering
+  - [pickering, 0]
 ---
 
 #### About the Program

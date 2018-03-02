@@ -22,7 +22,7 @@ proqualifications: false
 
 marketing_blurb: The Aga Khan Education Board for Ontario is looking for volunteer tutors to teach high school students in the Unionville area.
 marketing_jamatkhanas:
-  - jk: unionville
+  - [unionville, 0]
 ---
 
 #### About the Program

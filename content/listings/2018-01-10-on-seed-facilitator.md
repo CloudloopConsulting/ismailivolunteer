@@ -1,6 +1,6 @@
 ---
 date: 2018-01-10
-expirydate: 2018-03-01
+expirydate: 2018-04-01
 approved: true
 
 position: Facilitator
@@ -22,18 +22,18 @@ proqualifications: false
 
 marketing_blurb: SEED, the early childhood education development program, is looking for volunteer facilitators to work with children aged 0-3 years and their parents.
 marketing_jamatkhanas:
-  - jk: Barrie
-  - jk: Brampton
-  - jk: Durham
-  - jk: East York
-  - jk: Guelph
-  - jk: Hamilton
-  - jk: Kitchener
-  - jk: Meadowvale
-  - jk: Scarborough
-  - jk: Unionville
-  - jk: Don Mills
-  - jk: Downtown
+  - [barrie, 0]
+  - [brampton, 0]
+  - [durham, 0]
+  - [east-york, 0]
+  - [guelph, 0]
+  - [hamilton, 0]
+  - [kitchener, 0]
+  - [meadowvale, 0]
+  - [scarborough, 0]
+  - [unionville, 0]
+  - [don-mills, 0]
+  - [downtown, 0]
 ---
 
 #### About the Program

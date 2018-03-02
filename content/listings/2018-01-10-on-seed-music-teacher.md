@@ -22,13 +22,13 @@ proqualifications: false
 
 marketing_blurb: SEED, the early childhood education development program, is looking for volunteer music teachers to work with children aged 0-3 years and their parents.
 marketing_jamatkhanas:
-  - jk: Brampton
-  - jk: Durham
-  - jk: Hamilton
-  - jk: Meadowvale
-  - jk: Unionville
-  - jk: Don Mills
-  - jk: Downtown
+  - [brampton, 0]
+  - [durham, 0]
+  - [hamilton, 0]
+  - [meadowvale, 0]
+  - [unionville, 0]
+  - [don-mills, 0]
+  - [downtown, 0]
 ---
 
 #### About the Program

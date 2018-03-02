@@ -24,7 +24,7 @@ vulnerablesectorcheck: true
 
 marketing_blurb: The Aga Khan Education Board for Ontario is looking for volunteers to teach students in English and Mathematics at the Learning Center in Durham.
 marketing_jamatkhanas:
-  - jk: durham
+  - [durham, 0]
 ---
 
 #### About the Program
