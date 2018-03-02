@@ -19,8 +19,10 @@ weeksduration:
 totalhours:
 commitments:
 proqualifications: false
-jamatkhanas:
-  - richmond-hill
+
+marketing_blurb: The Aga Khan Education Board for Ontario is looking for volunteer tutors to teach high school students in the Richmond Hill area.
+marketing_jamatkhanas:
+  - jk: richmond-hill
 ---
 
 #### About the Program

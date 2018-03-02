@@ -19,19 +19,21 @@ weeksduration:
 totalhours:
 commitments:
 proqualifications: false
-jamatkhanas:
-  - Barrie
-  - Brampton
-  - Durham
-  - East York
-  - Guelph
-  - Hamilton
-  - Kitchener
-  - Meadowvale
-  - Scarborough
-  - Unionville
-  - Don Mills
-  - Downtown
+
+marketing_blurb: SEED, the early childhood education development program, is looking for volunteer facilitators to work with children aged 0-3 years and their parents.
+marketing_jamatkhanas:
+  - jk: Barrie
+  - jk: Brampton
+  - jk: Durham
+  - jk: East York
+  - jk: Guelph
+  - jk: Hamilton
+  - jk: Kitchener
+  - jk: Meadowvale
+  - jk: Scarborough
+  - jk: Unionville
+  - jk: Don Mills
+  - jk: Downtown
 ---
 
 #### About the Program

@@ -21,8 +21,10 @@ commitments:
   - Class every Saturday from 2:00pm to 4:00pm
 proqualifications: false
 vulnerablesectorcheck: true
-jamatkhanas:
-  - durham
+
+marketing_blurb: The Aga Khan Education Board for Ontario is looking for volunteers to teach students in English and Mathematics at the Learning Center in Durham.
+marketing_jamatkhanas:
+  - jk: durham
 ---
 
 #### About the Program

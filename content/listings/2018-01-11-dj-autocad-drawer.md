@@ -19,7 +19,9 @@ weeksduration:
 totalhours:
 commitments:
 proqualifications: false
-jamatkhanas:
+
+marketing_blurb: The Diamond Jubilee Venue Team is looking for an AutoCad Drawer to assist in developing drawings for upcoming Diamond Jubilee events.
+marketing_jamatkhanas:
 ---
 
 #### About the Program

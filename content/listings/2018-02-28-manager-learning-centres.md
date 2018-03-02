@@ -21,8 +21,10 @@ commitments:
   - Class every Friday from 6:30pm to 8:30pm
 proqualifications: false
 vulnerablesectorcheck: false
-jamatkhanas:
-  - richmond-hill
+
+marketing_blurb: The Aga Khan Education Board for Ontario is looking for a manager to help manage the Richmond Hill Learning Center.
+marketing_jamatkhanas:
+  - jk: richmond-hill
 ---
 
 #### About the Program

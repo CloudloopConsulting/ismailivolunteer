@@ -22,7 +22,9 @@ commitments:
   - one 20-30 minute in-person visit per month at selected centres
 proqualifications: false
 vulnerablesectorcheck: true
-jamatkhanas:
+
+marketing_blurb:
+marketing_jamatkhanas:
 ---
 
 #### About the Program
