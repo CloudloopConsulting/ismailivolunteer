@@ -1,20 +1,22 @@
 ---
-date: 2018-01-10
-expirydate: 2018-04-01
+date: 2018-03-28
+expirydate: 2018-05-01
 approved: false
 
-position: Facilitator
-program: SEED
-org: Aga Khan Education Board for Ontario
-description: Work with children aged 0-3 years and their parents in engaging programming
+position: Human Resources Coordinator
+program: Capacity Development
+org: Council for Ontario
+description: Help institute best practices for recruiting, interviewing and onboarding volunteers. 
+
 
 organizer: Hussein Kermally
 organizer_email: Hussein.Kermally@iicanada.net
-cc:
+cc: 
+- alizain.feerasta@iicanada.net
 
 startdate: false
-enddate: 2018-06-30
-hoursperweek: 3
+enddate: 2018-07-11
+hoursperweek: 5
 weeksduration:
 totalhours:
 commitments:
@@ -24,28 +26,36 @@ proqualifications: false
 
 #### About the Program
 
-The AKEBO is actively recruiting for SEED facilitators in 12 locations across Ontario (Barrie, Brampton, Durham, East York, Guelph, Hamilton, Kitchener, Meadowvale, Scarborough, Unionville, Don Mills, Downtown). Each center is looking for at least 2 facilitators. Join us in working with children aged 0 – 3 years and their parents in engaging programming. Full training is provided. Experience working with children is an asset.
+The (ONTARIO) Capacity Development Portfolio is looking for a Human Resource Coordinator to join a high-impact team with the mission to remodel the volunteer lifecycle for institutional positions.  A newly created OpportunitiesToServe platform democratizes volunteer opportunities with our institutions by making them available to view and apply online. In doing so, it promotes the alignment of talent, skill, passion and expertise for all eligible opportunities. 
 
 #### The Role
 
-- Facilitate small group parent and child sessions
-- Read through SEED Curriculum to implement activities and experiences
-- Attend training sessions as needed
-- Assist with set-up and wrap-up of center
-- Collaborate with center coordinators and other facilitators
-- Provide facilitator feedback
+Major responsibilities and key deliverables of the Human Resource Coordinator include: 
+-	Coordinating the pre-hire process for volunteer positions posted on the OpportunitiesToServe Platform in Ontario 
+-	Advisor to strategic team on ground-level learnings
+-	SME to Boards & Portfolios on Human Resources best practices
+-	Assisting Boards & Portfolios with drafting Job Descriptions
+-	Ensures the applicant experience is unparalleled and communication is timely and effective.
+-	Sets up and attends volunteer meetings as needed. 
+
 
 #### About You
 
 Positions requirements include:
 
-- Ability to communicate information to target audience
-- Ability to manage a small group of parents and children between the ages of birth to 3 years old
-- Committed
-- Organized
-- Responsible
+- 3+ Years as a Human Resource Professional
+- Collaboration Skills
+-	Communication Proficiency 
+-	Passionate Team Player
+-	Proactive
+-	People Management 
+-	Organizational Skills
+-	Time Management
+
 
 Nice-to-have skills include:
 
-- Experience working with children
-- Early Childhood Education Diploma
+- Bachelor's degree in social sciences, communication, human resources, business, or related field or experience
+- Prior experience as a Human Resource Professional
+- CHRP Certification is an asset
+
